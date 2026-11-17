@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="no-referrer" name="referrer"/>
+<title>Colabora | Cosiendo Alas</title>
+<meta content="Cómo colaborar con Cosiendo Alas: trabajo con colectivas, formación para quienes acompañan procesos, instituciones y apoyo al proyecto." name="description"/>
+<!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+<meta content="website" property="og:type"/>
+<meta content="Colabora | Cosiendo Alas" property="og:title"/>
+<meta content="Cómo colaborar con Cosiendo Alas: trabajo con colectivas, formación para quienes acompañan procesos, instituciones y apoyo al proyecto." property="og:description"/>
+<meta content="https://cosiendoalas.mx/og.png" property="og:image"/>
+<link href="home.svg" rel="icon" type="image/svg+xml"/>
+<link href="estilos.css" rel="stylesheet"/>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold" href="#contenido-principal">Saltar al contenido</a>
+<!-- SALIDA RÁPIDA -->
+<button aria-label="Salida rápida: te lleva a otra página de inmediato" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" id="salida-rapida" type="button">
+<svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+</button>
+<header class="bg-white shadow-sm sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20 gap-4">
+<a class="flex-shrink-0 flex items-center gap-3" href="index.html">
+<img alt="" class="h-10 w-10 object-contain" src="home.svg"/>
+<span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+</a>
+<nav aria-label="Principal" class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita">
+<a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a>
+<a class="hover:text-doradoSuave transition" href="demasiado-karen.html">Demasiado Karen</a>
+<a class="hover:text-doradoSuave transition" href="contra-archivo.html">Contra-archivo</a>
+<a class="hover:text-doradoSuave transition" href="observatorio.html">Observatorio</a>
+<a class="hover:text-doradoSuave transition" href="orientacion.html">Orientación</a>
+<a aria-current="page" class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition" href="colabora.html">Colabora</a>
+</nav>
+<div class="lg:hidden flex items-center">
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación" class="text-grisAntracita hover:text-azulOceano" id="menu-btn" type="button">
+<svg aria-hidden="true" class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:hidden bg-white border-t border-moradoMedio/20" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="posicion.html">Posición</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="demasiado-karen.html">Demasiado Karen</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="contra-archivo.html">Contra-archivo</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="observatorio.html">Observatorio</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="orientacion.html">Orientación</a>
+<a aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano" href="colabora.html">Colabora</a>
+</div>
+</div>
+</header>
+<main class="flex-grow" id="contenido-principal" tabindex="-1">
+<div class="bg-grisAntracita border-b border-moradoMedio/30">
+<div class="max-w-7xl mx-auto px-4 py-3">
+<nav aria-label="Ruta de navegación" class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave">
+<ol class="flex flex-wrap gap-2">
+<li><a class="hover:text-white transition" href="index.html">Inicio</a></li>
+<li><span aria-hidden="true" class="text-moradoMedio">›</span></li>
+<li aria-current="page" class="text-white font-bold">Colabora</li>
+</ol>
+</nav>
+</div>
+</div>
+<section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+<div class="max-w-4xl mx-auto relative z-10">
+<p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3">
+<span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>
+                    Colabora
+                </p>
+<h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">Colaborar,<br/><em class="text-doradoSuave italic font-normal">con condiciones.</em></h1>
+<p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">Un proyecto psicosocial y de crítica de género que se sostiene con reglas claras: quién paga, quién no y qué no se puede comprar.</p>
+</div>
+<div aria-hidden="true" class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl"></div>
+<div aria-hidden="true" class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl"></div>
+</section>
+
+
+<section class="max-w-4xl mx-auto px-4 py-12">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Cosiendo Alas no es un despacho. Nuestro trabajo es psicosocial y de crítica de género: miramos qué les hacen los procesos administrativos y penales a quienes los atraviesan, y qué herramientas hacen falta para atravesarlos.</p>
+<p>Explicamos cómo funciona el derecho para poder criticarlo y moverse dentro de él, no para ofrecerlo como servicio. Hoy este proyecto se sostiene con el tiempo no remunerado de su equipo. Por eso cada forma de colaborar tiene condiciones y límites claros, incluido el trabajo con instituciones.</p>
+</div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 pb-6 space-y-6">
+<div class="sello-asfalto border-l-4 border-l-doradoSuave rounded-r-xl p-6">
+<h2 class="text-2xl font-titulo1 font-bold text-azulOceano mb-4">Lo que no cambia, colabores como colabores</h2>
+<ul class="font-texto text-grisAntracita/90 space-y-3">
+<li><strong class="font-subtitulo text-azulOceano">Las víctimas y las colectivas nunca pagan.</strong> Lo que limitamos es cuánto podemos atender, no a quién.</li>
+<li><strong class="font-subtitulo text-azulOceano">Nadie compra su calificación.</strong> Una institución que evaluamos puede contratar trabajo con el proyecto, pero ningún contrato cambia, retrasa ni retira su ficha. Las reglas son públicas.</li>
+<li><strong class="font-subtitulo text-azulOceano">Todo ingreso se declara</strong> en nuestra bitácora pública de <a class="underline hover:text-moradoMedio transition" href="https://docs.google.com/spreadsheets/d/1pY4LP49-EWh2WwfQYixHAVZymXU6FbGwBgoWKJaASMY/edit?usp=sharing" rel="noopener noreferrer" target="_blank">transparencia</a> y en la sección de <a class="underline hover:text-moradoMedio transition" href="posicion.html#transparencia">principios de financiamiento</a>, con su fuente.</li>
+<li><strong class="font-subtitulo text-azulOceano">No llevamos casos.</strong> Orientamos y documentamos; no representamos ni actuamos como instancia investigadora.</li>
+</ul>
+</div>
+
+<!-- RECUADRO DE TRANSPARENCIA Y SOSTENIBILIDAD -->
+<div class="sello-asfalto border-l-4 border-l-verdeEsperanza rounded-r-xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2 max-w-xl">
+<p class="font-subtitulo text-xs uppercase tracking-[0.15em] text-azulOceano font-bold">Cuentas claras y abiertas</p>
+<h2 class="text-xl sm:text-2xl font-titulo1 font-bold text-grisAntracita">Transparencia y sostenibilidad</h2>
+<p class="font-texto text-base text-grisAntracita/90">Consulta en tiempo real nuestra hoja de registro de ingresos, gastos y origen de recursos, o súmate a sostener el trabajo libre y autónomo del proyecto en Patreon.</p>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 flex-shrink-0">
+<a class="inline-flex items-center justify-center gap-2 bg-white border-2 border-azulOceano text-azulOceano hover:bg-azulOceano hover:text-white font-subtitulo text-xs sm:text-sm uppercase tracking-wider font-bold px-5 py-3 rounded-lg transition shadow-sm text-center" href="https://docs.google.com/spreadsheets/d/1pY4LP49-EWh2WwfQYixHAVZymXU6FbGwBgoWKJaASMY/edit?usp=sharing" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span>Registro de transparencia</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 bg-azulOceano hover:bg-moradoMedio text-white font-subtitulo text-xs sm:text-sm uppercase tracking-wider font-bold px-5 py-3 rounded-lg transition shadow-sm text-center" href="https://www.patreon.com/cw/Cosiendoalas/membership" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span>Suscribirse en Patreon</span>
+</a>
+</div>
+</div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 py-10"><h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-2"><span class="subrayado-dorado">Formas de colaborar</span></h2><p class="font-texto text-lg text-grisAntracita/70 mb-6">Abre la que te corresponda. Cada una tiene sus propias condiciones.</p><div class="plegables">
+
+<details class="plegable" id="colectivas" style="--acento:#42c3d9"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Colectivas y estudiantes · gratuito</span><h3 class="plegable-titulo">Trabajar con colectivas</h3><span class="plegable-bajada">Lectura crítica de protocolos, talleres para atravesar el proceso y validación conjunta de hallazgos.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Lo que hacemos con colectivas no es un servicio: es trabajo conjunto, y no se cobra.</p>
+<h4>Qué podemos aportar</h4>
+<ul>
+<li><strong>Lectura crítica del protocolo de su universidad</strong>: qué promete, qué exige a quien denuncia y dónde reproduce la sospecha sobre su testimonio.</li>
+<li><strong>Talleres para atravesar el proceso</strong>, administrativo o penal: cómo funciona, qué desgasta, cómo preservar evidencia y cómo cuidarse en el camino.</li>
+<li><strong>Insumos para exigir una reforma</strong>, si están organizándose para hacerlo.</li>
+<li><strong>Lectura de un procedimiento en curso</strong>: qué etapa es, qué sigue y qué implica para quien lo vive.</li>
+</ul>
+<h4>Validación de hallazgos</h4>
+<p>Antes de publicar el diagnóstico de una institución, lo contrastamos con quienes estudian ahí. Nadie conoce mejor la distancia entre el protocolo escrito y lo que ocurre. Esa validación ha cambiado hallazgos.</p>
+<h4>Cupo</h4>
+<!-- PENDIENTE: definir el número de colectivas por semestre según las horas disponibles del equipo -->
+<p>Trabajamos con un número limitado de colectivas por semestre, para poder hacerlo bien. Si el cupo está lleno, te lo decimos y te anotamos para el siguiente.</p>
+<h4>Qué pedimos</h4>
+<ul>
+<li>Que la colectiva conserve sus propios criterios: no venimos a dirigir nada.</li>
+<li>Que nada de lo que compartan se publique sin su acuerdo.</li>
+<li>Que si en algún momento nuestra presencia estorba, nos lo digan.</li>
+</ul>
+<h4>Qué no hacemos</h4>
+<ul>
+<li>No hablamos en nombre de una colectiva ni la representamos.</li>
+<li>No usamos su trabajo sin crédito y sin permiso.</li>
+<li>No intermediamos con las autoridades de su universidad.</li>
+</ul>
+<h4>Escríbenos</h4>
+<p>A <a href="mailto:cosiendo.tus.alas@gmail.com?subject=Colectiva">cosiendo.tus.alas@gmail.com</a>, con el asunto «Colectiva» y el nombre de su universidad.</p>
+</div>
+</div></div></details>
+
+<details class="plegable" id="formacion" style="--acento:#8e62b1"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Organizaciones y quienes acompañan · con costo</span><h3 class="plegable-titulo">Formación para acompañar procesos</h3><span class="plegable-bajada">Efectos psicosociales del proceso, crítica de género y cuidado de quien acompaña.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Quien acompaña a alguien en un proceso administrativo o penal necesita algo más que conocer la ley: necesita entender qué le hace el proceso a la persona que lo atraviesa.</p>
+<h4>Para quién</h4>
+<ul>
+<li>Organizaciones de la sociedad civil y colectivas profesionales.</li>
+<li>Personal de atención, defensorías y áreas de género.</li>
+<li>Psicólogas, trabajadoras sociales y acompañantes.</li>
+<li>Sindicatos y espacios de trabajo que atienden casos de violencia.</li>
+</ul>
+<h4>Temas</h4>
+<ul>
+<li><strong>Lo que el proceso produce:</strong> sospecha sobre el testimonio, revictimización, desgaste y aislamiento.</li>
+<li><strong>Crítica de género del procedimiento:</strong> estereotipos en la valoración, qué exigen los protocolos y cómo señalar cuando no se aplican.</li>
+<li><strong>Herramientas para atravesarlo:</strong> preservar evidencia, registrar hechos, preparar a la persona para cada etapa.</li>
+<li><strong>Cuidado de quien acompaña:</strong> límites, desgaste vicario y redes de apoyo.</li>
+</ul>
+<h4>Cómo funciona</h4>
+<p>Talleres y cursos con calendario, o sesiones a la medida de una organización. Tienen costo porque así se sostiene el resto del proyecto, incluido el trabajo gratuito con víctimas y colectivas.</p>
+<!-- PENDIENTE: publicar el primer curso, sus fechas y su costo o rango -->
+<p>Estamos preparando el primer curso. Si a tu organización le interesa, escríbenos y te avisamos cuando abra.</p>
+<h4>Contacto</h4>
+<p>A <a href="mailto:cosiendo.tus.alas@gmail.com?subject=Formaci%C3%B3n">cosiendo.tus.alas@gmail.com</a>, con el asunto «Formación» y el nombre de tu organización.</p>
+</div>
+</div></div></details>
+
+<details class="plegable" id="instituciones" style="--acento:#fcc352"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Instituciones · con costo</span><h3 class="plegable-titulo">Trabajar con una institución</h3><span class="plegable-bajada">El diagnóstico va primero y nadie compra su calificación. Reglas públicas de separación.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+<strong class="font-subtitulo text-azulOceano">Una universidad puede contratarnos para mejorar cómo atiende la violencia. No puede comprar lo que decimos de ella.</strong> Estas condiciones no son negociables y se firman en cada contrato.
+</div>
+<div class="contenido font-texto text-grisAntracita/90">
+<h4>Qué ofrecemos</h4>
+<ul>
+<li><strong>Reforma de protocolos</strong> con enfoque psicosocial y de género: qué exige el procedimiento a quien denuncia y dónde produce desgaste o sospecha.</li>
+<li><strong>Diagnóstico psicosocial del procedimiento</strong>: cómo lo vive quien lo atraviesa.</li>
+<li><strong>Formación a las personas que operan el procedimiento</strong>, con foco en valoración del testimonio, revictimización y cuidado.</li>
+</ul>
+<h4>Reglas de separación</h4>
+<ol>
+<li><strong>El diagnóstico va primero.</strong> La ficha de la institución se publica con su calendario y sin condiciones. Ningún contrato la retrasa, la suaviza ni la retira.</li>
+<li><strong>Nadie compra la calificación.</strong> La ficha solo cambia cuando cambia el protocolo vigente, con evidencia pública. Haber contratado con nosotras no es evidencia.</li>
+<li><strong>Revisión externa.</strong> Mientras haya contrato, y durante un periodo posterior, la actualización de esa ficha la revisa una persona o equipo ajeno al servicio.<!-- PENDIENTE: definir la duración del periodo (propuesta: 12 meses) --></li>
+<li><strong>Registro público.</strong> Cada relación se publica en <a href="https://docs.google.com/spreadsheets/d/1pY4LP49-EWh2WwfQYixHAVZymXU6FbGwBgoWKJaASMY/edit?usp=sharing" rel="noopener noreferrer" target="_blank">transparencia</a> con institución, fecha, alcance y monto, y la ficha lleva una marca visible.</li>
+<li><strong>Ninguna institución es decisiva para nuestros ingresos.</strong> Fijamos un tope y lo publicamos.<!-- PENDIENTE: definir topes (propuesta: 20% por institución, 50% el total institucional) --></li>
+<li><strong>Lo que se diseña es abierto.</strong> Protocolos, rutas y materiales se publican con licencia libre y sin datos que identifiquen a nadie. Sirven a otras universidades y colectivas, y cualquiera puede revisar si el trabajo protege a quien denuncia o a la institución.</li>
+<li><strong>La comunidad valida antes de entregar.</strong> Una colectiva o grupo estudiantil del campus revisa el diseño, con honorario incluido en el contrato.</li>
+<li><strong>Una parte de cada contrato financia lo gratuito:</strong> la orientación y el trabajo con colectivas.<!-- PENDIENTE: definir el porcentaje (propuesta: 10%) --></li>
+</ol>
+<h4>Además</h4>
+<ul>
+<li>No hacemos trabajo cuyo objeto real sea proteger a la institución frente a quienes denuncian.</li>
+<li>Conservamos el derecho de publicar los hallazgos metodológicos.</li>
+<li>No actuamos como instancia investigadora ni resolvemos procedimientos internos.</li>
+<li>No trabajamos con una institución si alguien a quien orientamos tiene un procedimiento abierto en ella.</li>
+</ul>
+<p>Sabemos que calificar y ofrecer servicios puede parecer un conflicto de intereses. No lo negamos: por eso cada regla se puede verificar desde fuera.</p>
+<h4>Si nos evaluaron y quieren responder</h4>
+<p>Eso no es una consultoría: es el <a href="observatorio.html#replica">derecho de réplica</a>, y es gratuito.</p>
+<h4>Contacto</h4>
+<p>A <a href="mailto:cosiendo.tus.alas@gmail.com?subject=Instituci%C3%B3n">cosiendo.tus.alas@gmail.com</a>, con el asunto «Institución».</p>
+</div>
+</div></div></details>
+
+<details class="plegable" id="apoya" style="--acento:#53a0cc"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Apoya el proyecto</span><h3 class="plegable-titulo">Sostener esto</h3><span class="plegable-bajada">Suscripciones en Patreon, transparencia, alianzas, colaboración académica y difusión.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<h4>Donativos</h4>
+<p>Por ahora no recibimos donativos directos: todavía no contamos con una figura jurídica que nos permita hacerlo con la transparencia que exigimos a otras instituciones. Cuando eso cambie, lo anunciaremos aquí.</p>
+<h4>Suscripciones</h4>
+<p>Lo que sí tenemos son membresías en nuestro Patreon. Ayudan a sostener el tiempo que dedicamos al proyecto, la infraestructura del observatorio y el trabajo gratuito con víctimas y colectivas.</p>
+<div class="my-6 not-prose">
+<a class="inline-flex items-center gap-3 bg-azulOceano text-white font-subtitulo text-sm uppercase tracking-wider font-bold px-6 py-3.5 rounded-lg hover:bg-moradoMedio transition shadow-sm" href="https://www.patreon.com/cw/Cosiendoalas/membership" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span>Sumarse en Patreon</span>
+</a>
+</div>
+<h4>Transparencia abierta</h4>
+<p>Cada peso que ingresa al proyecto y su destino se registran de forma pública. Puedes revisar nuestra <a href="https://docs.google.com/spreadsheets/d/1pY4LP49-EWh2WwfQYixHAVZymXU6FbGwBgoWKJaASMY/edit?usp=sharing" rel="noopener noreferrer" target="_blank">bitácora de transparencia en Google Sheets</a> en cualquier momento.</p>
+<h4>De dónde no aceptaremos dinero</h4>
+<ul>
+<li>De cualquier institución que pretenda cambiar, retrasar o retirar su ficha a cambio del pago.</li>
+<li>De cualquier fuente que condicione qué se evalúa o qué se publica.</li>
+</ul>
+<h4>Alianzas</h4>
+<p>Nos interesa trabajar con organizaciones de la sociedad civil, fondos feministas y de derechos humanos, colectivas y grupos de investigación cuando hay trabajo concreto de por medio. Escríbannos a <a href="mailto:cosiendo.tus.alas@gmail.com?subject=Alianza">cosiendo.tus.alas@gmail.com</a>.</p>
+<h4>Colaboración académica</h4>
+<ul>
+<li>Revisión crítica de la metodología desde la psicología social y los estudios de género: si encuentran un problema, queremos saberlo.</li>
+<li>Apoyo en la revisión documental de protocolos.</li>
+<li>Uso de nuestros <a href="observatorio.html#datos">datos</a> en investigaciones propias, con atribución.</li>
+</ul>
+<h4>Difundir</h4>
+<p>Compartir el <a href="observatorio.html#indice">índice</a>, los <a href="orientacion.html#recursos">recursos</a> o el libro <a href="demasiado-karen.html"><em>Demasiado Karen</em></a> con quien los necesite también sostiene el proyecto. No todo apoyo es dinero.</p>
+</div>
+</div></div></details>
+
+</div></section>
+
+<section class="ancla border-t border-moradoMedio/20 mt-10" id="contacto">
+<div class="max-w-4xl mx-auto px-4 pt-16">
+<p class="font-subtitulo text-moradoMedio text-xs sm:text-sm uppercase tracking-[0.2em] mb-4 flex items-center gap-3"><span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>Contacto</p>
+<h2 class="text-3xl md:text-5xl font-titulo1 font-bold leading-tight text-grisAntracita">Escríbenos.</h2>
+<p class="font-texto text-lg sm:text-xl text-grisAntracita/70 leading-relaxed max-w-3xl mt-4">Para colectivas, formación, prensa, alianzas y colaboración académica.</p>
+</div>
+</section>
+<section class="max-w-4xl mx-auto px-4 py-12">
+<div class="sello-asfalto border-l-4 border-verdeEsperanza p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+<strong class="font-subtitulo text-azulOceano">Este no es el canal para casos.</strong> Si necesitas orientación sobre una situación de violencia, usa el formulario de <a class="underline" href="orientacion.html#solicitar">solicitar orientación</a>, que tiene el resguardo adecuado.
+</div>
+<div class="contenido font-texto text-grisAntracita/90">
+<p>Correo general: <a href="mailto:cosiendo.tus.alas@gmail.com">cosiendo.tus.alas@gmail.com</a></p>
+<!-- PENDIENTE: decidir si se publica el número de WhatsApp y con qué horario de atención -->
+<h3>Para qué sí</h3>
+<ul>
+<li>Trabajo con colectivas (asunto «Colectiva»).</li>
+<li>Formación para organizaciones y quienes acompañan (asunto «Formación»).</li>
+<li>Trabajo con instituciones, bajo las reglas de separación (asunto «Institución»).</li>
+<li>Invitaciones a talleres, mesas y presentaciones.</li>
+<li>Prensa y solicitudes de entrevista.</li>
+<li>Alianzas y propuestas de colaboración académica.</li>
+</ul>
+<h3>Para qué no</h3>
+<ul>
+<li>Denuncias: no somos instancia receptora de denuncias.</li>
+<li>Representación legal o asesoría jurídica de un caso: te orientamos sobre tus derechos y, si lo necesitas, te derivamos a quien sí lleva casos.</li>
+<li>Emergencias: consulta el <a href="directorio.html">directorio de atención inmediata</a>.</li>
+</ul>
+</div>
+</section>
+</main>
+<footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4">
+<div class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10" role="note">
+<p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a class="underline text-doradoSuave hover:text-white" href="directorio.html">Consulta el directorio de atención inmediata</a>.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+<div class="md:col-span-2">
+<h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+<p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+<div class="flex gap-3">
+<a aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.facebook.com/share/16oUTUZ9zC/" rel="noopener noreferrer" target="_blank">f</a>
+<a aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.instagram.com/cosiendo.tus.alas/" rel="noopener noreferrer" target="_blank">ig</a>
+<a aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.tiktok.com/@cosiendoalas.mx" rel="noopener noreferrer" target="_blank">tt</a>
+<a aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.youtube.com/@cosiendoalasmx" rel="noopener noreferrer" target="_blank">yt</a>
+<a aria-label="Patreon de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.patreon.com/cw/Cosiendoalas/membership" rel="noopener noreferrer" target="_blank">p</a>
+</div>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#principios">Qué hacemos y qué no</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#transparencia">Transparencia y financiamiento</a></li>
+<li><a class="hover:text-doradoSuave transition" href="https://docs.google.com/spreadsheets/d/1pY4LP49-EWh2WwfQYixHAVZymXU6FbGwBgoWKJaASMY/edit?usp=sharing" rel="noopener noreferrer" target="_blank">Bitácora de transparencia</a></li>
+<li><a class="hover:text-doradoSuave transition" href="voces.html">Voces</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html">Colabora</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="legal.html#privacidad">Aviso de privacidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#terminos">Términos de uso</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#accesibilidad">Accesibilidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="observatorio.html#replica">Derecho de réplica</a></li>
+</ul>
+</div>
+</div>
+<div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                © 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+</div>
+</footer>
+<script src="sitio.js"></script>
+</body>
+</html>
