@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_fuente/
+
+Sitemap: https://cosiendoalasmx.com/sitemap.xml
