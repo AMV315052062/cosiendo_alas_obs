@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Semáforo de la Simulación e Índice Nacional | Cosiendo Alas</title>
+    <meta name="description" content="Observatorio crítico que audita y transparenta el cumplimiento real de los protocolos de género frente a la simulación burocrática en las universidades públicas de México.">
+    <meta name="keywords" content="Semáforo de la Simulación, protocolos de género universidades públicas, violencia institucional, auditoría comunitaria, UNAM, UAM, IPN, UdeG">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Semáforo de la Simulación Institucional | Cosiendo Alas">
+    <meta property="og:description" content="Fichas de auditoría comunitaria: evaluamos la distancia entre el discurso formal de las universidades públicas y la realidad de los procesos.">
+    <meta property="og:image" content="https://cosiendoalasmx.com/home.svg">
+    <meta property="og:url" content="https://cosiendoalasmx.com/semaforo.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600;1,700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOceano: '#653a82',
+                        verdeEsperanza: '#42c3d9',
+                        doradoSuave: '#fcc352',
+                        grisAntracita: '#2b1045',
+                        moradoMedio: '#8e62b1',
+                        azulCielo: '#53a0cc',
+                        turquesaClaro: '#5dcad4',
+                        lavandaSuave: '#afb0de',
+                        fondoPagina: '#f8f6fb',
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #f8f6fb; }
+
+        .hero-gradient { background: linear-gradient(135deg, #2b1045 0%, #653a82 55%, #42c3d9 120%); }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+
+        .sello-asfalto {
+            background: repeating-linear-gradient(
+                135deg,
+                rgba(43, 16, 69, 0.03),
+                rgba(43, 16, 69, 0.03) 2px,
+                transparent 2px,
+                transparent 8px
+            ), #ffffff;
+            border: 1px solid rgba(101, 58, 130, 0.15);
+        }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden flex flex-col min-h-screen">
+
+    <!-- SALIDA RÁPIDA -->
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <!-- NAVBAR -->
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="que_hacer.html" class="hidden sm:inline-flex items-center gap-2 bg-red-600 text-white text-xs sm:text-sm font-subtitulo font-bold px-3 py-2 rounded-lg hover:bg-red-700 transition">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Emergencia Jurídica</span>
+                    </a>
+                    <button id="menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- OVERLAY + MENÚ LATERAL -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" aria-label="Cerrar menú" class="text-gray-400 hover:text-azulOceano transition p-2"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Observatorio</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="semaforo.html" class="block font-subtitulo font-bold text-azulOceano transition py-1"><i class="fa-solid fa-magnifying-glass-chart mr-2"></i>Semáforo de la Simulación Institucional</a></li>
+                        <li><a href="genealogia.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Genealogía de la Incredulidad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Archivo Vivo</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="repositorio.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Repositorio de Anti-Best Sellers</a></li>
+                        <li><a href="contracartografia.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Herramientas de Contra-Cartografía</a></li>
+                        <li><a href="que_hacer.html" class="block font-subtitulo font-bold text-red-600 hover:text-red-700 transition py-1"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Kit de emergencia NOM-046</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Cultura Molecular</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="desmontando.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Desmontando la Interfaz</a></li>
+                        <li><a href="desarme_epoca.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Desarme de la Época</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">El Manifiesto</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="trinchera.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">El Manifiesto del Asfalto</a></li>
+                        <li><a href="directorio.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Organismos bajo sospecha</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- HERO OBSERVATORIO -->
+    <header class="hero-gradient text-white pt-32 pb-20 sm:pt-40 sm:pb-24 px-6 sm:px-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <p class="font-subtitulo text-doradoSuave uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 font-semibold flex items-center gap-3">
+                <span class="h-px w-8 bg-doradoSuave inline-block"></span>
+                Observatorio Crítico
+            </p>
+            <h1 class="font-titulo1 text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] mb-6">
+                El Semáforo de la <br><em class="text-doradoSuave font-normal italic">Simulación Institucional.</em>
+            </h1>
+            <p class="font-texto text-lg sm:text-xl text-lavandaSuave max-w-3xl leading-relaxed">
+                Base de datos independiente sobre violencia sexual documentada (acoso, hostigamiento, abuso y violación) en al menos 38 universidades públicas de México. Evaluamos el cumplimiento real, la brecha de impunidad y la respuesta de las autoridades ante las denuncias estudiantiles.
+            </p>
+        </div>
+
+        <div class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl"></div>
+        <div class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl"></div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+
+        <!-- RESUMEN TÉCNICO Y PATRONES -->
+        <section class="mb-12">
+            <div class="sello-asfalto p-8 rounded-2xl border border-azulOceano/20 shadow-sm">
+                <h2 class="font-titulo1 italic text-2xl sm:text-3xl text-azulOceano mb-4">Hallazgos y Diagnóstico Transversal</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-700">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-xs">
+                        <i class="fa-solid fa-map-location-dot text-azulOceano text-xl mb-2 block"></i>
+                        <strong class="text-grisAntracita block text-base mb-1">Fenómeno Sistémico y Nacional</strong>
+                        <p class="leading-relaxed">Se identifican casos periodísticamente verificables en universidades de casi todos los estados, abarcando instituciones autónomas, estatales y tecnológicas descentralizadas.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-xs">
+                        <i class="fa-solid fa-clock-rotate-left text-amber-600 text-xl mb-2 block"></i>
+                        <strong class="text-grisAntracita block text-base mb-1">Respuesta Reactiva</strong>
+                        <p class="leading-relaxed">Las destituciones y sanciones efectivas suceden mayoritariamente tras paros, tomas de instalaciones o "tendederos", no por iniciativa proactiva de los comités.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-xs">
+                        <i class="fa-solid fa-scale-unbalanced text-red-600 text-xl mb-2 block"></i>
+                        <strong class="text-grisAntracita block text-base mb-1">Brecha de Impunidad</strong>
+                        <p class="leading-relaxed">A pesar del alto volumen de quejas registradas, existe una marcada distancia entre las denuncias iniciadas y la imposición de sanciones definitivas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+        <section class="mb-12 sticky top-20 z-40">
+            <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-gray-200">
+                <div class="flex flex-col lg:flex-row gap-4 justify-between items-center">
+                    
+                    <!-- Campo de texto del buscador -->
+                    <div class="relative w-full lg:w-1/2">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-azulOceano text-lg"></i>
+                        <input type="text" id="uni-search" placeholder="Busca por nombre de universidad, sigla, estado o fuente..." class="w-full pl-12 pr-10 py-3.5 bg-fondoPagina border border-gray-300 rounded-xl text-sm sm:text-base font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20 transition">
+                        <button id="clear-search" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+                    </div>
+
+                    <!-- Botones de Filtro por Categoria -->
+                    <div class="flex flex-wrap gap-2 w-full lg:w-auto justify-start lg:justify-end">
+                        <button onclick="filterCat('all', this)" class="filter-btn active bg-azulOceano text-white px-4 py-2.5 rounded-xl text-xs font-subtitulo font-bold transition shadow-xs">Todas (<span id="count-all">0</span>)</button>
+                        <button onclick="filterCat('cat1', this)" class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2.5 rounded-xl text-xs font-subtitulo font-bold transition">Cat. 1: Autónomas (<span id="count-cat1">0</span>)</button>
+                        <button onclick="filterCat('cat2', this)" class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2.5 rounded-xl text-xs font-subtitulo font-bold transition">Cat. 2: No Autónomas (<span id="count-cat2">0</span>)</button>
+                        <button onclick="filterCat('cat3', this)" class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2.5 rounded-xl text-xs font-subtitulo font-bold transition">Cat. 3: Tecnológicas / Interculturales (<span id="count-cat3">0</span>)</button>
+                    </div>
+
+                </div>
+                
+                <div class="mt-3 flex justify-between items-center text-xs text-gray-500 font-mono pt-2 border-t border-gray-100">
+                    <span>Mostrando: <strong id="visible-count" class="text-azulOceano">0</strong> instituciones de educación superior</span>
+                    <span>Actualización: Julio 2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENEDOR DE TARJETAS DE UNIVERSIDADES -->
+        <section class="mb-16">
+            <div id="uni-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CATEGORÍA 1: AUTÓNOMAS -->
+
+                <!-- UNAM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unam universidad nacional autonoma de mexico cigu cu cch fyl cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UNAM.webp" alt="Logo UNAM" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UNAM';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://unam.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>unam.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNAM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Nacional Autónoma de México</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">La Silla Rota (2018):</strong>
+                                <span>Denuncia por abuso sexual y posterior acoso contra profesor del Colegio de Geografía en la Facultad de Filosofía y Letras.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Cimacnoticias (Agosto 2022):</strong>
+                                <span>Bajo la cifra de 1,486 casos acumulados de violencia de género, se reportó que una exalumna de la FAD enfrentó contrademanda por daño moral tras señalar a un profesor por acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uam universidad autonoma metropolitana iztapalapa azcapotzalco cuajimalpa cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAM.webp" alt="Logo UAM" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UAM';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uam.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uam.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma Metropolitana</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Infobae (Octubre 2022):</strong>
+                                <span>Detención de profesor de química de UAM Iztapalapa por presunto abuso sexual contra una alumna de maestría en instalaciones de laboratorio.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Infobae (Octubre 2021):</strong>
+                                <span>Sentencia de 9 años de prisión a un profesor de la UAM Azcapotzalco por abuso sexual agravado contra una estudiante.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UACM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uacm universidad autonoma de la ciudad de mexico san lorenzo tezonco cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UACM.png" alt="Logo UACM" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uacm.edu.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uacm.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de la Ciudad de México</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Proceso (Mayo 2014):</strong>
+                                <span>Cese del coordinador del Posgrado en Derechos Humanos por acoso y hostigamiento sexual y laboral hacia dos académicas.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Los Ángeles Press (Septiembre 2024):</strong>
+                                <span>Exexigencia de disculpa pública en el plantel San Lorenzo Tezonco contra un profesor investigador con denuncia ante la FGJCDMX que continuaba impartiendo clases.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UANL -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uanl universidad autonoma de nuevo leon monterrey metoouanl">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UANL.svg" alt="Logo UANL" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UANL';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uanl.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uanl.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UANL</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Nuevo León</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Excélsior (2019):</strong>
+                                <span>Protestas en la Facultad de Artes Visuales exigiendo la destitución de docente señalado vía #MeTooUANL por condicionar calificaciones por relaciones e imágenes.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">SinEmbargo (Marzo 2022):</strong>
+                                <span>Protestas y tendederos en preparatorias de la UANL durante la jornada del 8M exponiendo casos de acoso y abuso sexual.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UdeG -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="udg universidad de guadalajara jalisco prepas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UDEG.png" alt="Logo UdeG" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UdeG';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://udg.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>udg.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UdeG</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Guadalajara</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">La Jornada (Marzo 2022):</strong>
+                                <span>Licencia de profesor en la Preparatoria Vocacional tras denuncias públicas por acoso a estudiantes.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Milenio (2022):</strong>
+                                <span>Toma de instalaciones en la Preparatoria 11 tras la detención de un docente por abuso sexual contra una alumna.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- BUAP -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="buap benemerita universidad autonoma de puebla">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="BUAP.svg" alt="Logo BUAP" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=BUAP';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://buap.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>buap.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">BUAP</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Benemérita Univ. Autónoma de Puebla</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Periódico Central (2017):</strong>
+                                <span>Lámina de testimonios y denuncias en Psicología exponiendo a ocho docentes por acoso y misoginia.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Sol de Puebla (Enero 2023):</strong>
+                                <span>Reporte oficial de Abogacía General con 64 investigaciones por violencia de género en 2022 (acoso, ciberacoso y abuso).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UV -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uv universidad veracruzana xalapa veracruz">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UV.webp" alt="Logo UV" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UV';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uv.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uv.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UV</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Veracruzana</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Heraldo (Marzo 2023):</strong>
+                                <span>Denuncias formales ante la Fiscalía contra un docente de la Facultad de Arquitectura Xalapa por hostigamiento.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">La Silla Rota (Agosto 2024):</strong>
+                                <span>Solicitud de información pública documentó 66 quejas contra académicos entre 2018 y 2024; 6 profesores fueron dados de baja en 2023.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAEMéx -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaemex universidad autonoma del estado de mexico toluca nezahualcoyotl">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAMEX.svg" alt="Logo UAEMex" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UAEMex';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uaemex.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uaemex.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAEMéx</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma del Estado de México</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Reporte Índigo (Marzo 2020):</strong>
+                                <span>Rectoría informó la baja de 20 profesores (15 destituciones y 5 despidos) tras señalamientos en la Facultad de Ciencias de la Conducta.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Milenio (Marzo 2020):</strong>
+                                <span>Paro en campus Nezahualcóyotl exigiendo cese de administrativo con carpetas por violación y acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAEM (Morelos) -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaem universidad autonoma del estado de morelos cuernavaca feum">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAEMORELOS.jpg" alt="Logo UAEM Morelos" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uaem.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uaem.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAEM (Morelos)</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma del Estado de Morelos</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Infobae (Noviembre 2022):</strong>
+                                <span>Profesor sentenciado a 3 años de prisión por acoso sexual cometido contra una estudiante de 16 años.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">La Jornada (Agosto 2021):</strong>
+                                <span>La FEUM exigió el cese de un docente de Medicina denunciado por acoso durante prácticas profesionales, documentando 14 casos en 4 meses.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UABC -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uabc universidad autonoma de baja california mexicali tijuana">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UABC.png" alt="Logo UABC" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uabc.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uabc.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UABC</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de Baja California</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Proceso (Octubre 2025):</strong>
+                                <span>Destitución de encargado de laboratorio por acoso contra cinco alumnas. Rectoría reconoció la separación de 17 profesores en los últimos años.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">La Jornada (Noviembre 2019):</strong>
+                                <span>Denuncias públicas en Mexicali exponiendo dos casos de violación y múltiples quejas por acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAS -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uas universidad autonoma de sinaloa culiacan">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="SINALOA.jpg" alt="Logo UAS" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uas.edu.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uas.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAS</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Sinaloa</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Noroeste (2020):</strong>
+                                <span>Alumnas de Arquitectura Culiacán denunciaron el hallazgo de un dispositivo que las grababa sin consentimiento en sanitarios.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Reacción Informativa (Junio 2024):</strong>
+                                <span>Estudiantes y docentes de Psicología denunciaron reiterado acoso docente presuntamente omiso por autoridades.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UG -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ug universidad de guanajuato leon">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="GUANAJUATO.svg" alt="Logo UG" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://ugto.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>ugto.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UG</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Guanajuato</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Universal (2018-2019):</strong>
+                                <span>Profesoras y alumnas de Ciencias Sociales León denunciaron acoso continuado por parte de cinco académicos.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Zona Franca (2022):</strong>
+                                <span>Aviso sobre permanencia en aulas de un docente con carpeta de investigación abierta por presunta violación en 2020.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UADY -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uady universidad autonoma de yucatan merida prepas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UADY.png" alt="Logo UADY" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uady.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uady.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UADY</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Yucatán</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">SIPSE (Junio 2019):</strong>
+                                <span>Estudiante de la Preparatoria Uno denunció tocamientos indebidos por parte de un docente tras condicionamiento académico.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">La Jornada Maya (Marzo 2020):</strong>
+                                <span>Tendederos masivos en múltiples facultades exhibiendo docentes y personal administrativo.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UNACH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unach universidad autonoma de chiapas tuxtla gutierrez">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UNACH.png" alt="Logo UNACH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://unach.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>unach.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNACH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Chiapas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Universal (2021):</strong>
+                                <span>Retiro de denominación honorífica en espacio universitario tras denuncia pública por acoso en maestría de DDHH.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Meganoticias (Marzo 2023):</strong>
+                                <span>Cifra oficial confirmando la rescisión de 81 profesores por hostigamiento y acoso sexual en el periodo 2018-2022.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAQ -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaq universidad autonoma de queretaro">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAQ.jpg" alt="Logo UAQ" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UAQ';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uaq.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uaq.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAQ</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Querétaro</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Universal Qro (2022):</strong>
+                                <span>Expulsión de un docente tras acumulación de quejas por violación formuladas por cuatro alumnas.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Radio Fórmula (Octubre 2022):</strong>
+                                <span>Judicialización del caso de un profesor de Ciencias Naturales procesado por abuso sexual agravado.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UABJO -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uabjo universidad autonoma benito juarez de oaxaca">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UABJO.jpg" alt="Logo UABJO" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uabjo.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uabjo.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UABJO</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma "Benito Juárez" de Oaxaca</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Universal Oaxaca (Noviembre 2022):</strong>
+                                <span>Tendedero en la Facultad de Medicina señalando a docentes por acoso, difusión no consentida de material íntimo y agresiones.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">NVI Noticias (2025):</strong>
+                                <span>Rescisión laboral de un académico del Instituto de Ciencias de la Educación tras denuncias por hostigamiento a docentes y alumnas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UJAT -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ujat universidad juarez autonoma de tabasco villahermosa">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UJAT.jpg" alt="Logo UJAT" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://ujat.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>ujat.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UJAT</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Juárez Autónoma de Tabasco</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Financiero (Agosto 2021):</strong>
+                                <span>Expulsión de un docente por hostigamiento tras movilizaciones estudiantiles.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">XEVA (2023):</strong>
+                                <span>La Coordinación de Estudios de Género reportó 70 casos atendidos en 2022 y 13 nuevos expedientes en 2023.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UASLP -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaslp universidad autonoma de san luis potosi fup">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UASLP.png" alt="Logo UASLP" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uaslp.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uaslp.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UASLP</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de San Luis Potosí</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Financiero (Octubre 2025):</strong>
+                                <span>Expulsión de dos estudiantes tras violar a una joven en oficinas gremiales de la Facultad de Derecho.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Universal (Octubre 2025):</strong>
+                                <span>Rescisión laboral de un académico de Economía tras manifestaciones estudiantiles.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UACH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uach universidad autonoma de chihuahua juarez">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UACH.svg" alt="Logo UACH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uach.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uach.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Chihuahua</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Diario de Juárez (Marzo 2025):</strong>
+                                <span>Denuncia pública en la FCPyS campus Juárez contra dos docentes por acoso sexual y subjetivo.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Norte Digital (2021):</strong>
+                                <span>Reconocimiento oficial del aumento en denuncias y separación de siete integrantes del personal en 2020.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UMSNH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="umsnh universidad michoacana de san nicolas de hidalgo morelia michoacan">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UMSNH.webp" alt="Logo UMSNH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://umich.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>umich.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UMSNH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Michoacana de San Nicolás de Hidalgo</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Universal (2019):</strong>
+                                <span>Estudiante grabó y denunció penalmente a un profesor de Derecho por pedir favores sexuales a cambio de aprobación.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">MiMorelia (2019-2020):</strong>
+                                <span>Reporte de 14 expedientes por acoso; sólo un docente fue despedido de los cinco involucrados.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAdeC -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uadec universidad autonoma de coahuila saltillo">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAdeC.svg" alt="Logo UAdeC" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uadec.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uadec.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAdeC</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Coahuila</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Vanguardia (2023):</strong>
+                                <span>Separación de un docente de Jurisprudencia denunciado por acoso sexual hacia una estudiante menor de edad.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Milenio (2023):</strong>
+                                <span>Registro de múltiples denuncias formales por acoso en la Facultad de Jurisprudencia.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UNISON -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unison universidad de sonora hermosillo navojoa metoounison">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UNISON.svg" alt="Logo UNISON" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://unison.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>unison.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNISON</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Sonora</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Proyecto Puente (Febrero 2020):</strong>
+                                <span>Coordinador de posgrado dejó el cargo tras 13 señaIamientos vía @MeTooUnison, pero conservó cátedra.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Expreso (Abril 2024):</strong>
+                                <span>Conflicto en campus Navojoa tras la agresión de un académico hacia un estudiante que colocó un cartel de protesta.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAGro -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uagro universidad autonoma de guerrero chilpancingo acapulco">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAGro.svg" alt="Logo UAGro" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uagro.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uagro.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAGro</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Guerrero</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Quadratín (Junio 2025):</strong>
+                                <span>Expulsión definitiva por el Consejo Universitario de dos profesores por acoso contra alumnas menores de edad.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Réplica (Marzo 2022):</strong>
+                                <span>Mural de denuncia en Ciencias Químico Biológicas exponiendo a 20 integrantes de la comunidad por acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAA -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaa universidad autonoma de aguascalientes">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAA.png" alt="Logo UAA" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uaa.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uaa.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAA</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Aguascalientes</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Aguzados (2023):</strong>
+                                <span>Alumnas del Centro de las Artes y la Cultura denunciaron a docente por vulnerar su libertad y seguridad sexual.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">POPLab (2023):</strong>
+                                <span>El caso de Jimena "N" detonó exigencias de justicia y señalamientos por desatención burocrática previa.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAZ -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaz universidad autonoma de zacatecas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAZ.svg" alt="Logo UAZ" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uaz.edu.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uaz.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAZ</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Zacatecas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">NTR Zacatecas (Abril 2026):</strong>
+                                <span>Paro en Campus 2 (Antropología) señalando a docente por hostigamiento continuado a lo largo de varios años.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Diario de México:</strong>
+                                <span>Registro de despido de un docente por presunto acoso tras denuncia formal de estudiante.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UJED -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ujed universidad juarez del estado de durango gomez palacio">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UJED.jpg" alt="Logo UJED" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://ujed.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>ujed.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UJED</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Juárez del Estado de Durango</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Latinus (Noviembre 2023):</strong>
+                                <span>Denuncia en Ciencias de la Salud (Gómez Palacio) tras descubrir cámara oculta instalada en sanitarios por un docente.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Milenio (2023):</strong>
+                                <span>Queja de personal administrativo contra académico en la Facultad de Agricultura ante la Unidad de Prevención de Género.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAT -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uat universidad autonoma de tamaulipas victoria">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAT.png" alt="Logo UAT" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uat.edu.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uat.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAT</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Tamaulipas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Periódico Encuesta (Abril 2024):</strong>
+                                <span>Separación del Secretario de Administración tras denuncia formal por tocamientos en oficinas de Rectoría.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Milenio:</strong>
+                                <span>Tendederos de denuncia organizados por alumnas de diversas facultades para exhibir casos de acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAEH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaeh universidad autonoma del estado de hidalgo pachuca tizayuca">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAEH.webp" alt="Logo UAEH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uaeh.edu.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uaeh.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAEH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma del Estado de Hidalgo</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Universal Hidalgo (2023):</strong>
+                                <span>Denuncia contra docente de Escuela Superior de Tizayuca por acoso en periodo de evaluación extraordinaria.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Criterio Hidalgo (Mayo 2023):</strong>
+                                <span>Renuncia de docente del ICSA tras señalamientos públicos organizados por el colectivo Tetlachihui Machtiani.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UATx -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uatx universidad autonoma de tlaxcala zacatelco">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UATx.webp" alt="Logo UATx" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uatx.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uatx.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UATx</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Tlaxcala</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Milenio (2020):</strong>
+                                <span>Alumnas de Medicina y Filosofía promovieron #YoSiTeCreo, resultando en la suspensión de cuatro catedráticos de más de 50 casos señalados.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UAN -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uan universidad autonoma de nayarit tepic san blas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UAN.svg" alt="Logo UAN" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uan.edu.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uan.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAN</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Nayarit</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">N+ (2023):</strong>
+                                <span>Operativo de la Fiscalía en la Escuela de Ingeniería Pesquera (San Blas) investigando presuntas conductas de acoso e irregularidades.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UACJ -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uacj universidad autonoma de ciudad juarez chihuahua">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UACJ.png" alt="Logo UACJ" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uacj.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uacj.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACJ</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de Ciudad Juárez</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">El Diario / Excélsior (Mayo 2019):</strong>
+                                <span>Denuncia por agresión tumultuaria formulada por una docente contra cuatro profesores del Instituto de Ingeniería.</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Diario MX (Junio 2023):</strong>
+                                <span>Baja definitiva de docente-investigador por acoso sexual en el programa de literatura.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UCOL -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ucol universidad de colima iuba">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UCOL.svg" alt="Logo UCOL" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://ucol.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>ucol.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UCOL</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Colima</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Proceso (Abril 2022):</strong>
+                                <span>Rescisión de contrato a docente del Instituto Universitario de Bellas Artes tras protestas y acumulado de 12 quejas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UACAM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uacam universidad autonoma de campeche">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UACAM.webp" alt="Logo UACAM" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uacam.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uacam.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACAM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Campeche</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Proceso (Marzo 2020):</strong>
+                                <span>Instalación de tendederos en los campus 1, 3 y 5 por la colectiva "UAC sin acoso" exhibiendo personal académico y de servicio.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UABCS -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uabcs universidad autonoma de baja california sur la paz">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UABCS.webp" alt="Logo UABCS" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://uabcs.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uabcs.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UABCS</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de Baja California Sur</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">ZETA / Radio Fórmula (2022-2024):</strong>
+                                <span>Remoción y finiquito de profesores adscritos al Departamento de Humanidades tras protestas por acoso y discriminación.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UNACAR -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unacar universidad autonoma del carmen campeche">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UNACAR.png" alt="Logo UNACAR" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://unacar.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>unacar.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNACAR</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma del Carmen</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Proceso (Marzo 2020):</strong>
+                                <span>Colectiva "Las del Sur" colocó tendedero de denuncias frente a Rectoría; la administración ordenó retirarlo generando exhortos del Congreso Local.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UNICACH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unicach universidad autonoma de ciencias y artes de chiapas tuxtla">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UNICACH.png" alt="Logo UNICACH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 1: Autónoma</span>
+                                <a href="https://unicach.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>unicach.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNICACH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. de Ciencias y Artes de Chiapas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-azulOceano">
+                                <strong class="block text-grisAntracita">Alerta Chiapas / El Sol del Soconusco (Mayo 2026):</strong>
+                                <span>Estudiantes de Biología denunciaron tocamientos sin consentimiento cometidos por un docente dentro de aulas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- CATEGORÍA 2: NO AUTÓNOMAS -->
+
+                <!-- IPN -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat2" data-search="ipn instituto politecnico nacional esime esca cecyt cdmx ley olimpia">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="IPN.jpg" alt="Logo IPN" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=IPN';">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 2: Federal</span>
+                                <a href="https://ipn.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>ipn.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">IPN</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Instituto Politécnico Nacional (Dependiente SEP)</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-600">
+                                <strong class="block text-grisAntracita">Infobae (Octubre 2023):</strong>
+                                <span>Proceso judicial contra un estudiante de la ESCA Santo Tomás acusado de alterar y distribuir imágenes íntimas de compañeras mediante Inteligencia Artificial (Ley Olimpia).</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-600">
+                                <strong class="block text-grisAntracita">Excélsior (2020):</strong>
+                                <span>Movilizaciones y #IPNtendederos en planteles como ESIME Ticomán, CECyT 5 y 13.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UQROO -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat2" data-search="uqroo universidad de quintana roo chetumal cancun opd">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UQROO.jpg" alt="Logo UQROO" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 2: Estatal Descentralizada</span>
+                                <a href="https://uqroo.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>uqroo.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UQROO</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Quintana Roo</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-600">
+                                <strong class="block text-grisAntracita">Por Esto! (2024):</strong>
+                                <span>Rectoría confirmó la atención formal de 10 casos de presunto acoso sexual durante el ejercicio 2024.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- CATEGORÍA 3: TECNOLÓGICAS, INTERCULTURALES Y REGIONALES -->
+
+                <!-- UNICH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="unich universidad intercultural de chiapas san cristobal">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UNICH.png" alt="Logo UNICH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 3: Intercultural</span>
+                                <a href="https://unich.edu.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>unich.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNICH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Intercultural de Chiapas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-emerald-600">
+                                <strong class="block text-grisAntracita">Alerta Chiapas (Febrero 2026):</strong>
+                                <span>Señalamientos públicos contra autoridades universitarias por presunto encubrimiento a un exdocente denunciado por cuatro alumnas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- ITSPR / TecNM Poza Rica -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="itspr tecnm tecnologico superior de poza rica veracruz">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="ITSPR Poza Rica.jpg" alt="Logo ITSPR" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 3: Tecnológico</span>
+                                <a href="https://tecnm.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>tecnm.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">ITSPR Poza Rica</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Instituto Tecnológico Superior de Poza Rica</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-emerald-600">
+                                <strong class="block text-grisAntracita">La Jornada Veracruz (2025):</strong>
+                                <span>Denuncia penal formal por acoso y abuso sexual contra un docente (Carpeta PZR/DVII/FEMUJ/F3/251/2025).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- TecNM GAM II -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="tecnm tecnologico nacional de mexico gustavo a madero cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="TecNM GAM II.jpg" alt="Logo TecNM" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 3: Tecnológico</span>
+                                <a href="https://tecnm.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>tecnm.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">TecNM GAM II</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">TecNM Gustavo A. Madero II (CDMX)</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-emerald-600">
+                                <strong class="block text-grisAntracita">N+ (Octubre 2023):</strong>
+                                <span>Denuncias de múltiples estudiantes señalando a un profesor del plantel por acoso y condicionamientos.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- UBBJ Papantla -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="ubbj universidad para el bienestar benito juarez garcia papantla veracruz cndh">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="w-16 h-16 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-200 flex-shrink-0">
+                                <img src="UBBJ Papantla.jpg" alt="Logo UBBJ" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 font-subtitulo font-bold text-xs rounded-full mb-1">Cat. 3: Sistema UBBJ</span>
+                                <a href="https://ubbj.gob.mx" target="_blank" rel="noopener noreferrer" class="text-xs text-azulOceano hover:underline block font-mono"><i class="fa-solid fa-globe mr-1"></i>ubbj.gob.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UBBJ Papantla</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Benito Juárez (Papantla, Ver.)</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-emerald-600">
+                                <strong class="block text-grisAntracita">Recomendación CNDH (Septiembre 2025):</strong>
+                                <span>La CNDH emitió recomendación dirigida al sistema UBBJ por vulneración a derechos humanos y omisión ante denuncias de hostigamiento.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="genealogia.html" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-azulOceano/30 text-azulOceano font-subtitulo font-bold text-xs rounded-lg hover:bg-azulOceano hover:text-white transition">
+                        <span>Ver análisis</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- MESAJE SI NO HAY RESULTADOS DE BÚSQUEDA -->
+            <div id="no-results" class="hidden text-center py-16 sello-asfalto rounded-2xl border border-gray-200">
+                <i class="fa-solid fa-building-circle-exclamation text-4xl text-moradoMedio mb-3"></i>
+                <h3 class="font-titulo1 text-2xl text-grisAntracita font-bold mb-2">No se encontraron registros coincidentes</h3>
+                <p class="text-gray-600 text-sm max-w-md mx-auto mb-6">
+                    Intenta buscar por otro término o navega entre las categorías. Si deseas ingresar información sobre tu universidad para auditoría, contáctanos.
+                </p>
+                <a href="repositorio.html" class="inline-flex items-center gap-2 bg-azulOceano text-white font-subtitulo font-bold px-5 py-2.5 rounded-lg text-xs hover:bg-moradoMedio transition">
+                    <span>Aportar expediente al Archivo Vivo</span>
+                    <i class="fa-solid fa-upload"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- REGISTRO Y AUDITORÍA COMUNITARIA -->
+        <section class="sello-asfalto p-8 sm:p-12 rounded-2xl text-center border border-azulOceano/20 shadow-sm my-12">
+            <h2 class="font-titulo1 italic text-3xl sm:text-4xl text-azulOceano mb-4">¿Tu universidad requiere actualización?</h2>
+            <p class="font-texto text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed mb-6">
+                El Semáforo de la Simulación se alimenta de testimonios, expedientes de quejas, solicitudes de transparencia y análisis directo de asambleas estudiantiles. Envía la documentación de tu campus de manera segura.
+            </p>
+            <a href="repositorio.html" class="inline-flex items-center gap-3 bg-azulOceano text-white font-subtitulo font-bold px-8 py-4 rounded-xl hover:bg-moradoMedio transition shadow-md">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Enviar datos al Archivo Vivo.</span>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                            <img src="home.svg" alt="Icon Cosiendo Alas" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                        </div>
+                        <h3 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h3>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Observatorio crítico, acompañamiento jurídico y desarme cultural frente a la simulación institucional.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Cosiendo Alas" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Cosiendo Alas" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@cosiendoalas.mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok Cosiendo Alas" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@cosiendoalasmx" target="_blank" rel="noopener noreferrer" aria-label="YouTube Cosiendo Alas" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto Directo</h4>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT LÓGICO DE BÚSQUEDA Y FILTRADO EN TIEMPO REAL -->
+    <script>
+        const searchInput = document.getElementById('uni-search');
+        const clearBtn = document.getElementById('clear-search');
+        const uniCards = document.querySelectorAll('.uni-card');
+        const noResults = document.getElementById('no-results');
+        const visibleCountEl = document.getElementById('visible-count');
+
+        let activeCategory = 'all';
+
+        function updateCounters() {
+            let total = uniCards.length;
+            let cat1 = 0, cat2 = 0, cat3 = 0;
+
+            uniCards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                if (cat === 'cat1') cat1++;
+                if (cat === 'cat2') cat2++;
+                if (cat === 'cat3') cat3++;
+            });
+
+            document.getElementById('count-all').textContent = total;
+            document.getElementById('count-cat1').textContent = cat1;
+            document.getElementById('count-cat2').textContent = cat2;
+            document.getElementById('count-cat3').textContent = cat3;
+        }
+
+        function filterGrid() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            uniCards.forEach(card => {
+                const searchData = card.getAttribute('data-search').toLowerCase();
+                const cardCategory = card.getAttribute('data-category');
+
+                const matchesQuery = query === '' || searchData.includes(query);
+                const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
+
+                if (matchesQuery && matchesCategory) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            visibleCountEl.textContent = visibleCount;
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        function filterCat(cat, btnElement) {
+            activeCategory = cat;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-azulOceano', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+
+            btnElement.classList.remove('bg-gray-100', 'text-gray-700');
+            btnElement.classList.add('active', 'bg-azulOceano', 'text-white');
+
+            filterGrid();
+        }
+
+        searchInput.addEventListener('input', filterGrid);
+
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterGrid();
+            searchInput.focus();
+        });
+
+        // NAVBAR & SIDE MENU SCRIPT
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth;
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+                menuBtn.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        
+        // Inicialización
+        updateCounters();
+        filterGrid();
+        harmonizeGraphics();
+    </script>
+</body>
+</html>

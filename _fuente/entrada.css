@@ -1,0 +1,93 @@
+/* Cosiendo Alas · estilos del sitio.
+   Generado con Tailwind CSS 3 a partir de las clases que usan las páginas.
+   Para regenerarlo tras agregar clases nuevas:
+   desde la carpeta _fuente/:
+     npx tailwindcss@3 -c tailwind.config.js -i entrada.css -o ../estilos.css --minify */
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400;font-display:swap;src:url(fuentes/playfair-display-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(fuentes/playfair-display-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;font-display:swap;src:url(fuentes/playfair-display-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:600;font-display:swap;src:url(fuentes/playfair-display-latin-600-italic.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:700;font-display:swap;src:url(fuentes/playfair-display-latin-700-italic.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(fuentes/montserrat-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(fuentes/montserrat-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(fuentes/montserrat-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(fuentes/montserrat-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(fuentes/montserrat-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:300;font-display:swap;src:url(fuentes/source-sans-pro-latin-300-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;font-display:swap;src:url(fuentes/source-sans-pro-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Sans Pro';font-style:italic;font-weight:400;font-display:swap;src:url(fuentes/source-sans-pro-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:600;font-display:swap;src:url(fuentes/source-sans-pro-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:700;font-display:swap;src:url(fuentes/source-sans-pro-latin-700-normal.woff2) format('woff2')}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Sans Pro', sans-serif; background-color: #f8f6fb; color: #2b1045; }
+  h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; }
+  :focus-visible { outline: 3px solid #fcc352; outline-offset: 2px; }
+  main:focus { outline: none; }
+}
+@layer components {
+  .font-subtitulo { font-family: 'Montserrat', sans-serif; }
+  .hero-gradient { background: linear-gradient(135deg, #2b1045 0%, #653a82 55%, #42c3d9 120%); }
+  .sello-asfalto {
+    background: repeating-linear-gradient(135deg, rgba(43,16,69,.03), rgba(43,16,69,.03) 2px, transparent 2px, transparent 8px), #ffffff;
+    border: 1px solid rgba(101,58,130,.15);
+  }
+  .pull-quote { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: #2b1045; line-height: 1.35; border-left: 4px solid #42c3d9; padding-left: 1.5rem; }
+  .subrayado-dorado { background-image: linear-gradient(120deg, #fcc352 0%, #fcc352 100%); background-repeat: no-repeat; background-size: 100% .35em; background-position: 0 90%; }
+  .divisor-linea { display: flex; align-items: center; justify-content: center; gap: 1rem; color: #8e62b1; margin: 3rem 0; }
+  .divisor-linea::before, .divisor-linea::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #afb0de, transparent); max-width: 8rem; }
+  .contenido { font-size: 1.125rem; line-height: 1.75; }
+  .contenido > * + * { margin-top: 1.25rem; }
+  .contenido h2 { font-size: 1.875rem; font-weight: 700; color: #653a82; margin-top: 2.5rem; }
+  .contenido h3 { font-size: 1.375rem; font-weight: 700; color: #2b1045; margin-top: 1.75rem; }
+  .contenido a { color: #653a82; text-decoration: underline; text-underline-offset: 3px; }
+  .contenido a:hover { color: #42c3d9; }
+  .contenido ul { list-style: disc; padding-left: 1.5rem; }
+  .contenido ol { list-style: decimal; padding-left: 1.5rem; }
+  .contenido li + li { margin-top: .5rem; }
+  .contenido li::marker { color: #42c3d9; }
+  .contenido h4 { font-size: 1.5rem; font-weight: 700; color: #653a82; margin-top: 2.25rem; line-height: 1.25; }
+  .contenido h5 { font-size: 1.25rem; font-weight: 700; color: #2b1045; margin-top: 1.5rem; }
+  .contenido > h4:first-child { margin-top: 0; }
+
+  /* Secciones plegables */
+  .plegables > * + * { margin-top: 1rem; }
+  .plegable { display: block; background: #fff; border: 1px solid rgba(101,58,130,.15); border-left: 5px solid var(--acento, #8e62b1); border-radius: .75rem; }
+  .plegable-resumen, .plegable-enlace { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.25rem; cursor: pointer; list-style: none; }
+  .plegable-resumen::-webkit-details-marker { display: none; }
+  .plegable-resumen::marker { content: ""; }
+  .plegable-texto { display: block; min-width: 0; }
+  .plegable-eyebrow { display: block; font-family: 'Montserrat', sans-serif; font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: #8e62b1; }
+  .plegable-titulo { display: block; font-family: 'Playfair Display', serif; font-size: 1.375rem; font-weight: 700; line-height: 1.25; color: #2b1045; margin-top: .25rem; }
+  .plegable-titulo em { color: #653a82; }
+  .plegable-bajada { display: block; font-family: 'Source Sans Pro', sans-serif; font-size: 1rem; line-height: 1.5; color: rgba(43,16,69,.7); margin-top: .35rem; }
+  .plegable-icono { flex-shrink: 0; width: 2.25rem; height: 2.25rem; border-radius: 9999px; border: 1px solid rgba(101,58,130,.3); display: flex; align-items: center; justify-content: center; color: #653a82; font-weight: 700; transition: transform .2s, background-color .2s, color .2s; }
+  .plegable-resumen:hover .plegable-titulo, .plegable-enlace:hover .plegable-titulo { color: #653a82; }
+  .plegable-resumen:hover .plegable-icono, .plegable-enlace:hover .plegable-icono { border-color: #42c3d9; }
+  .plegable[open] > .plegable-resumen .plegable-icono { transform: rotate(180deg); background: #653a82; border-color: #653a82; color: #fff; }
+  .plegable[open] > .plegable-resumen { border-bottom: 1px solid rgba(101,58,130,.12); }
+  .plegable-cuerpo { padding: 1.5rem 1.25rem 1.25rem; }
+  .plegable-bloque + .plegable-bloque { margin-top: 2.5rem; }
+  .plegable-cerrar { display: inline-flex; align-items: center; gap: .5rem; margin-top: 2rem; font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: #653a82; padding: .6rem 1rem; border: 1px solid rgba(101,58,130,.3); border-radius: 9999px; background: #fff; }
+  .plegable-cerrar:hover { border-color: #42c3d9; color: #2b1045; }
+  @media (min-width: 640px) {
+    .plegable-resumen, .plegable-enlace { padding: 1.5rem 1.75rem; }
+    .plegable-cuerpo { padding: 2rem 1.75rem 1.75rem; }
+    .plegable-titulo { font-size: 1.625rem; }
+  }
+
+  /* Volver arriba */
+  .volver-arriba { position: fixed; left: 1.5rem; bottom: 1.5rem; z-index: 45; width: 3rem; height: 3rem; border-radius: 9999px; background: #fff; color: #653a82; border: 1px solid rgba(101,58,130,.3); box-shadow: 0 4px 14px rgba(43,16,69,.15); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transform: translateY(.5rem); transition: opacity .2s, transform .2s; }
+  .volver-arriba.visible { opacity: 1; pointer-events: auto; transform: none; }
+  .volver-arriba:hover { background: #653a82; color: #fff; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition-duration: .01ms !important; } html { scroll-behavior: auto; } }
+
+[id] { scroll-margin-top: 6rem; }
+#mobile-menu { display: none; }
+#mobile-menu.active { display: block; }

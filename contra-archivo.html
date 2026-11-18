@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Contra-archivo | Cosiendo Alas</title>
+    <meta name="description" content="Videoensayos, videopodcast y lecturas que parten de «Demasiado Karen» y quedan archivados con su texto, sus fuentes y sus documentos.">
+    <!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contra-archivo | Cosiendo Alas">
+    <meta property="og:description" content="Videoensayos, videopodcast y lecturas que parten de «Demasiado Karen» y quedan archivados con su texto, sus fuentes y sus documentos.">
+    <meta property="og:image" content="https://cosiendoalas.mx/og.png">
+    <link rel="icon" href="home.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <a href="#contenido-principal" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold">Saltar al contenido</a>
+
+    <!-- SALIDA RÁPIDA -->
+    <button type="button" id="salida-rapida" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" aria-label="Salida rápida: te lleva a otra página de inmediato">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+        <span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+    </button>
+
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-4">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img src="home.svg" alt="" class="h-10 w-10 object-contain">
+                    <span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+                </a>
+                <nav class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita" aria-label="Principal">
+                    <a href="posicion.html" class="hover:text-doradoSuave transition">Posición</a>
+                    <a href="demasiado-karen.html" class="hover:text-doradoSuave transition">Demasiado Karen</a>
+                    <a href="contra-archivo.html" aria-current="page" class="text-verdeEsperanza border-b-2 border-verdeEsperanza pb-1">Contra-archivo</a>
+                    <a href="observatorio.html" class="hover:text-doradoSuave transition">Observatorio</a>
+                    <a href="orientacion.html" class="hover:text-doradoSuave transition">Orientación</a>
+                    <a href="colabora.html" class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition">Colabora</a>
+                </nav>
+                <div class="lg:hidden flex items-center">
+                    <button type="button" id="menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu" class="text-grisAntracita hover:text-azulOceano">
+                        <svg class="h-8 w-8" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-moradoMedio/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+                <a href="posicion.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Posición</a>
+                <a href="demasiado-karen.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Demasiado Karen</a>
+                <a href="contra-archivo.html" aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-verdeEsperanza bg-fondoPagina">Contra-archivo</a>
+                <a href="observatorio.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Observatorio</a>
+                <a href="orientacion.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Orientación</a>
+                <a href="colabora.html" class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano">Colabora</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow" id="contenido-principal" tabindex="-1">
+        <div class="bg-grisAntracita border-b border-moradoMedio/30">
+            <div class="max-w-7xl mx-auto px-4 py-3">
+                <nav class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave" aria-label="Ruta de navegación">
+                    <ol class="flex flex-wrap gap-2">
+                        <li><a href="index.html" class="hover:text-white transition">Inicio</a></li>
+                        <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                        <li class="text-white font-bold" aria-current="page">Contra-archivo</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3">
+                    <span class="h-px w-8 bg-doradoSuave inline-block" aria-hidden="true"></span>
+                    Contra-archivo
+                </p>
+                <h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">No ser<br><em class="text-doradoSuave italic font-normal">una nota periodística.</em></h1>
+                <p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">Videoensayos y un videopodcast que parten de <em>Demasiado Karen</em>, se cruzan con una lectura y quedan archivados aquí con su texto, sus fuentes y sus documentos. Las plataformas traen al público; este sitio guarda lo que se puede citar.</p>
+            </div>
+            <div class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl" aria-hidden="true"></div>
+            <div class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl" aria-hidden="true"></div>
+        </section>
+        
+        <nav class="max-w-5xl mx-auto px-4 pt-10" aria-label="En esta página">
+            <div class="sello-asfalto rounded-xl p-4 sm:p-5">
+                <p class="font-subtitulo text-[10px] uppercase tracking-widest text-moradoMedio mb-3">En esta página</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#metodo" class="font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-moradoMedio/30 text-grisAntracita hover:border-verdeEsperanza hover:text-azulOceano transition">Cómo se arma cada pieza</a>
+                    <a href="#episodios" class="font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-moradoMedio/30 text-grisAntracita hover:border-verdeEsperanza hover:text-azulOceano transition">Episodios</a>
+                    <a href="#lecturas" class="font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-moradoMedio/30 text-grisAntracita hover:border-verdeEsperanza hover:text-azulOceano transition">Lecturas</a>
+                    <a href="voces.html" class="font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-moradoMedio/30 text-grisAntracita hover:border-verdeEsperanza hover:text-azulOceano transition">Voces</a>
+                </div>
+            </div>
+        </nav>
+
+        <section id="metodo" class="ancla max-w-6xl mx-auto px-4 py-16">
+            <h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-4 text-center"><span class="subrayado-dorado">Tres capas en cada pieza</span></h2>
+            <p class="font-texto text-lg text-grisAntracita/80 text-center max-w-2xl mx-auto mb-10">El relato institucional queda frente a la experiencia y frente a sus propios documentos. Y todo queda citado en una página permanente.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="sello-asfalto p-8 rounded-xl border-t-4 border-t-doradoSuave">
+                    <p class="font-subtitulo text-[10px] font-bold uppercase tracking-widest text-moradoMedio mb-2">01</p>
+                    <h3 class="text-xl font-titulo1 font-bold mb-3 text-azulOceano">Libro</h3>
+                    <p class="font-texto text-grisAntracita/80">El capítulo o la escena de <a href="demasiado-karen.html" class="underline text-azulOceano hover:text-verdeEsperanza">Demasiado Karen</a> de la que parte. Nunca la escena de violencia: esa se queda en el libro.</p>
+                </div>
+                <div class="sello-asfalto p-8 rounded-xl border-t-4 border-t-verdeEsperanza">
+                    <p class="font-subtitulo text-[10px] font-bold uppercase tracking-widest text-moradoMedio mb-2">02</p>
+                    <h3 class="text-xl font-titulo1 font-bold mb-3 text-azulOceano">Lectura</h3>
+                    <p class="font-texto text-grisAntracita/80">La autora, la teoría o la obra que se le cruza: análisis institucional, crítica feminista, cine, medios.</p>
+                </div>
+                <div class="sello-asfalto p-8 rounded-xl border-t-4 border-t-moradoMedio">
+                    <p class="font-subtitulo text-[10px] font-bold uppercase tracking-widest text-moradoMedio mb-2">03</p>
+                    <h3 class="text-xl font-titulo1 font-bold mb-3 text-azulOceano">Archivo</h3>
+                    <p class="font-texto text-grisAntracita/80">El documento que lo prueba: un protocolo, una sentencia, una nota de prensa, una ficha del <a href="observatorio.html" class="underline text-azulOceano hover:text-verdeEsperanza">Observatorio</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIONES PLEGABLES (ACORDEONES) -->
+        <section class="max-w-6xl mx-auto px-4 py-8">
+            <div class="plegables">
+                
+                <!-- PLEGABLE: EPISODIOS -->
+                <details class="plegable" id="episodios" style="--acento:#42c3d9">
+                    <summary class="plegable-resumen">
+                        <span class="plegable-texto">
+                            <span class="plegable-eyebrow">Archivo audiovisual</span>
+                            <h3 class="plegable-titulo">Episodios</h3>
+                            <span class="plegable-bajada">Un videoensayo al mes y el videopodcast cada quince días.</span>
+                        </span>
+                        <span aria-hidden="true" class="plegable-icono">
+                            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="plegable-cuerpo">
+                        <div class="plegable-bloque py-6">
+                            <div class="sello-asfalto p-4 sm:p-6 rounded-xl mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div class="w-full md:w-1/3 relative">
+                                    <label for="select-temp" class="sr-only">Filtrar por temporada</label>
+                                    <select id="select-temp" class="w-full appearance-none px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-subtitulo text-sm font-bold uppercase tracking-widest text-azulOceano focus:outline-none focus:border-verdeEsperanza cursor-pointer">
+                                        <option value="todas">Todas las Temporadas</option>
+                                        <option value="1">Temporada 1</option>
+                                        <option value="2">Temporada 2</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-azulOceano">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    </div>
+                                </div>
+                                <p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio text-right w-full md:w-auto" id="contador-ep" aria-live="polite">&nbsp;</p>
+                            </div>
+                            
+                            <div id="grid-ep" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                            
+                            <noscript><p class="font-texto text-lg text-center py-10">Este listado necesita JavaScript. Los episodios también están en el canal de YouTube.</p></noscript>
+                            
+                            <div role="note" class="mt-8 sello-asfalto border-l-4 border-verdeEsperanza p-5 rounded-r-xl font-texto text-base text-grisAntracita/90">
+                                <strong class="font-subtitulo text-azulOceano">Reglas de cuidado en cada pieza.</strong> Advertencia de contenido al inicio cuando se aborda violencia sexual. Ningún nombre de terceras personas sin revisión legal. Enlace visible al <a href="directorio.html" class="underline">directorio de atención</a> y al <a href="observatorio.html#replica" class="underline">derecho de réplica</a>. Los videos se reproducen sin rastreo: no se carga nada de YouTube hasta que eliges reproducir.
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- PLEGABLE: LECTURAS -->
+                <details class="plegable" id="lecturas" style="--acento:#8e62b1">
+                    <summary class="plegable-resumen">
+                        <span class="plegable-texto">
+                            <span class="plegable-eyebrow">Textos y reseñas</span>
+                            <h3 class="plegable-titulo">Lecturas: Desarmar el discurso</h3>
+                            <span class="plegable-bajada">Ensayos sobre la relación de la cultura e instituiones con la violencia.</span>
+                        </span>
+                        <span aria-hidden="true" class="plegable-icono">
+                            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="plegable-cuerpo">
+                        <div class="plegable-bloque py-6">
+                            <div class="sello-asfalto p-4 sm:p-6 rounded-xl mb-8 flex flex-col md:flex-row gap-4">
+                                <div class="w-full md:w-2/3">
+                                    <label class="sr-only" for="buscar-lec">Buscar en las lecturas</label>
+                                    <input autocomplete="off" class="w-full px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20 transition" id="buscar-lec" placeholder="Busca por título, autoría, obra o tema…" type="search"/>
+                                </div>
+                                
+                                <div class="w-full md:w-1/3 relative">
+                                    <label class="sr-only" for="select-eje">Filtrar por eje temático</label>
+                                    <select id="select-eje" class="w-full appearance-none px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-subtitulo text-sm font-bold uppercase tracking-widest text-azulOceano focus:outline-none focus:border-verdeEsperanza cursor-pointer">
+                                        <option value="todos">Todos los temas</option>
+                                        <option value="juridicos">Discursos jurídicos</option>
+                                        <option value="culturales">Discursos culturales</option>
+                                        <option value="medios">Medios</option>
+                                        <option value="cine-literatura">Cine y literatura</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-azulOceano">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p aria-live="polite" class="mt-3 font-subtitulo text-xs uppercase tracking-widest text-moradoMedio text-right w-full mb-6" id="contador-lec">&nbsp;</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-lec"></div>
+                            
+                            <noscript><p class="font-texto text-lg text-center py-10">Este listado necesita JavaScript para filtrarse.</p></noscript>
+                            <div class="hidden text-center py-16 sello-asfalto rounded-xl" id="vacio-lec">
+                                <h2 class="text-2xl font-titulo1 font-bold text-grisAntracita mb-2">No hay textos con ese criterio</h2>
+                                <p class="font-texto text-grisAntracita/80">Prueba con otra palabra o elige «Todos los temas».</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+<div class="max-w-4xl mx-auto px-4"><div class="divisor-linea" aria-hidden="true"><i>&#9670;</i></div></div>
+
+        <section class="max-w-5xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <a href="voces.html" class="sello-asfalto p-6 rounded-xl border-t-4 border-t-verdeEsperanza hover:shadow-lg transition flex flex-col justify-between items-center text-center group h-full">
+                    <div class="flex flex-col items-center justify-center text-center w-full">
+                        <p class="font-subtitulo text-[10px] font-bold uppercase tracking-widest text-moradoMedio mb-2 text-center w-full">Voces</p>
+                        <h3 class="text-xl font-titulo1 font-bold text-azulOceano mb-3 text-center w-full">Escribir en voz propia</h3>
+                        <p class="font-texto text-grisAntracita/80 mb-5 text-center">Textos de quienes atravesaron la violencia institucional, con moderación, consentimiento y derecho de retiro.</p>
+                    </div>
+                    <span class="font-subtitulo font-bold text-sm text-azulOceano group-hover:text-verdeEsperanza transition uppercase tracking-widest text-center">Entrar <span aria-hidden="true">&rarr;</span></span>
+                </a>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div role="note" class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10">
+                <p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a href="directorio.html" class="underline text-doradoSuave hover:text-white">Consulta el directorio de atención inmediata</a>.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+                <div class="md:col-span-2">
+                    <h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+                    <p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">f</a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">ig</a>
+                        <a href="https://www.tiktok.com/@cosiendoalas.mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">tt</a>
+                        <a href="https://www.youtube.com/@cosiendoalasmx" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">yt</a>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+                    <ul class="space-y-2">
+                        <li><a href="posicion.html" class="hover:text-doradoSuave transition">Posición</a></li>
+                        <li><a href="posicion.html#principios" class="hover:text-doradoSuave transition">Qué hacemos y qué no</a></li>
+                        <li><a href="posicion.html#transparencia" class="hover:text-doradoSuave transition">Transparencia y financiamiento</a></li>
+                        <li><a href="voces.html" class="hover:text-doradoSuave transition">Voces</a></li>
+                        <li><a href="colabora.html" class="hover:text-doradoSuave transition">Colabora</a></li>
+                        <li><a href="colabora.html#contacto" class="hover:text-doradoSuave transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+                    <ul class="space-y-2">
+                        <li><a href="legal.html#privacidad" class="hover:text-doradoSuave transition">Aviso de privacidad</a></li>
+                        <li><a href="legal.html#terminos" class="hover:text-doradoSuave transition">Términos de uso</a></li>
+                        <li><a href="legal.html#accesibilidad" class="hover:text-doradoSuave transition">Accesibilidad</a></li>
+                        <li><a href="observatorio.html#replica" class="hover:text-doradoSuave transition">Derecho de réplica</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                &copy; 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+        </div>
+    </footer>
+    
+    <script src="datos/episodios-data.js"></script>
+    <script src="datos/lecturas-data.js"></script>
+    
+    <!-- Script para filtrado de Episodios con <select> -->
+    <script>
+    (function () {
+        const DATOS = window.EPISODIOS || [];
+        const grid = document.getElementById('grid-ep');
+        const contador = document.getElementById('contador-ep');
+        const select = document.getElementById('select-temp');
+        const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x) n.textContent = x; return n; };
+
+        function tarjeta(e) {
+            const art = el('article', 'sello-asfalto p-6 rounded-xl border-t-4 ' + (e.url ? 'border-t-verdeEsperanza' : 'border-t-lavandaSuave') + ' flex flex-col justify-between');
+            art.dataset.temp = String(e.temporada);
+            const top = el('div');
+            const meta = el('div', 'flex flex-wrap items-center gap-2 mb-3');
+            meta.appendChild(el('span', 'font-subtitulo text-[10px] font-bold uppercase tracking-widest text-moradoMedio', 'Temporada ' + e.temporada + ' · Episodio ' + e.numero));
+            meta.appendChild(el('span', 'font-subtitulo text-[10px] uppercase tracking-widest px-2 py-0.5 rounded ' + (e.url ? 'bg-verdeEsperanza/20' : 'bg-lavandaSuave/30') + ' text-grisAntracita', e.url ? (e.estreno || 'Publicado') : 'En preparación' + (e.estreno ? ' · ' + e.estreno : '')));
+            top.appendChild(meta);
+            top.appendChild(el('h3', 'text-xl font-titulo1 font-bold text-azulOceano mb-3', e.titulo));
+            const dl = el('dl', 'font-texto text-sm text-grisAntracita/80 space-y-2 mb-5');
+            [['Libro', e.libro], ['Lectura', e.lectura], ['Archivo', e.archivo]].forEach(function (par) {
+                if (!par[1]) return;
+                const d = el('div');
+                d.appendChild(el('dt', 'font-subtitulo text-[10px] font-bold uppercase tracking-widest text-moradoMedio', par[0]));
+                d.appendChild(el('dd', '', par[1]));
+                dl.appendChild(d);
+            });
+            top.appendChild(dl);
+            if (e.advertencia) top.appendChild(el('p', 'font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/25 text-grisAntracita px-2 py-1 rounded inline-block mb-4', 'Advertencia de contenido'));
+            art.appendChild(top);
+            if (e.url) {
+                const a = el('a', 'font-subtitulo font-bold text-sm text-azulOceano hover:text-verdeEsperanza transition uppercase tracking-widest', 'Ver el episodio');
+                a.href = e.url;
+                art.appendChild(a);
+            }
+            return art;
+        }
+
+        const tarjetas = DATOS.map(tarjeta);
+        tarjetas.forEach(t => grid.appendChild(t));
+
+        function filtrar(temp) {
+            let n = 0;
+            tarjetas.forEach(t => { 
+                const ok = temp === 'todas' || t.dataset.temp === temp; 
+                t.classList.toggle('hidden', !ok); 
+                if (ok) n++; 
+            });
+            if (contador) contador.textContent = 'Mostrando ' + n + ' de ' + DATOS.length + ' episodios';
+        }
+        
+        if (select) {
+            select.addEventListener('change', (e) => {
+                filtrar(e.target.value);
+            });
+        }
+        filtrar('todas');
+    })();
+    </script>
+
+    <!-- Script para filtrado de Lecturas con buscador + <select> -->
+    <script>
+        (function () {
+            const DATOS = window.LECTURAS || [];
+            const EJES = window.EJES_NOMBRES || {};
+            const grid = document.getElementById('grid-lec');
+            const vacio = document.getElementById('vacio-lec');
+            const buscar = document.getElementById('buscar-lec');
+            const contador = document.getElementById('contador-lec');
+            const select = document.getElementById('select-eje');
+            let ejeActivo = 'todos';
+
+            const norm = s => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+            const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x) n.textContent = x; return n; };
+
+            function tarjeta(l) {
+                const art = el('article', 'sello-asfalto p-6 rounded-xl border-t-4 border-t-verdeEsperanza flex flex-col justify-between');
+                art.dataset.eje = l.eje;
+                art.dataset.busqueda = norm([l.titulo, l.autoria, l.resumen, EJES[l.eje], (l.etiquetas || []).join(' ')].join(' '));
+                const top = el('div');
+                const meta = el('div', 'flex flex-wrap items-center gap-2 mb-3');
+                meta.appendChild(el('span', 'font-subtitulo text-[10px] font-bold uppercase tracking-widest text-moradoMedio', EJES[l.eje] || l.eje));
+                if (l.lectura) meta.appendChild(el('span', 'font-subtitulo text-[10px] uppercase tracking-widest text-grisAntracita/60', l.lectura));
+                top.appendChild(meta);
+                top.appendChild(el('h2', 'text-xl font-titulo1 font-bold text-azulOceano mb-2', l.titulo));
+                if (l.autoria || l.fecha) top.appendChild(el('p', 'font-subtitulo text-xs uppercase tracking-widest text-grisAntracita/60 mb-3', [l.autoria, l.fecha].filter(Boolean).join(' · ')));
+                if (l.resumen) top.appendChild(el('p', 'font-texto text-grisAntracita/80 mb-5', l.resumen));
+                if (l.advertencia) {
+                    const av = el('p', 'font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/25 text-grisAntracita px-2 py-1 rounded inline-block mb-4', 'Advertencia de contenido');
+                    top.appendChild(av);
+                }
+                art.appendChild(top);
+                const a = el('a', 'font-subtitulo font-bold text-sm text-azulOceano hover:text-verdeEsperanza transition uppercase tracking-widest');
+                a.href = l.url;
+                if (l.externo) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+                a.textContent = l.externo ? 'Abrir enlace' : 'Leer';
+                a.setAttribute('aria-label', (l.externo ? 'Abrir: ' : 'Leer: ') + l.titulo);
+                art.appendChild(a);
+                return art;
+            }
+
+            const tarjetas = DATOS.map(tarjeta);
+            tarjetas.forEach(t => grid.appendChild(t));
+
+            function filtrar() {
+                if(!buscar) return;
+                const terminos = norm(buscar.value).split(/\s+/).filter(Boolean);
+                let n = 0;
+                tarjetas.forEach(t => {
+                    const ok = (ejeActivo === 'todos' || t.dataset.eje === ejeActivo) && terminos.every(x => t.dataset.busqueda.includes(x));
+                    t.classList.toggle('hidden', !ok);
+                    if (ok) n++;
+                });
+                if (vacio) vacio.classList.toggle('hidden', n !== 0);
+                if (contador) contador.textContent = 'Mostrando ' + n + ' de ' + DATOS.length + ' textos';
+                const p = new URLSearchParams();
+                if (ejeActivo !== 'todos') p.set('eje', ejeActivo);
+                if (buscar.value.trim()) p.set('q', buscar.value.trim());
+                const qs = p.toString();
+                try { history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '')); } catch (e) {}
+            }
+
+            if (select) {
+                select.addEventListener('change', (e) => {
+                    ejeActivo = e.target.value;
+                    filtrar();
+                });
+            }
+            
+            if (buscar) {
+                buscar.addEventListener('input', filtrar);
+            }
+
+            const params = new URLSearchParams(location.search);
+            const e0 = params.get('eje');
+            if(buscar) buscar.value = params.get('q') || '';
+            
+            if (e0 && select) {
+                select.value = e0;
+                ejeActivo = e0;
+            }
+            filtrar();
+        })();
+    </script>
+    <script src="sitio.js"></script>
+</body>
+</html>

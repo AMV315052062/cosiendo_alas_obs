@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Directorio de atención | Cosiendo Alas</title>
+    <meta name="description" content="Directorio de instancias de atención a víctimas de violencia de género en México: líneas nacionales, Ciudad de México y las 32 entidades federativas.">
+    <!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Directorio de atención | Cosiendo Alas">
+    <meta property="og:description" content="Directorio de instancias de atención a víctimas de violencia de género en México: líneas nacionales, Ciudad de México y las 32 entidades federativas.">
+    <meta property="og:image" content="https://cosiendoalas.mx/og.png">
+    <link rel="icon" href="home.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <a href="#contenido-principal" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold">Saltar al contenido</a>
+
+    <!-- SALIDA RÁPIDA -->
+    <button type="button" id="salida-rapida" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" aria-label="Salida rápida: te lleva a otra página de inmediato">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+        <span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+    </button>
+
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-4">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img src="home.svg" alt="" class="h-10 w-10 object-contain">
+                    <span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+                </a>
+                <nav class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita" aria-label="Principal">
+                    <a href="posicion.html" class="hover:text-doradoSuave transition">Posición</a>
+                    <a href="demasiado-karen.html" class="hover:text-doradoSuave transition">Demasiado Karen</a>
+                    <a href="contra-archivo.html" class="hover:text-doradoSuave transition">Contra-archivo</a>
+                    <a href="observatorio.html" class="hover:text-doradoSuave transition">Observatorio</a>
+                    <a href="orientacion.html" aria-current="page" class="text-verdeEsperanza border-b-2 border-verdeEsperanza pb-1">Orientación</a>
+                    <a href="colabora.html" class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition">Colabora</a>
+                </nav>
+                <div class="lg:hidden flex items-center">
+                    <button type="button" id="menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu" class="text-grisAntracita hover:text-azulOceano">
+                        <svg class="h-8 w-8" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-moradoMedio/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+                <a href="posicion.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Posición</a>
+                    <a href="demasiado-karen.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Demasiado Karen</a>
+                    <a href="contra-archivo.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Contra-archivo</a>
+                    <a href="observatorio.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Observatorio</a>
+                    <a href="orientacion.html" aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-verdeEsperanza bg-fondoPagina">Orientación</a>
+                    <a href="colabora.html" class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano">Colabora</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow" id="contenido-principal" tabindex="-1">
+        <div class="bg-grisAntracita border-b border-moradoMedio/30">
+            <div class="max-w-7xl mx-auto px-4 py-3">
+                <nav class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave" aria-label="Ruta de navegación">
+                    <ol class="flex flex-wrap gap-2">
+                        <li><a href="index.html" class="hover:text-white transition">Inicio</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li><a href="orientacion.html" class="hover:text-white transition">Orientación</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li class="text-white font-bold" aria-current="page">Directorio</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+<section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+<div class="max-w-4xl mx-auto relative z-10">
+<p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3">
+<span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>
+                    Directorio
+                </p>
+<h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">Dónde acudir<br/><em class="text-doradoSuave italic font-normal">ahora.</em></h1>
+<p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">Líneas nacionales, instancias de la Ciudad de México y los institutos y Centros de Justicia para las Mujeres de las 32 entidades.</p>
+</div>
+<div aria-hidden="true" class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl"></div>
+<div aria-hidden="true" class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl"></div>
+</section>
+<section class="max-w-4xl mx-auto px-4 py-12">
+<div class="bg-grisAntracita text-white border-l-4 border-doradoSuave p-6 rounded-r-xl mb-8" role="note">
+<h2 class="font-titulo1 text-2xl font-bold mb-2">Si estás en peligro ahora mismo</h2>
+<p class="font-texto text-lavandaSuave mb-4">Marca al 911. Opera las 24 horas en todo el país y atiende también situaciones de violencia de género.</p>
+<a class="inline-block bg-red-700 hover:bg-red-800 text-white font-subtitulo font-bold uppercase text-base tracking-wider px-8 py-4 rounded-lg transition" href="tel:911">Llamar al 911</a>
+</div>
+<div class="contenido font-texto text-grisAntracita/90">
+<p>Los teléfonos de esta página se pueden marcar con un toque. Junto a cada instancia anotamos qué hace y en qué horario, para que no tengas que averiguarlo llamando.</p>
+<p><strong>Última revisión: Octubre del 2026.</strong> Los datos institucionales cambian sin aviso. Si acudiste a alguna instancia y la información estaba mal, <a href="colabora.html#contacto">dínoslo</a> y la corregimos.</p>
+</div>
+</section>
+<section class="max-w-6xl mx-auto px-4 py-12">
+<h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-8"><span class="subrayado-dorado">Líneas nacionales</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<article class="sello-asfalto p-6 rounded-xl border-t-4 border-t-doradoSuave">
+<h3 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">911 — Emergencias</h3>
+<p class="font-texto text-grisAntracita/80 mb-3">Policía, bomberos, ambulancias y situaciones de violencia de género. Opera en todo el país. <strong>En peligro inmediato, marca siempre al 911.</strong></p>
+<p class="font-texto text-base mb-1"><span class="font-subtitulo font-bold uppercase text-[10px] tracking-widest text-moradoMedio block">Teléfono</span><span>911</span></p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-grisAntracita/60 mt-2">24 horas, todos los días</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl border-t-4 border-t-verdeEsperanza">
+<h3 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">Línea de la Vida (CONADIC)</h3>
+<p class="font-texto text-grisAntracita/80 mb-3">Apoyo emocional, consumo de sustancias, crisis personales y violencia.</p>
+<p class="font-texto text-base mb-1"><span class="font-subtitulo font-bold uppercase text-[10px] tracking-widest text-moradoMedio block">Teléfono</span><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528009112000">800 911 2000</a></p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-grisAntracita/60 mt-2">24 horas, todos los días</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl border-t-4 border-t-verdeEsperanza">
+<h3 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">Línea Nacional Diversidad Segura</h3>
+<p class="font-texto text-grisAntracita/80 mb-3">Atención a personas LGBTQ+ víctimas de violencia, discriminación y crímenes de odio.</p>
+<p class="font-texto text-base mb-1"><span class="font-subtitulo font-bold uppercase text-[10px] tracking-widest text-moradoMedio block">Teléfono</span><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528000005428">800 000 5428</a></p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-grisAntracita/60 mt-2">24 horas, todos los días</p>
+</article>
+</div>
+</section>
+<div class="max-w-4xl mx-auto px-4"><div aria-hidden="true" class="divisor-linea"><i>◆</i></div></div>
+<section class="max-w-5xl mx-auto px-4 py-12" id="cdmx">
+<h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-8"><span class="subrayado-dorado">Ciudad de México</span></h2>
+<p class="font-texto text-lg text-grisAntracita/80 mb-8">La sección más detallada, porque es donde trabajamos. Incluye la unidad especializada en violencia sexual dentro de espacios educativos.</p>
+<div class="space-y-6">
+<article class="sello-asfalto p-6 sm:p-8 rounded-xl border-t-4 border-t-doradoSuave">
+<span class="font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/30 text-grisAntracita px-2 py-1 rounded">Cambio institucional</span>
+<h3 class="text-2xl font-titulo1 font-bold text-azulOceano mt-3 mb-2">Centro de Atención Integral a Víctimas de Delitos en Razón de Género (CAIV-Género)</h3>
+<p class="font-texto text-grisAntracita/90 mb-3"><strong>El CAVI y el CTA cesaron funciones el 31 de agosto de 2024</strong> y fueron absorbidos por el CAIV-Género. Si alguien te remite al CAVI o al CTA, es esta la instancia que corresponde.</p>
+<p class="font-texto text-grisAntracita/80 mb-5">Atención psicológica, jurídica, médica y de trabajo social; orientación en salud sexual, medidas de protección y guardia de 24 horas para atención inmediata.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 border-t border-moradoMedio/20 pt-5">
+<div>
+<h4 class="font-subtitulo font-bold text-sm uppercase tracking-widest text-moradoMedio mb-1">Sede 1 (antes CAVI)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-1">Digna Ochoa y Plácido No. 56, PB, Col. Doctores, Cuauhtémoc, CDMX</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+525553455224,5226">55 5345 5224 ext. 5226</a> · <a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+525553455224,5228">55 5345 5224 ext. 5228</a></p>
+</div>
+<div>
+<h4 class="font-subtitulo font-bold text-sm uppercase tracking-widest text-moradoMedio mb-1">Sede 2 (antes CTA)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-1">Enrique Pestalozzi No. 1115, Col. Del Valle, Benito Juárez, CDMX</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+525553455224">55 5345 5224</a></p>
+</div>
+</div>
+</article>
+<article class="sello-asfalto p-6 sm:p-8 rounded-xl border-t-4 border-t-verdeEsperanza">
+<h3 class="text-2xl font-titulo1 font-bold text-azulOceano mb-2">LUNAS — Unidades Territoriales (SeMujeres CDMX)</h3>
+<p class="font-texto text-grisAntracita/80 mb-4">Servicios gratuitos: asesoría jurídica, acompañamiento psicológico, trabajo social y detección de riesgo feminicida. Hay 27 unidades repartidas por la ciudad.</p>
+<div class="bg-white/70 border-l-4 border-doradoSuave p-4 rounded-r-lg mb-4 font-texto" role="note">
+<strong class="font-subtitulo text-azulOceano">Fuera del horario de oficina:</strong> Línea SOS Mujeres, 24 horas — <a class="font-subtitulo font-bold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2" href="tel:*765">*765</a>
+</div>
+<a class="font-subtitulo font-bold text-sm uppercase tracking-widest text-azulOceano hover:text-verdeEsperanza transition" href="https://semujeres.cdmx.gob.mx/lunas" rel="noopener noreferrer" target="_blank">Ver el directorio de las 27 LUNAS <span aria-hidden="true">→</span></a>
+</article>
+<article class="sello-asfalto p-6 sm:p-8 rounded-xl border-t-4 border-t-moradoMedio">
+<h3 class="text-2xl font-titulo1 font-bold text-azulOceano mb-1">Fiscalías especializadas (FGJ CDMX)</h3>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio mb-4">Aquí inicia el proceso penal formal</p>
+<p class="font-texto text-grisAntracita/80 mb-6">Llegar a la agencia correcta desde el principio evita un peregrinaje y hace que la investigación pericial y la integración de la carpeta avancen con el rigor necesario.</p>
+<div class="space-y-5 border-t border-moradoMedio/20 pt-5">
+<div>
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Fiscalía de Investigación de Delitos Sexuales (FIDS)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Sede central: Gral. Gabriel Hernández No. 56, Col. Doctores. Tiene agencias territoriales en distintas alcaldías.</p>
+<a class="font-subtitulo font-bold text-sm text-azulOceano hover:text-verdeEsperanza underline underline-offset-2" href="https://www.fgjcdmx.gob.mx/nuestros-servicios/fiscalia-central-de-investigacion/para-la-atencion-de-delitos-sexuales/agencias-especializadas" rel="noopener noreferrer" target="_blank">Ver agencias territoriales</a>
+</div>
+<div class="border-t border-moradoMedio/20 pt-5">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Unidad de Investigación de Delitos Sexuales para Estudiantes</h4>
+<p class="font-texto text-sm text-grisAntracita/80 mb-2">Instancia especializada en violencia sexual dentro de espacios educativos de media superior y superior. <strong>Si el hecho ocurrió en tu universidad, esta es la unidad que corresponde.</strong></p>
+<p class="font-texto text-sm text-grisAntracita/70">Enrique Pestalozzi No. 1115, Col. Del Valle, Benito Juárez.</p>
+</div>
+<div class="border-t border-moradoMedio/20 pt-5">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Fiscalía de Investigación de Delitos en Agravio de Niñas, Niños y Adolescentes (FIDCANNA)</h4>
+<p class="font-texto text-sm text-grisAntracita/80 mb-2">Investiga violación, pederastia, abuso, acoso sexual, trata y corrupción de personas menores de edad, con protección especializada.</p>
+<p class="font-texto text-sm text-grisAntracita/70">Dr. Vértiz No. 114, Col. Doctores.</p>
+</div>
+<div class="border-t border-moradoMedio/20 pt-5">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Fiscalía de Investigación del Delito de Feminicidio</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Dr. Río de la Loza No. 156, Col. Doctores.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+525553455160">55 5345 5160</a></p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<div class="max-w-4xl mx-auto px-4"><div aria-hidden="true" class="divisor-linea"><i>◆</i></div></div>
+<section class="max-w-5xl mx-auto px-4 py-12">
+<h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-8"><span class="subrayado-dorado">Por entidad federativa</span></h2>
+<p class="font-texto text-lg text-grisAntracita/80 mb-8">Institutos estatales de la mujer y Centros de Justicia para las Mujeres. Toca una entidad para ver sus datos.</p>
+<div class="space-y-3">
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">01</span>AGUASCALIENTES</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Aguascalentense de las Mujeres (IAM)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Manuel Gómez Morín s/n, Col. Ferronales, CP 20180, Aguascalientes, Ags.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524499102128,137">449 910 2128 ext. 137</a> · <a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524499102128,3114">449 910 2128 ext. 3114</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Centro de Justicia para las Mujeres (CJM)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Aguascalientes Sur No. 1302, Fracc. Del Valle, CP 20900, Aguascalientes, Ags.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524491753100">449 175 3100</a></p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-grisAntracita/60 mt-2">24 horas 365 días</p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">02</span>BAJA CALIFORNIA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto de la Mujer para el Estado de Baja California (IMEBC)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Anáhuac y Calzada Independencia No. 1199, Centro Cívico CANACO, Mexicali, B.C.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526865586364">686 558 6364</a> · <a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526865575495">686 557 5495</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Tijuana</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Insurgentes No. 16150, Col. Garita de Otay, Tijuana, B.C.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526649734470">664 973 4470</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">03</span>BAJA CALIFORNIA SUR</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Sudcaliforniano de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Luis Donaldo Colosio s/n, Col. Ex Base Aérea, La Paz, B.C.S.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526121222945">612 122 2945</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM La Paz</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle Carabineros s/n, Col. Bellavista, La Paz, B.C.S.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526126883500">612 688 3500</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">04</span>CAMPECHE</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto de la Mujer del Estado de Campeche (IMEC)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle 53 No. 46 entre 14 y 16, Col. Centro, Campeche.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529818113640">981 811 3640</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Campeche</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Prolongación de la calle 51, entre 44 y 46, Col. Guadalupe, Campeche.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529818119400">981 811 9400</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">05</span>COAHUILA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Coahuilense de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Centro de Gobierno, 2do Piso, Saltillo, Coahuila.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528446981080">844 698 1080</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Saltillo</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Luis Echeverría Álvarez No. 3400, Colonia Ejidal, Saltillo, Coahuila.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528444340089">844 434 0089</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">06</span>COLIMA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Colimense de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Complejo Administrativo del Gobierno del Estado, Edificio A.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+523123162000,26300">312 316 2000 ext. 26300</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Colima</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle José Juárez Martínez Esq. Pedro Galván, Col. Centro.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+523123164505">312 316 4505</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">07</span>CHIAPAS</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de Igualdad de Género</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Palacio de Gobierno, Tuxtla Gutiérrez, Chiapas.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529616121845">961 612 1845</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Tuxtla Gutiérrez</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Libramiento Norte Oriente s/n, Col. El Bosque.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529616165724">961 616 5724</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">08</span>CHIHUAHUA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Chihuahuense de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle 1 de Mayo 1802, Col. Pacifico, Chihuahua, Chih.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526144293505">614 429 3505</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Chihuahua (CEJUM)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle 51 y Rosales No. 1203, Col. Tiradores.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526144293300">614 429 3300</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">09</span>CIUDAD DE MÉXICO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<p class="font-texto text-grisAntracita/90">La Ciudad de México tiene su propia sección, más detallada, arriba en esta página.</p>
+<a class="inline-block mt-3 font-subtitulo font-bold text-sm uppercase tracking-widest text-azulOceano hover:text-verdeEsperanza transition" href="#cdmx">Ir a la sección de CDMX <span aria-hidden="true">↑</span></a>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">10</span>DURANGO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Estatal de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle Zaragoza 526 Sur, Zona Centro, Durango, Dgo.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526181370212">618 137 0212</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Durango</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. José María Patoni s/n, Col. Ciudad Industrial.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526181374000">618 137 4000</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">11</span>GUANAJUATO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto para las Mujeres Guanajuatenses (IMUG)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Plaza de la Paz 23, Zona Centro, Guanajuato, Gto.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524737335523">473 733 5523</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Guanajuato</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Camino a San José de Cervera 140, Irapuato, Gto.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524626269515">462 626 9515</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">12</span>GUERRERO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de la Mujer Guerrero</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Palacio de Gobierno, Chilpancingo, Gro.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527474719700">747 471 9700</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Chilpancingo</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. René Juárez Cisneros s/n, Col. El Potrero.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527474720524">747 472 0524</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">13</span>HIDALGO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Hidalguense de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Parque Hidalgo No. 103, Col. Centro, Pachuca, Hgo.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527717181550">771 718 1550</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Hidalgo</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. San Carlos No. 118, Fracc. San Carlos, Pachuca, Hgo.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527717015000">771 701 5000</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">14</span>JALISCO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de Igualdad Sustantiva (SISEMH)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Miguel Blanco No. 883, Zona Centro, Guadalajara, Jal.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+523333456166">33 3345 6166</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Guadalajara</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Álvaro Alcázar 5869, Col. Jardines Alcalde.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+523330305450">33 3030 5450</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">15</span>ESTADO DE MÉXICO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de las Mujeres Edomex</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Palacio del Poder Ejecutivo, Toluca, Edomex.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527222138915">722 213 8915</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Toluca</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Paseo Matlatzincas No. 1100, Col. La Teresona.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527222360524">722 236 0524</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">16</span>MICHOACÁN</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de la Mujer Michoacán (Seimujer)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Acueducto 1106, Chapultepec Norte, Morelia, Mich.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524431136700">443 113 6700</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Morelia</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Periférico Paseo de la República No. 6040, Col. Ex Ejido Ocolusen.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524432998144">443 299 8144</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">17</span>MORELOS</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto de la Mujer para el Estado de Morelos</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Benito Juárez 33, Col. Las Palmas, Cuernavaca, Mor.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527773186499">777 318 6499</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Cuernavaca</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Morelos Sur 74, Col. Chipitlán, Cuernavaca, Mor.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+527773120043">777 312 0043</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">18</span>NAYARIT</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Nayarita de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Rey Nayar 43, Col. Aviación, Tepic, Nay.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+523112160292">311 216 0292</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Tepic</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle Rey Nayar No. 202, Col. San Juan, Tepic.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+523111296000">311 129 6000</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">19</span>NUEVO LEÓN</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Estatal de las Mujeres NL</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Zaragoza 1000 Sur, Condominio Acero, Piso 2, Monterrey, NL.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528120209773">81 2020 9773</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Monterrey</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Alejandro de Rodas 123, Cumbres de Santa Catarina, Monterrey.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528120204000">81 2020 4000</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">20</span>OAXACA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de las Mujeres de Oaxaca</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Centro Administrativo del Poder Ejecutivo y Judicial "General Porfirio Díaz".</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529515015000">951 501 5000</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Oaxaca</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle Armenta y López No. 700, Col. Centro, Oaxaca.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529515141121">951 514 1121</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">21</span>PUEBLA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de Igualdad Sustantiva Puebla</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle 2 Sur No. 902, Centro Histórico, Puebla, Pue.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+522222323738">222 232 3738</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Puebla</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle 17 Sur No. 1105, Col. El Carmen, Puebla, Pue.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+522222405214">222 240 5214</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">22</span>QUERÉTARO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Queretano de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle Madero No. 70, Centro Histórico, Querétaro, Qro.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524422161121">442 216 1121</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Querétaro</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Lateral Autopista México-Querétaro 2060, Centro Sur.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524422387600">442 238 7600</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">23</span>QUINTANA ROO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Quintanarroense de la Mujer</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Héroes No. 68, Col. Centro, Chetumal, Q. Roo.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529838321709">983 832 1709</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Cancún</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Región 94, Manzana 10, Lote 1, Cancún, Q. Roo.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529988840000">998 884 0000</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">24</span>SAN LUIS POTOSÍ</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto de las Mujeres del Estado (IMES)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Madero No. 305, Centro Histórico, San Luis Potosí, S.L.P.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524441442920">444 144 2920</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM San Luis Potosí</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Antonio Rocha Cordero No. 507, Fracc. Simón Díaz.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524448332144">444 833 2144</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">25</span>SINALOA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de las Mujeres Sinaloa</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Palacio de Gobierno, Culiacán, Sin.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526677130000">667 713 0000</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Culiacán</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Enrique Cabrera 2084, Col. Desarrollo Urbano Tres Ríos.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526677587000">667 758 7000</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">26</span>SONORA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Sonorense de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Niños Héroes No. 42, Col. Centro, Hermosillo, Son.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526622125521">662 212 5521</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Hermosillo</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Vildósola final s/n, Col. Villa de Seris.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+526622594800">662 259 4800</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">27</span>TABASCO</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Estatal de las Mujeres Tabasco</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle Antonio Suárez No. 136, Col. Reforma, Villahermosa, Tab.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529933166488">993 316 6488</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Villahermosa</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Usumacinta s/n, Col. Gil y Sáenz.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529933136550">993 313 6550</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">28</span>TAMAULIPAS</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto de las Mujeres en Tamaulipas</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Palacio de Gobierno, Victoria, Tamps.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528343188000">834 318 8000</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Ciudad Victoria</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Blvd. Praxedis Balboa s/n, Col. Burocrática.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+528343186100">834 318 6100</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">29</span>TLAXCALA</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<p class="font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/30 text-grisAntracita px-2 py-1 rounded inline-block mb-4">Estado sin CJM certificado</p>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Estatal de la Mujer Tlaxcala</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Ex-Rancho La Aguanaja, Municipio de Apetatitlán, Tlax.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+522464652960">246 465 2960</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">30</span>VERACRUZ</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto Veracruzano de las Mujeres</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Adolfo Ruiz Cortines No. 1618, Col. Francisco Ferrer Guardia, Xalapa, Ver.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+522288120500">228 812 0500</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Xalapa</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Culturas Veracruzanas s/n, Reserva Territorial.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+522288416170">228 841 6170</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">31</span>YUCATÁN</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Secretaría de las Mujeres Yucatán (Semujeres)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Calle 66 No. 533 entre 65 y 67, Col. Centro, Mérida, Yuc.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529999233711">999 923 3711</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CJM Mérida</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Periférico Poniente km 46.5, Complejo de Seguridad.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+529999303250">999 930 3250</a></p>
+</div>
+</div>
+</details>
+<details class="sello-asfalto rounded-xl overflow-hidden group">
+<summary class="flex justify-between items-center gap-4 cursor-pointer p-5 font-subtitulo font-bold text-lg text-azulOceano hover:bg-white/60 transition">
+<span><span class="text-moradoMedio font-mono text-sm mr-2">32</span>ZACATECAS</span>
+<span aria-hidden="true" class="text-moradoMedio transition-transform group-open:rotate-180">▼</span>
+</summary>
+<div class="px-6 pb-6 pt-0 border-t border-moradoMedio/20">
+<p class="font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/30 text-grisAntracita px-2 py-1 rounded inline-block mb-4">Estado sin CJM certificado</p>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">Instituto para las Mujeres Zacatecanas (INMUZA)</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Av. Juárez No. 100, Col. Centro, CP 98000, Zacatecas, Zac.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524929225500">492 922 5500</a></p>
+</div>
+<div class="py-4 border-b border-moradoMedio/20 last:border-0">
+<h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-1">CAVIZ - Centro de Atención a la Violencia Familiar</h4>
+<p class="font-texto text-sm text-grisAntracita/70 mb-2">Roberto Cabral del Hoyo, Zona A, DIF, CP 98083, Zacatecas, Zac.</p>
+<p class="font-texto text-base"><a class="font-subtitulo font-semibold text-azulOceano hover:text-verdeEsperanza underline underline-offset-2 whitespace-nowrap" href="tel:+524929225500,200">492 922 5500 ext. 200</a></p>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section class="max-w-4xl mx-auto px-4 py-12">
+<div class="sello-asfalto border-l-4 border-verdeEsperanza p-6 rounded-r-xl">
+<h2 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">Ayúdanos a mantenerlo vivo</h2>
+<p class="font-texto text-grisAntracita/90">Si llamaste a un número que ya no existe, si te atendieron en un horario distinto al publicado o si conoces una instancia que falta, <a class="text-azulOceano underline" href="colabora.html#contacto">escríbenos</a>. Un directorio desactualizado, en este contexto, hace daño.</p>
+</div>
+</section>
+
+    </main>
+
+    <footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div role="note" class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10">
+                <p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a href="directorio.html" class="underline text-doradoSuave hover:text-white">Consulta el directorio de atención inmediata</a>.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+                <div class="md:col-span-2">
+                    <h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+                    <p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">f</a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">ig</a>
+                        <a href="https://www.tiktok.com/@cosiendoalas.mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">tt</a>
+                        <a href="https://www.youtube.com/@cosiendoalasmx" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">yt</a>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+                    <ul class="space-y-2">
+                        <li><a href="posicion.html" class="hover:text-doradoSuave transition">Posición</a></li>
+                        <li><a href="posicion.html#principios" class="hover:text-doradoSuave transition">Qué hacemos y qué no</a></li>
+                        <li><a href="posicion.html#transparencia" class="hover:text-doradoSuave transition">Transparencia y financiamiento</a></li>
+                        <li><a href="voces.html" class="hover:text-doradoSuave transition">Voces</a></li>
+                        <li><a href="colabora.html" class="hover:text-doradoSuave transition">Colabora</a></li>
+                        <li><a href="colabora.html#contacto" class="hover:text-doradoSuave transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+                    <ul class="space-y-2">
+                        <li><a href="legal.html#privacidad" class="hover:text-doradoSuave transition">Aviso de privacidad</a></li>
+                        <li><a href="legal.html#terminos" class="hover:text-doradoSuave transition">Términos de uso</a></li>
+                        <li><a href="legal.html#accesibilidad" class="hover:text-doradoSuave transition">Accesibilidad</a></li>
+                        <li><a href="observatorio.html#replica" class="hover:text-doradoSuave transition">Derecho de réplica</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                &copy; 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+        </div>
+    </footer>
+
+    <script src="sitio.js"></script>
+</body>
+</html>

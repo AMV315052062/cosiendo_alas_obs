@@ -1,0 +1,113 @@
+COSIENDO ALAS — SITIO EN HTML PURO (v2.0)
+=========================================
+De 34 páginas a 12, sin Tailwind por CDN y sin fuentes de Google: todo
+lo que el sitio necesita vive en esta carpeta. Nada se descarga de otro
+servidor al abrir una página (salvo el video, y solo cuando alguien lo
+reproduce). Así se cumple de verdad la promesa de no rastrear.
+
+LA ESTRUCTURA
+-------------
+  index.html              Inicio (cuatro entradas: ahora también «vengo por el libro»)
+  posicion.html           Posición + qué hacemos y qué no + equipo + transparencia
+  demasiado-karen.html    El libro, del libro al video, catálogo editorial
+  contra-archivo.html     Las tres capas, episodios, lecturas, boletín
+  voces.html              Voces + compartir + política de publicación + retiro
+  observatorio.html       Observatorio + índice + metodología + matriz + informes
+                          + datos + derecho de réplica
+  orientacion.html        Rutas, evidencia, archivo del caso, represalias,
+                          alcance y solicitud de orientación
+  directorio.html         Directorio de atención (página propia: tiene que
+                          encontrarse rápido)
+  colabora.html           Colectivas + formación + instituciones (reglas de
+                          separación) + apoya + contacto
+  legal.html              Aviso de privacidad + términos + accesibilidad
+  404.html
+
+  estilos.css             Todo el diseño (identidad gráfica intacta)
+  sitio.js                Menú, salida rápida (botón y Esc x2), video sin rastreo
+  fuentes/                Playfair Display, Montserrat y Source Sans Pro
+  home.svg                Logo (sigue siendo PROVISIONAL)
+  datos/                  Los listados que se llenan solos (ver abajo)
+
+  episodios/_plantilla-episodio.html     videoensayo o episodio de podcast
+  lecturas/_plantilla-lectura.html       ensayo escrito
+  lecturas/*.html                        las 8 reseñas del Botiquín Cultural
+  lecturas/img/                          pósters de las reseñas (faltan 4: ver abajo)
+  instituciones/_plantilla-ficha.html    ficha de universidad
+
+Las páginas que antes estaban separadas ahora son secciones con ancla.
+Por ejemplo, la vía penal está en orientacion.html#via-penal y la
+matriz en observatorio.html#matriz. Cada página larga abre con un
+recuadro «En esta página» que lleva a cada sección.
+
+CÓMO PROBARLO
+-------------
+Abre index.html con doble clic o con Live Server de VS Code.
+
+PUBLICAR ALGO NUEVO (sin tocar el menú)
+---------------------------------------
+Para agregar contenido solo editas un archivo de datos y, si hace falta,
+copias una plantilla. El menú y el pie no se tocan.
+
+  Un episodio      copia episodios/_plantilla-episodio.html, llénala, y
+                   pon su ruta en «url» dentro de datos/episodios-data.js.
+                   Aparece en Contra-archivo y bajo su parte del libro.
+  Un ensayo        copia lecturas/_plantilla-lectura.html y agrégalo a
+                   datos/lecturas-data.js.
+  Una universidad  copia instituciones/_plantilla-ficha.html y agrégala a
+                   datos/instituciones-data.js.
+
+Cada archivo de datos trae sus instrucciones arriba. Los de lecturas e
+instituciones traen un bloque de EJEMPLO que debes borrar. El de
+episodios ya tiene el mapa de las temporadas 1 y 2 con los títulos de
+trabajo, todos «En preparación».
+
+SI CAMBIAS EL MENÚ O EL PIE
+---------------------------
+Ahora son 15 archivos en lugar de 34. Usa Ctrl+Shift+H en VS Code
+(reemplazar en todos los archivos). Ojo con las rutas: en las tres
+plantillas llevan ../ delante.
+
+SI CAMBIAS LOS ESTILOS
+----------------------
+estilos.css ya está listo. Si agregas clases de Tailwind que el sitio
+no usaba, hay que regenerarlo (instrucciones al principio del archivo).
+Lo más seguro: reutilizar clases que ya aparecen en otras páginas.
+
+ANTES DE PUBLICAR — lo imprescindible (sigue igual que en la v1.0)
+------------------------------------------------------------------
+1. LOGO. home.svg es provisional. Reemplázalo conservando el nombre.
+2. Busca «EDITAR» en todo el proyecto (Ctrl+Shift+F). Cada aparición es
+   un dato que solo ustedes pueden poner.
+3. Lo jurídico está sin verificar. Lo más delicado: el PLAZO para
+   impugnar ante juez de control (orientacion.html#archivo), las rutas
+   (tipificaciones y plazos varían por entidad) y cada fundamento de la
+   matriz (observatorio.html#matriz).
+4. El directorio: no publiques un teléfono sin haberlo probado.
+5. Formularios (voces.html#compartir y orientacion.html#solicitar) y
+   boletín (contra-archivo.html#boletin): son maquetas, NO ENVÍAN NADA.
+   Conéctalos a un servicio y decláralo en legal.html#privacidad.
+6. legal.html debe revisarse con formación jurídica.
+7. demasiado-karen.html: la sinopsis y la semblanza son un BORRADOR.
+   Karen decide qué parte de su historia se vuelve pública.
+
+PUBLICARLO GRATIS
+-----------------
+Sube la carpeta tal cual a GitHub Pages o Cloudflare Pages. No hay nada
+que compilar. Solo se paga el dominio.
+
+LO QUE YA ESTÁ RESUELTO
+-----------------------
+· Salida rápida en todas las páginas: botón rojo + Esc dos veces.
+· Fuentes y estilos locales: ninguna petición a Google ni a CDNs.
+· Videos con «reproducir para cargar» y youtube-nocookie.
+· Zoom permitido, navegación por teclado, «saltar al contenido», foco
+  visible, respeto a «reducir movimiento», migas de pan.
+
+Pósters pendientes
+  Cuatro reseñas usaban pósters alojados en otros sitios (que rastrean a
+  quien visita). Se sustituyeron por una portada tipográfica. Para poner
+  el póster: guarda la imagen en lecturas/img/ con el nombre indicado y
+  sigue el comentario que está justo encima de la portada en cada archivo.
+    fue-solo-un-accidente.jpg · sorry-baby.jpg
+    promising-young-woman.jpg · tengo-un-nombre.jpg

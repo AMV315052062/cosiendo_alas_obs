@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="no-referrer" name="referrer"/>
+<title>Voces | Cosiendo Alas</title>
+<meta content="Espacio de escritura compartida: textos de quienes atravesaron la violencia institucional, con moderación y consentimiento." name="description"/>
+<!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+<meta content="website" property="og:type"/>
+<meta content="Voces | Cosiendo Alas" property="og:title"/>
+<meta content="Espacio de escritura compartida: textos de quienes atravesaron la violencia institucional, con moderación y consentimiento." property="og:description"/>
+<meta content="https://cosiendoalas.mx/og.png" property="og:image"/>
+<link href="home.svg" rel="icon" type="image/svg+xml"/>
+<link href="estilos.css" rel="stylesheet"/>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold" href="#contenido-principal">Saltar al contenido</a>
+<!-- SALIDA RÁPIDA -->
+<button aria-label="Salida rápida: te lleva a otra página de inmediato" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" id="salida-rapida" type="button">
+<svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+</button>
+<header class="bg-white shadow-sm sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20 gap-4">
+<a class="flex-shrink-0 flex items-center gap-3" href="index.html">
+<img alt="" class="h-10 w-10 object-contain" src="home.svg"/>
+<span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+</a>
+<nav aria-label="Principal" class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita">
+<a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a>
+<a class="hover:text-doradoSuave transition" href="demasiado-karen.html">Demasiado Karen</a>
+<a aria-current="page" class="text-verdeEsperanza border-b-2 border-verdeEsperanza pb-1" href="contra-archivo.html">Contra-archivo</a>
+<a class="hover:text-doradoSuave transition" href="observatorio.html">Observatorio</a>
+<a class="hover:text-doradoSuave transition" href="orientacion.html">Orientación</a>
+<a class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition" href="colabora.html">Colabora</a>
+</nav>
+<div class="lg:hidden flex items-center">
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación" class="text-grisAntracita hover:text-azulOceano" id="menu-btn" type="button">
+<svg aria-hidden="true" class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:hidden bg-white border-t border-moradoMedio/20" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="posicion.html">Posición</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="demasiado-karen.html">Demasiado Karen</a>
+<a aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-verdeEsperanza bg-fondoPagina" href="contra-archivo.html">Contra-archivo</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="observatorio.html">Observatorio</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="orientacion.html">Orientación</a>
+<a class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano" href="colabora.html">Colabora</a>
+</div>
+</div>
+</header>
+<main class="flex-grow" id="contenido-principal" tabindex="-1">
+<div class="bg-grisAntracita border-b border-moradoMedio/30">
+<div class="max-w-7xl mx-auto px-4 py-3">
+<nav aria-label="Ruta de navegación" class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave">
+<ol class="flex flex-wrap gap-2">
+<li><a class="hover:text-white transition" href="index.html">Inicio</a></li>
+<li><span aria-hidden="true" class="text-moradoMedio">›</span></li>
+<li><a class="hover:text-white transition" href="contra-archivo.html">Contra-archivo</a></li>
+<li><span aria-hidden="true" class="text-moradoMedio">›</span></li>
+<li aria-current="page" class="text-white font-bold">Voces</li>
+</ol>
+</nav>
+</div>
+</div>
+<section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+<div class="max-w-4xl mx-auto relative z-10">
+<p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3">
+<span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>
+                    Voces
+                </p>
+<h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">Escribir<br/><em class="text-doradoSuave italic font-normal">en voz propia.</em></h1>
+<p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">Un espacio para contar lo vivido con las palabras de cada quien. No es un tendedero ni un buzón de denuncias: es un archivo.</p>
+</div>
+<div aria-hidden="true" class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl"></div>
+<div aria-hidden="true" class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl"></div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 py-12">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Voces es un espacio de <strong>escritura</strong>. No recibimos denuncias ni las tramitamos: publicamos textos de quienes quieren contar, desde su propia experiencia, lo que atravesaron o atraviesan.</p>
+<p>La diferencia importa. Un tendedero señala a una persona; un texto nombra una experiencia. Lo primero expone a quien escribe a riesgos legales. Lo segundo construye un archivo que sostiene a quien viene después.</p>
+</div>
+<div class="sello-asfalto border-l-4 border-verdeEsperanza p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+                Todos los textos pasan por <a class="underline" href="#politica">moderación</a>: se revisan entre dos personas, se anonimizan y hay un tiempo de espera antes de publicar. Quien escribe puede <a class="underline" href="#retiro">pedir el retiro</a> en cualquier momento, sin explicar por qué.
+            </div>
+</section>
+<section class="max-w-4xl mx-auto px-4 py-10">
+<h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-8 text-center"><span class="subrayado-dorado">Textos publicados</span></h2>
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base mb-8" role="note">
+<span class="font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/30 text-grisAntracita px-2 py-0.5 rounded">Aquí pondríamos textos que no envíen, si tuvieramos.</span>
+<p class="mt-2">Aún no hay textos publicados. Cuando exista el primero, aquí estará :)</p>
+</div>
+
+</section>
+<section class="ancla border-t border-moradoMedio/20" id="compartir">
+<div class="max-w-4xl mx-auto px-4 pt-12">
+<p class="font-subtitulo text-moradoMedio text-xs sm:text-sm uppercase tracking-[0.2em] mb-4 flex items-center gap-3"><span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>Voces</p>
+<h2 class="text-3xl md:text-5xl font-titulo1 font-bold leading-tight text-grisAntracita">Compartir<br/><em class="text-azulOceano italic font-normal">un texto.</em></h2>
+<p class="font-texto text-lg sm:text-xl text-grisAntracita/70 leading-relaxed max-w-3xl mt-4">Lo que escribas es tuyo. Aquí solo lo alojamos, con tu permiso y mientras lo quieras.</p>
+</div>
+</section>
+<section class="max-w-4xl mx-auto px-4 py-10">
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+<strong class="font-subtitulo text-azulOceano">Antes de escribir, léenos esto.</strong> Enviar un texto no inicia ningún procedimiento legal ni universitario. Si lo que necesitas es actuar sobre tu situación, la <a class="underline" href="orientacion.html">sección de orientación</a> es el lugar.
+            </div>
+<details class="plegable mt-2" id="antes-de-enviar" style="--acento:#fcc352"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Antes de enviar</span><h3 class="plegable-titulo">Qué publicamos y qué pasa con tu texto</h3><span class="plegable-bajada">Qué sí y qué no, tu consentimiento y los pasos hasta publicarlo.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="contenido font-texto text-grisAntracita/90">
+<h4>Qué publicamos</h4>
+<ul>
+<li>Crónicas, cartas, relatos, poemas y ensayos sobre lo que se vive o viviste.</li>
+<li>Textos sobre el desgaste burocrático, la espera, el trato institucional.</li>
+<li>Escritura de quienes acompañaron a alguien en un proceso.</li>
+</ul>
+<h4>Qué no publicamos</h4>
+<ul>
+<li><strong>Nombres de personas</strong> señaladas, funcionarias o terceras.</li>
+<li><strong>Datos que permitan identificar a alguien de forma indirecta:</strong> materia, grupo, fechas exactas, cargos, apodos.</li>
+<li>Textos que imputen delitos a una persona identificable. No es censura: es lo que te protege de una demanda por daño moral.</li>
+</ul>
+<h4>Consentimiento informado</h4>
+<p>Al enviar un texto nos autorizas a publicarlo en este sitio, con la firma que elijas. Ese consentimiento:</p>
+<ul>
+<li>Es revocable en cualquier momento y sin explicación.</li>
+<li>No incluye reproducirlo en informes, investigaciones ni materiales de difusión: para eso te pediríamos permiso aparte y específico.</li>
+<li>No nos cede la autoría: el texto sigue siendo tuyo.</li>
+</ul>
+<h4>Qué pasa después de enviarlo</h4>
+<ol>
+<li>Te confirmamos la recepción al siguiente domingo a más tardar.</li>
+<li>Leemos y revisamos que no haya datos identificables.</li>
+<li>Hay un tiempo de espera deliberado antes de publicar: nadie publica en caliente.</li>
+<li>Si hay que ajustar algo, te lo proponemos y decides tú.</li>
+<li>Se publica solo cuando lo confirmas.</li>
+</ol>
+</div></div></details>
+<!-- FORMULARIO CONECTADO A GOOGLE SHEETS -->
+<form class="sello-asfalto p-6 sm:p-8 rounded-xl space-y-6 mt-8" id="form-voces">
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio font-bold">Tu texto</p>
+<div>
+<label class="block font-subtitulo font-bold text-sm mb-2" for="firma">Cómo quieres firmar</label>
+<input class="w-full px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20" id="firma" name="firma" placeholder="Un nombre, un seudónimo o «anónima»" required="" type="text"/>
+<p class="text-sm text-grisAntracita/70 mt-1">No necesita ser tu nombre real.</p>
+</div>
+<div>
+<label class="block font-subtitulo font-bold text-sm mb-2" for="contacto">Un medio para responderte</label>
+<input class="w-full px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20" id="contacto" name="contacto" placeholder="Correo o el medio que prefieras" required="" type="text"/>
+<p class="text-sm text-grisAntracita/70 mt-1">Solo lo usamos para hablar de tu texto. No se publica.</p>
+</div>
+<div>
+<label class="block font-subtitulo font-bold text-sm mb-2" for="texto">Tu texto</label>
+<textarea class="w-full px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20" id="texto" name="texto" required="" rows="12"></textarea>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1.5 w-5 h-5 accent-azulOceano" id="acepto" name="acepto" required="" type="checkbox"/>
+<label class="font-texto text-base" for="acepto">He leído la <a class="text-azulOceano underline" href="#politica">política de publicación</a> y autorizo que mi texto se publique en este sitio. Sé que puedo pedir su retiro cuando quiera.</label>
+</div>
+<button class="bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-8 py-4 rounded-lg hover:bg-moradoMedio transition w-full sm:w-auto" id="btn-enviar" type="submit">Enviar texto</button>
+<div class="hidden font-texto text-sm mt-3" id="form-mensaje"></div>
+</form>
+<div class="mt-10 sello-asfalto border-l-4 border-verdeEsperanza p-5 rounded-r-xl font-texto" role="note">
+<strong class="font-subtitulo text-azulOceano">Si escribir te removió algo</strong>, es normal. El <a class="underline" href="directorio.html">directorio de atención</a> reúne instancias de apoyo psicológico y jurídico que atienden ahora.
+            </div>
+</section>
+<section class="max-w-4xl mx-auto px-4 py-10"><h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-2"><span class="subrayado-dorado">Las reglas del espacio</span></h2><p class="font-texto text-lg text-grisAntracita/70 mb-6">Publicadas antes de recibir el primer texto.</p><div class="plegables"><details class="plegable" id="politica" style="--acento:#8e62b1"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Política</span><h3 class="plegable-titulo">Cómo moderamos</h3><span class="plegable-bajada">Anonimización, revisión por dos personas, tiempo de espera y qué no publicamos.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Moderar no es corregir ni juzgar lo que alguien vivió. Es proteger a quien escribe de exponerse a un riesgo que no eligió.</p>
+<h4>Anonimización</h4>
+<p>Ningún texto publica nombres de personas. Tampoco datos que permitan identificar a alguien de forma indirecta: una materia concreta, un grupo, un cargo específico, fechas exactas, apodos o detalles que en un entorno pequeño equivalen a un nombre.</p>
+<p>Esto también aplica a quien escribe: si la combinación de datos de tu propio texto permite identificarte sin que lo hayas decidido, te lo señalamos antes de publicar.</p>
+<h4>Revisión por dos personas</h4>
+<p>Cada texto lo leen al menos dos integrantes del equipo. Una sola lectura se equivoca más.</p>
+<h4>Tiempo de espera</h4>
+<p>Entre la recepción y la publicación pasa un periodo de tiempo deliberado. Escribir después de algo difícil y publicarlo el mismo día son dos decisiones distintas, y conviene que no se tomen a la vez.</p>
+<h4>Qué no publicamos</h4>
+<ul>
+<li>Textos que imputen delitos a una persona identificable.</li>
+<li>Textos que expongan a terceras personas que no consintieron.</li>
+<li>Contenido que incite a la violencia.</li>
+<li>Descripciones gráficas innecesarias: se publica lo que el texto necesita, no más.</li>
+</ul>
+<h4>Advertencias de contenido</h4>
+<p>Los textos que abordan violencia sexual llevan una advertencia visible antes del cuerpo. No es un aviso legal: es una cortesía hacia quien lee.</p>
+<h4>Estos textos no son datos de investigación</h4>
+<p>Lo que se publica en Voces <strong>no se analiza, no se codifica y no alimenta ningún informe del Observatorio</strong>. Son dos materiales separados por decisión del proyecto, no por falta de interés. Si alguna vez quisiéramos usar un texto con fines de investigación, pediríamos un consentimiento nuevo, específico y por escrito.</p>
+<h4>Retiro</h4>
+<p>Quien escribió puede pedir que su texto deje de publicarse en cualquier momento, sin dar razones. Lo retiramos sin preguntar. <a href="#retiro">Aquí está cómo</a>.</p>
+</div>
+</div></div></details><details class="plegable" id="retiro" style="--acento:#42c3d9"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Retiro</span><h3 class="plegable-titulo">Retirar o cambiar un texto</h3><span class="plegable-bajada">Sin explicaciones, cuando quieras. También puedes pedir menos que el retiro.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Si escribiste un texto que está publicado aquí y quieres que deje de estarlo, lo retiramos. No necesitas explicar por qué.</p>
+<h4>Cómo pedirlo</h4>
+<p>Escribe a <a href="mailto:cosiendo.tus.alas@gmail.com">cosiendo.tus.alas@gmail.com</a> con el asunto «Retiro» e indica el título del texto o la firma con la que se publicó. Si conservas el medio de contacto con el que lo enviaste, úsalo: nos ayuda a confirmar que eres tú.</p>
+<h4>Qué hacemos</h4>
+<ul>
+<li>Retiramos el texto del sitio.</li>
+<li>Borramos el archivo y su registro de nuestro lado.</li>
+<li>Te confirmamos cuando está hecho.</li>
+</ul>
+<h4>Qué no podemos hacer</h4>
+<p>Con honestidad: si alguien copió, citó o archivó el texto mientras estuvo público, eso escapa a nuestro control. Los buscadores también pueden conservar copias durante un tiempo. Podemos pedir su eliminación, pero no garantizarla. Esa es una de las razones del tiempo de espera antes de publicar.</p>
+<h4>También puedes pedir menos que el retiro</h4>
+<ul>
+<li>Cambiar la firma con la que aparece.</li>
+<li>Quitar un fragmento concreto.</li>
+<li>Editar el texto.</li>
+</ul>
+<p>Cualquiera de estas opciones es válida y se atiende igual.</p>
+</div>
+</div></div></details></div></section>
+
+</main>
+<footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4">
+<div class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10" role="note">
+<p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a class="underline text-doradoSuave hover:text-white" href="directorio.html">Consulta el directorio de atención inmediata</a>.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+<div class="md:col-span-2">
+<h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+<p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+<div class="flex gap-3">
+<a aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.facebook.com/share/16oUTUZ9zC/" rel="noopener noreferrer" target="_blank">f</a>
+<a aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.instagram.com/cosiendo.tus.alas/" rel="noopener noreferrer" target="_blank">ig</a>
+<a aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.tiktok.com/@cosiendoalas.mx" rel="noopener noreferrer" target="_blank">tt</a>
+<a aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.youtube.com/@cosiendoalasmx" rel="noopener noreferrer" target="_blank">yt</a>
+</div>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#principios">Qué hacemos y qué no</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#transparencia">Transparencia y financiamiento</a></li>
+<li><a class="hover:text-doradoSuave transition" href="voces.html">Voces</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html">Colabora</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="legal.html#privacidad">Aviso de privacidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#terminos">Términos de uso</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#accesibilidad">Accesibilidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="observatorio.html#replica">Derecho de réplica</a></li>
+</ul>
+</div>
+</div>
+<div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                © 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+</div>
+</footer>
+<script src="sitio.js"></script>
+<script>
+        const formVoces = document.getElementById('form-voces');
+        const formMensaje = document.getElementById('form-mensaje');
+        const btnEnviar = document.getElementById('btn-enviar');
+
+        if (formVoces) {
+            formVoces.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Tu URL de Google Apps Script integrada:
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxN6kk2_4cDAbsRXdWuCvBvSRigjnF-vXnTd_9hV1VBk2at6JN9vpMXUdC-sLRMt1hsdA/exec';
+
+                btnEnviar.disabled = true;
+                btnEnviar.textContent = 'Enviando...';
+                formMensaje.classList.remove('hidden', 'text-red-600', 'text-verdeEsperanza');
+                formMensaje.classList.add('text-grisAntracita');
+                formMensaje.textContent = 'Registrando texto...';
+
+                const formData = new FormData(formVoces);
+
+                try {
+                    await fetch(scriptURL, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    });
+
+                    formMensaje.classList.remove('text-grisAntracita');
+                    formMensaje.classList.add('text-verdeEsperanza', 'font-bold');
+                    formMensaje.textContent = 'Tu texto ha sido enviado con éxito. Gracias por compartir tu voz.';
+                    formVoces.reset();
+                } catch (error) {
+                    formMensaje.classList.remove('text-grisAntracita');
+                    formMensaje.classList.add('text-red-600', 'font-bold');
+                    formMensaje.textContent = 'Hubo un error al enviar el texto. Por favor intenta de nuevo o escríbenos por correo.';
+                } finally {
+                    btnEnviar.disabled = false;
+                    btnEnviar.textContent = 'Enviar texto';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

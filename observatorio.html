@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="no-referrer" name="referrer"/>
+<title>Observatorio | Cosiendo Alas</title>
+<meta content="Diagnóstico de los protocolos de atención a la violencia en universidades públicas frente a la LGAMVLV y estándares internacionales." name="description"/>
+<!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+<meta content="website" property="og:type"/>
+<meta content="Observatorio | Cosiendo Alas" property="og:title"/>
+<meta content="Diagnóstico de los protocolos de atención a la violencia en universidades públicas frente a la LGAMVLV y estándares internacionales." property="og:description"/>
+<meta content="https://cosiendoalas.mx/og.png" property="og:image"/>
+<link href="home.svg" rel="icon" type="image/svg+xml"/>
+<link href="estilos.css" rel="stylesheet"/>
+
+<style>
+    /* Estilos de respaldo para las tarjetas y el buscador (independientes de CDN) */
+    .uni-card {
+        background-color: #ffffff;
+        border: 1px solid rgba(142, 98, 177, 0.25);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .uni-card:hover {
+        box-shadow: 0 8px 20px -4px rgba(43, 16, 69, 0.12);
+    }
+    .uni-logo-box {
+        width: 4rem;
+        height: 4rem;
+        min-width: 4rem;
+        min-height: 4rem;
+        border-radius: 0.75rem;
+        background-color: #f8f6fb;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(142, 98, 177, 0.2);
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    .uni-logo-box img {
+        width: 100%;
+        height: 100%;
+        max-width: 3rem;
+        max-height: 3rem;
+        object-fit: contain;
+        display: block;
+    }
+    .uni-note {
+        background-color: #f8f6fb;
+        padding: 0.75rem 0.875rem;
+        border-radius: 0.5rem;
+        border-left: 4px solid #653a82;
+    }
+    .uni-note-cat2 { border-left-color: #53a0cc; }
+    .uni-note-cat3 { border-left-color: #42c3d9; }
+    .uni-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+    .uni-badge-cat1 { background-color: rgba(142, 98, 177, 0.15); color: #653a82; }
+    .uni-badge-cat2 { background-color: rgba(83, 160, 204, 0.18); color: #2b1045; }
+    .uni-badge-cat3 { background-color: rgba(66, 195, 217, 0.2); color: #2b1045; }
+    .uni-web-link svg {
+        width: 0.875rem;
+        height: 0.875rem;
+        display: inline-block;
+        vertical-align: -2px;
+        margin-right: 0.25rem;
+    }
+    .search-icon-svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+    .clear-btn-svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    #uni-search {
+        padding-left: 2.75rem;
+        padding-right: 2.5rem;
+    }
+    /* Botón de envío por correo (independiente de CDN) */
+    .btn-correo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        max-width: 100%;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .btn-correo svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+    }
+    .btn-correo span {
+        overflow-wrap: anywhere;
+    }
+    /* Aviso emergente al abrir la página (independiente de CDN) */
+    #aviso-observatorio {
+        border: none;
+        border-top: 4px solid #fcc352;
+        border-radius: 1rem;
+        padding: 0;
+        width: calc(100% - 2rem);
+        max-width: 32rem;
+        box-shadow: 0 20px 40px -8px rgba(43, 16, 69, 0.35);
+        background-color: #ffffff;
+        color: #2b1045;
+    }
+    #aviso-observatorio::backdrop {
+        background-color: rgba(43, 16, 69, 0.6);
+    }
+    .aviso-cuerpo { padding: 2rem 1.75rem 1.75rem; }
+    .aviso-etiqueta {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #653a82;
+        margin-bottom: 0.75rem;
+    }
+    .aviso-titulo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 1rem;
+    }
+    .aviso-texto {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0 0 0.75rem;
+    }
+    .aviso-acciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+    .aviso-btn {
+        flex: 1 1 12rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+    .aviso-btn-primario { background-color: #653a82; color: #ffffff; border: 1px solid #653a82; }
+    .aviso-btn-primario:hover { background-color: #2b1045; }
+    .aviso-btn-secundario { background-color: #ffffff; color: #2b1045; border: 1px solid rgba(142, 98, 177, 0.4); }
+    .aviso-btn-secundario:hover { background-color: #f8f6fb; }
+    .aviso-correo { font-weight: 700; color: #653a82; overflow-wrap: anywhere; }
+</style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<!-- AVISO EMERGENTE AL ABRIR EL OBSERVATORIO -->
+<dialog id="aviso-observatorio" aria-labelledby="aviso-titulo" aria-describedby="aviso-descripcion">
+    <div class="aviso-cuerpo">
+        <span class="aviso-etiqueta font-subtitulo">Aviso</span>
+        <h2 id="aviso-titulo" class="aviso-titulo font-titulo1">El análisis por institución tardará en estar disponible</h2>
+        <div id="aviso-descripcion" class="font-texto">
+            <p class="aviso-texto">Por motivos de fuerza mayor, el contenido de esta sección se publicará más adelante de lo previsto. Mientras tanto, puedes consultar el registro hemerográfico del índice.</p>
+            <p class="aviso-texto">Si necesitas un análisis con urgencia, escríbenos a <a class="aviso-correo" href="mailto:cosiendo.tus.alas@gmail.com?subject=Solicitud%20urgente%20de%20an%C3%A1lisis%20-%20Observatorio">cosiendo.tus.alas@gmail.com</a> y expón tu situación.</p>
+        </div>
+        <div class="aviso-acciones font-subtitulo">
+            <a class="aviso-btn aviso-btn-primario" href="mailto:cosiendo.tus.alas@gmail.com?subject=Solicitud%20urgente%20de%20an%C3%A1lisis%20-%20Observatorio">Escribir por correo</a>
+            <button type="button" class="aviso-btn aviso-btn-secundario" id="aviso-cerrar">Entendido</button>
+        </div>
+    </div>
+</dialog>
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold" href="#contenido-principal">Saltar al contenido</a>
+<!-- SALIDA RÁPIDA -->
+<button aria-label="Salida rápida: te lleva a otra página de inmediato" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" id="salida-rapida" type="button">
+<svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+</button>
+<header class="bg-white shadow-sm sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20 gap-4">
+<a class="flex-shrink-0 flex items-center gap-3" href="index.html">
+<img alt="" class="h-10 w-10 object-contain" src="home.svg"/>
+<span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+</a>
+<nav aria-label="Principal" class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita">
+<a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a>
+<a class="hover:text-doradoSuave transition" href="demasiado-karen.html">Demasiado Karen</a>
+<a class="hover:text-doradoSuave transition" href="contra-archivo.html">Contra-archivo</a>
+<a aria-current="page" class="text-verdeEsperanza border-b-2 border-verdeEsperanza pb-1" href="observatorio.html">Observatorio</a>
+<a class="hover:text-doradoSuave transition" href="orientacion.html">Orientación</a>
+<a class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition" href="colabora.html">Colabora</a>
+</nav>
+<div class="lg:hidden flex items-center">
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación" class="text-grisAntracita hover:text-azulOceano" id="menu-btn" type="button">
+<svg aria-hidden="true" class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:hidden bg-white border-t border-moradoMedio/20" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="posicion.html">Posición</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="demasiado-karen.html">Demasiado Karen</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="contra-archivo.html">Contra-archivo</a>
+<a aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-verdeEsperanza bg-fondoPagina" href="observatorio.html">Observatorio</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="orientacion.html">Orientación</a>
+<a class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano" href="colabora.html">Colabora</a>
+</div>
+</div>
+</header>
+<main class="flex-grow" id="contenido-principal" tabindex="-1">
+<div class="bg-grisAntracita border-b border-moradoMedio/30">
+<div class="max-w-7xl mx-auto px-4 py-3">
+<nav aria-label="Ruta de navegación" class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave">
+<ol class="flex flex-wrap gap-2">
+<li><a class="hover:text-white transition" href="index.html">Inicio</a></li>
+<li><span aria-hidden="true" class="text-moradoMedio">›</span></li>
+<li aria-current="page" class="text-white font-bold">Observatorio</li>
+</ol>
+</nav>
+</div>
+</div>
+<section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+<div class="max-w-4xl mx-auto relative z-10">
+<p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3">
+<span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>
+                    Observatorio
+                </p>
+<h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">Mapear la falla<br/><em class="text-verdeEsperanza italic font-normal">institucional.</em></h1>
+<p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">Evaluamos el diseño y la eficacia de los protocolos universitarios de atención a la violencia. No evaluamos personas: auditamos las reglas del juego.</p>
+</div>
+<div aria-hidden="true" class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl"></div>
+<div aria-hidden="true" class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl"></div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-7">
+<h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-8"><span class="subrayado-dorado">Qué medimos</span></h2>
+<div class="contenido font-texto text-grisAntracita/90">
+<p>Las universidades públicas respondieron a la exigencia estudiantil redactando protocolos. La existencia de un documento no garantiza el acceso a la justicia ni erradica la violencia institucional.</p>
+<p>Nuestra matriz contrasta los reglamentos internos contra estándares normativos ineludibles:</p>
+<ul>
+<li>Ley General de Acceso de las Mujeres a una Vida Libre de Violencia (LGAMVLV).</li>
+<li>Ley General de Educación Superior (LGES).</li>
+<li>Convención de Belém do Pará.</li>
+<li>Recomendación General 36 del Comité CEDAW.</li>
+</ul>
+<p>También rastreamos la hemeroteca para documentar cómo responden en la práctica, y así evidenciar la brecha entre el papel y lo que ocurre.</p>
+<blockquote class="pull-quote my-8">«La impunidad no es un accidente del sistema: suele ser el resultado exacto de su diseño burocrático.»</blockquote>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="sello-asfalto p-8 rounded-xl border-t-4 border-t-verdeEsperanza h-full flex flex-col justify-center">
+<span class="font-subtitulo text-sm font-bold text-moradoMedio uppercase tracking-widest mb-2 block">Estado de avance</span>
+<div class="text-verdeEsperanza text-8xl font-subtitulo font-extrabold leading-none mb-4">42</div>
+<h3 class="text-2xl font-titulo1 font-bold mb-3 text-azulOceano">Universidades en el índice</h3>
+<p class="font-texto text-grisAntracita/80 text-lg mb-6">Primera fase: registro hemerográfico de casos documentados en instituciones de distintos regímenes jurídicos — autónomas federales, estatales, federales sectorizadas y centros públicos.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio mb-8">Segunda fase, en curso: evaluación de cada protocolo contra la matriz de estándares.</p>
+<a class="inline-block bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-6 py-4 rounded-lg hover:bg-moradoMedio transition text-center" href="#indice">Explorar el índice</a>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="ancla border-t border-moradoMedio/20 mt-10" id="indice">
+<div class="max-w-4xl mx-auto px-4 pt-16">
+<p class="font-subtitulo text-moradoMedio text-xs sm:text-sm uppercase tracking-[0.2em] mb-4 flex items-center gap-3"><span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>Instituciones</p>
+<h2 class="text-3xl md:text-5xl font-titulo1 font-bold leading-tight text-grisAntracita">Índice de<br/><em class="text-azulOceano italic font-normal">instituciones.</em></h2>
+<p class="font-texto text-lg sm:text-xl text-grisAntracita/70 leading-relaxed max-w-3xl mt-4">Cada universidad, su régimen jurídico y el estado de su evaluación. Filtra por tipo de institución o busca la tuya.</p>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 py-12">
+    <div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+        <strong class="font-subtitulo text-azulOceano">Primera fase.</strong> Este índice reúne el registro hemerográfico por institución. La evaluación indicador por indicador contra la <a class="underline" href="#matriz">matriz de estándares</a> está en curso; cada ficha indica en qué punto va. La ausencia de registros no equivale a buen funcionamiento.
+    </div>
+
+    <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+    <div class="sello-asfalto p-4 sm:p-6 rounded-xl mb-10 sticky top-20 z-30 shadow-md">
+        <div class="flex flex-col lg:flex-row gap-4 justify-between items-center">
+            
+            <!-- Campo de texto del buscador -->
+            <div class="relative w-full lg:w-1/2">
+                <label class="sr-only" for="uni-search">Buscar por nombre de universidad, sigla, estado o fuente</label>
+                <svg aria-hidden="true" class="search-icon-svg text-azulOceano" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="search" id="uni-search" autocomplete="off" placeholder="Busca por nombre de universidad, sigla, estado o fuente..." class="w-full pl-12 pr-10 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20 transition">
+                <button id="clear-search" type="button" aria-label="Limpiar búsqueda" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-grisAntracita/50 hover:text-azulOceano p-1">
+                    <svg aria-hidden="true" class="clear-btn-svg" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Botones de Filtro por Categoría -->
+            <div aria-label="Filtrar por categoría de universidad" role="group" class="flex flex-wrap gap-2 w-full lg:w-auto justify-start lg:justify-end">
+                <button type="button" onclick="filterCat('all', this)" aria-pressed="true" class="filter-btn active bg-azulOceano text-white border border-azulOceano font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full transition">Todas (<span id="count-all">0</span>)</button>
+                <button type="button" onclick="filterCat('cat1', this)" aria-pressed="false" class="filter-btn bg-white text-grisAntracita border border-moradoMedio/30 hover:border-verdeEsperanza font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full transition">Cat. 1: Autónomas (<span id="count-cat1">0</span>)</button>
+                <button type="button" onclick="filterCat('cat2', this)" aria-pressed="false" class="filter-btn bg-white text-grisAntracita border border-moradoMedio/30 hover:border-verdeEsperanza font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full transition">Cat. 2: No Autónomas (<span id="count-cat2">0</span>)</button>
+                <button type="button" onclick="filterCat('cat3', this)" aria-pressed="false" class="filter-btn bg-white text-grisAntracita border border-moradoMedio/30 hover:border-verdeEsperanza font-subtitulo text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full transition">Cat. 3: Tecnológicas / Interculturales (<span id="count-cat3">0</span>)</button>
+            </div>
+
+        </div>
+        
+        <div class="mt-3 pt-3 border-t border-moradoMedio/20 flex flex-wrap justify-between items-center gap-2 font-subtitulo text-xs uppercase tracking-widest text-moradoMedio">
+            <span aria-live="polite">Mostrando: <strong id="visible-count" class="text-azulOceano">0</strong> instituciones de educación superior</span>
+            <span>Actualización: Julio 2026</span>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR DE TARJETAS DE UNIVERSIDADES -->
+    <div id="uni-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- CATEGORÍA 1: AUTÓNOMAS -->
+
+                <!-- UNAM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unam universidad nacional autonoma de mexico cigu cu cch fyl cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UNAM.webp" alt="Logo UNAM" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UNAM';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://unam.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>unam.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNAM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Nacional Autónoma de México</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">La Silla Rota (2018):</strong>
+                                <span>Denuncia por abuso sexual y posterior acoso contra profesor del Colegio de Geografía en la Facultad de Filosofía y Letras.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Cimacnoticias (Agosto 2022):</strong>
+                                <span>Bajo la cifra de 1,486 casos acumulados de violencia de género, se reportó que una exalumna de la FAD enfrentó contrademanda por daño moral tras señalar a un profesor por acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uam universidad autonoma metropolitana iztapalapa azcapotzalco cuajimalpa cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAM.webp" alt="Logo UAM" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UAM';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uam.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uam.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma Metropolitana</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Infobae (Octubre 2022):</strong>
+                                <span>Detención de profesor de química de UAM Iztapalapa por presunto abuso sexual contra una alumna de maestría en instalaciones de laboratorio.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Infobae (Octubre 2021):</strong>
+                                <span>Sentencia de 9 años de prisión a un profesor de la UAM Azcapotzalco por abuso sexual agravado contra una estudiante.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UACM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uacm universidad autonoma de la ciudad de mexico san lorenzo tezonco cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UACM.png" alt="Logo UACM" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uacm.edu.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uacm.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de la Ciudad de México</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Proceso (Mayo 2014):</strong>
+                                <span>Cese del coordinador del Posgrado en Derechos Humanos por acoso y hostigamiento sexual y laboral hacia dos académicas.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Los Ángeles Press (Septiembre 2024):</strong>
+                                <span>Exigencia de disculpa pública en el plantel San Lorenzo Tezonco contra un profesor investigador con denuncia ante la FGJCDMX que continuaba impartiendo clases.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UANL -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uanl universidad autonoma de nuevo leon monterrey metoouanl">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UANL.svg" alt="Logo UANL" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UANL';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uanl.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uanl.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UANL</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Nuevo León</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Excélsior (2019):</strong>
+                                <span>Protestas en la Facultad de Artes Visuales exigiendo la destitución de docente señalado vía #MeTooUANL por condicionar calificaciones por relaciones e imágenes.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">SinEmbargo (Marzo 2022):</strong>
+                                <span>Protestas y tendederos en preparatorias de la UANL durante la jornada del 8M exponiendo casos de acoso y abuso sexual.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UdeG -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="udg universidad de guadalajara jalisco prepas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UDEG.png" alt="Logo UdeG" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UdeG';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://udg.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>udg.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UdeG</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Guadalajara</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">La Jornada (Marzo 2022):</strong>
+                                <span>Licencia de profesor en la Preparatoria Vocacional tras denuncias públicas por acoso a estudiantes.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Milenio (2022):</strong>
+                                <span>Toma de instalaciones en la Preparatoria 11 tras la detención de un docente por abuso sexual contra una alumna.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- BUAP -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="buap benemerita universidad autonoma de puebla">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/BUAP.svg" alt="Logo BUAP" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=BUAP';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://buap.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>buap.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">BUAP</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Benemérita Univ. Autónoma de Puebla</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Periódico Central (2017):</strong>
+                                <span>Lámina de testimonios y denuncias en Psicología exponiendo a ocho docentes por acoso y misoginia.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Sol de Puebla (Enero 2023):</strong>
+                                <span>Reporte oficial de Abogacía General con 64 investigaciones por violencia de género en 2022 (acoso, ciberacoso y abuso).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UV -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uv universidad veracruzana xalapa veracruz">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UV.webp" alt="Logo UV" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UV';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uv.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uv.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UV</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Veracruzana</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Heraldo (Marzo 2023):</strong>
+                                <span>Denuncias formales ante la Fiscalía contra un docente de la Facultad de Arquitectura Xalapa por hostigamiento.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">La Silla Rota (Agosto 2024):</strong>
+                                <span>Solicitud de información pública documentó 66 quejas contra académicos entre 2018 y 2024; 6 profesores fueron dados de baja en 2023.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAEMéx -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaemex universidad autonoma del estado de mexico toluca nezahualcoyotl">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAMEX.svg" alt="Logo UAEMex" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UAEMex';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uaemex.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uaemex.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAEMéx</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma del Estado de México</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Reporte Índigo (Marzo 2020):</strong>
+                                <span>Rectoría informó la baja de 20 profesores (15 destituciones y 5 despidos) tras señalamientos en la Facultad de Ciencias de la Conducta.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Milenio (Marzo 2020):</strong>
+                                <span>Paro en campus Nezahualcóyotl exigiendo cese de administrativo con carpetas por violación y acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAEM (Morelos) -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaem universidad autonoma del estado de morelos cuernavaca feum">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAEMORELOS.jpg" alt="Logo UAEM Morelos" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uaem.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uaem.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAEM (Morelos)</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma del Estado de Morelos</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Infobae (Noviembre 2022):</strong>
+                                <span>Profesor sentenciado a 3 años de prisión por acoso sexual cometido contra una estudiante de 16 años.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">La Jornada (Agosto 2021):</strong>
+                                <span>La FEUM exigió el cese de un docente de Medicina denunciado por acoso durante prácticas profesionales, documentando 14 casos en 4 meses.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UABC -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uabc universidad autonoma de baja california mexicali tijuana">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UABC.png" alt="Logo UABC" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uabc.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uabc.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UABC</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de Baja California</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Proceso (Octubre 2025):</strong>
+                                <span>Destitución de encargado de laboratorio por acoso contra cinco alumnas. Rectoría reconoció la separación de 17 profesores en los últimos años.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">La Jornada (Noviembre 2019):</strong>
+                                <span>Denuncias públicas en Mexicali exponiendo dos casos de violación y múltiples quejas por acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAS -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uas universidad autonoma de sinaloa culiacan">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/SINALOA.jpg" alt="Logo UAS" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uas.edu.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uas.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAS</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Sinaloa</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Noroeste (2020):</strong>
+                                <span>Alumnas de Arquitectura Culiacán denunciaron el hallazgo de un dispositivo que las grababa sin consentimiento en sanitarios.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Reacción Informativa (Junio 2024):</strong>
+                                <span>Estudiantes y docentes de Psicología denunciaron reiterado acoso docente presuntamente omiso por autoridades.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UG -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ug universidad de guanajuato leon">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/GUANAJUATO.svg" alt="Logo UG" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://ugto.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>ugto.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UG</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Guanajuato</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Universal (2018-2019):</strong>
+                                <span>Profesoras y alumnas de Ciencias Sociales León denunciaron acoso continuado por parte de cinco académicos.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Zona Franca (2022):</strong>
+                                <span>Aviso sobre permanencia en aulas de un docente con carpeta de investigación abierta por presunta violación en 2020.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UADY -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uady universidad autonoma de yucatan merida prepas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UADY.png" alt="Logo UADY" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uady.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uady.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UADY</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Yucatán</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">SIPSE (Junio 2019):</strong>
+                                <span>Estudiante de la Preparatoria Uno denunció tocamientos indebidos por parte de un docente tras condicionamiento académico.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">La Jornada Maya (Marzo 2020):</strong>
+                                <span>Tendederos masivos en múltiples facultades exhibiendo docentes y personal administrativo.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UNACH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unach universidad autonoma de chiapas tuxtla gutierrez">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UNACH.png" alt="Logo UNACH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://unach.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>unach.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNACH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Chiapas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Universal (2021):</strong>
+                                <span>Retiro de denominación honorífica en espacio universitario tras denuncia pública por acoso en maestría de DDHH.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Meganoticias (Marzo 2023):</strong>
+                                <span>Cifra oficial confirmando la rescisión de 81 profesores por hostigamiento y acoso sexual en el periodo 2018-2022.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAQ -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaq universidad autonoma de queretaro">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAQ.jpg" alt="Logo UAQ" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=UAQ';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uaq.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uaq.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAQ</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Querétaro</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Universal Qro (2022):</strong>
+                                <span>Expulsión de un docente tras acumulación de quejas por violación formuladas por cuatro alumnas.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Radio Fórmula (Octubre 2022):</strong>
+                                <span>Judicialización del caso de un profesor de Ciencias Naturales procesado por abuso sexual agravado.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UABJO -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uabjo universidad autonoma benito juarez de oaxaca">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UABJO.jpg" alt="Logo UABJO" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uabjo.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uabjo.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UABJO</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma "Benito Juárez" de Oaxaca</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Universal Oaxaca (Noviembre 2022):</strong>
+                                <span>Tendedero en la Facultad de Medicina señalando a docentes por acoso, difusión no consentida de material íntimo y agresiones.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">NVI Noticias (2025):</strong>
+                                <span>Rescisión laboral de un académico del Instituto de Ciencias de la Educación tras denuncias por hostigamiento a docentes y alumnas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UJAT -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ujat universidad juarez autonoma de tabasco villahermosa">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UJAT.jpg" alt="Logo UJAT" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://ujat.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>ujat.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UJAT</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Juárez Autónoma de Tabasco</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Financiero (Agosto 2021):</strong>
+                                <span>Expulsión de un docente por hostigamiento tras movilizaciones estudiantiles.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">XEVA (2023):</strong>
+                                <span>La Coordinación de Estudios de Género reportó 70 casos atendidos en 2022 y 13 nuevos expedientes en 2023.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UASLP -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaslp universidad autonoma de san luis potosi fup">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UASLP.png" alt="Logo UASLP" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uaslp.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uaslp.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UASLP</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de San Luis Potosí</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Financiero (Octubre 2025):</strong>
+                                <span>Expulsión de dos estudiantes tras violar a una joven en oficinas gremiales de la Facultad de Derecho.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Universal (Octubre 2025):</strong>
+                                <span>Rescisión laboral de un académico de Economía tras manifestaciones estudiantiles.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UACH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uach universidad autonoma de chihuahua juarez">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UACH.svg" alt="Logo UACH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uach.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uach.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Chihuahua</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Diario de Juárez (Marzo 2025):</strong>
+                                <span>Denuncia pública en la FCPyS campus Juárez contra dos docentes por acoso sexual y subjetivo.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Norte Digital (2021):</strong>
+                                <span>Reconocimiento oficial del aumento en denuncias y separación de siete integrantes del personal en 2020.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UMSNH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="umsnh universidad michoacana de san nicolas de hidalgo morelia michoacan">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UMSNH.webp" alt="Logo UMSNH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://umich.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>umich.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UMSNH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Michoacana de San Nicolás de Hidalgo</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Universal (2019):</strong>
+                                <span>Estudiante grabó y denunció penalmente a un profesor de Derecho por pedir favores sexuales a cambio de aprobación.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">MiMorelia (2019-2020):</strong>
+                                <span>Reporte de 14 expedientes por acoso; sólo un docente fue despedido de los cinco involucrados.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAdeC -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uadec universidad autonoma de coahuila saltillo">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAdeC.svg" alt="Logo UAdeC" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uadec.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uadec.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAdeC</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Coahuila</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Vanguardia (2023):</strong>
+                                <span>Separación de un docente de Jurisprudencia denunciado por acoso sexual hacia una estudiante menor de edad.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Milenio (2023):</strong>
+                                <span>Registro de múltiples denuncias formales por acoso en la Facultad de Jurisprudencia.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UNISON -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unison universidad de sonora hermosillo navojoa metoounison">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UNISON.svg" alt="Logo UNISON" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://unison.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>unison.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNISON</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Sonora</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Proyecto Puente (Febrero 2020):</strong>
+                                <span>Coordinador de posgrado dejó el cargo tras 13 señalamientos vía @MeTooUnison, pero conservó cátedra.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Expreso (Abril 2024):</strong>
+                                <span>Conflicto en campus Navojoa tras la agresión de un académico hacia un estudiante que colocó un cartel de protesta.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAGro -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uagro universidad autonoma de guerrero chilpancingo acapulco">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAGro.svg" alt="Logo UAGro" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uagro.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uagro.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAGro</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Guerrero</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Quadratín (Junio 2025):</strong>
+                                <span>Expulsión definitiva por el Consejo Universitario de dos profesores por acoso contra alumnas menores de edad.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Réplica (Marzo 2022):</strong>
+                                <span>Mural de denuncia en Ciencias Químico Biológicas exponiendo a 20 integrantes de la comunidad por acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAA -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaa universidad autonoma de aguascalientes">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAA.png" alt="Logo UAA" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uaa.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uaa.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAA</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Aguascalientes</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Aguzados (2023):</strong>
+                                <span>Alumnas del Centro de las Artes y la Cultura denunciaron a docente por vulnerar su libertad y seguridad sexual.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">POPLab (2023):</strong>
+                                <span>El caso de Jimena "N" detonó exigencias de justicia y señalamientos por desatención burocrática previa.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAZ -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaz universidad autonoma de zacatecas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAZ.svg" alt="Logo UAZ" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uaz.edu.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uaz.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAZ</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Zacatecas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">NTR Zacatecas (Abril 2026):</strong>
+                                <span>Paro en Campus 2 (Antropología) señalando a docente por hostigamiento continuado a lo largo de varios años.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Diario de México:</strong>
+                                <span>Registro de despido de un docente por presunto acoso tras denuncia formal de estudiante.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UJED -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ujed universidad juarez del estado de durango gomez palacio">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UJED.jpg" alt="Logo UJED" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://ujed.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>ujed.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UJED</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Juárez del Estado de Durango</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Latinus (Noviembre 2023):</strong>
+                                <span>Denuncia en Ciencias de la Salud (Gómez Palacio) tras descubrir cámara oculta instalada en sanitarios por un docente.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Milenio (2023):</strong>
+                                <span>Queja de personal administrativo contra académico en la Facultad de Agricultura ante la Unidad de Prevención de Género.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAT -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uat universidad autonoma de tamaulipas victoria">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAT.png" alt="Logo UAT" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uat.edu.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uat.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAT</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Tamaulipas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Periódico Encuesta (Abril 2024):</strong>
+                                <span>Separación del Secretario de Administración tras denuncia formal por tocamientos en oficinas de Rectoría.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Milenio:</strong>
+                                <span>Tendederos de denuncia organizados por alumnas de diversas facultades para exhibir casos de acoso.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAEH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uaeh universidad autonoma del estado de hidalgo pachuca tizayuca">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAEH.webp" alt="Logo UAEH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uaeh.edu.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uaeh.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAEH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma del Estado de Hidalgo</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Universal Hidalgo (2023):</strong>
+                                <span>Denuncia contra docente de Escuela Superior de Tizayuca por acoso en periodo de evaluación extraordinaria.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Criterio Hidalgo (Mayo 2023):</strong>
+                                <span>Renuncia de docente del ICSA tras señalamientos públicos organizados por el colectivo Tetlachihui Machtiani.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UATx -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uatx universidad autonoma de tlaxcala zacatelco">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UATx.webp" alt="Logo UATx" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uatx.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uatx.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UATx</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Tlaxcala</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Milenio (2020):</strong>
+                                <span>Alumnas de Medicina y Filosofía promovieron #YoSiTeCreo, resultando en la suspensión de cuatro catedráticos de más de 50 casos señalados.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UAN -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uan universidad autonoma de nayarit tepic san blas">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UAN.svg" alt="Logo UAN" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uan.edu.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uan.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UAN</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Nayarit</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">N+ (2023):</strong>
+                                <span>Operativo de la Fiscalía en la Escuela de Ingeniería Pesquera (San Blas) investigando presuntas conductas de acoso e irregularidades.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UACJ -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uacj universidad autonoma de ciudad juarez chihuahua">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UACJ.png" alt="Logo UACJ" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uacj.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uacj.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACJ</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de Ciudad Juárez</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">El Diario / Excélsior (Mayo 2019):</strong>
+                                <span>Denuncia por agresión tumultuaria formulada por una docente contra cuatro profesores del Instituto de Ingeniería.</span>
+                            </div>
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Diario MX (Junio 2023):</strong>
+                                <span>Baja definitiva de docente-investigador por acoso sexual en el programa de literatura.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UCOL -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="ucol universidad de colima iuba">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UCOL.svg" alt="Logo UCOL" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://ucol.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>ucol.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UCOL</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Colima</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Proceso (Abril 2022):</strong>
+                                <span>Rescisión de contrato a docente del Instituto Universitario de Bellas Artes tras protestas y acumulado de 12 quejas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UACAM -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uacam universidad autonoma de campeche">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UACAM.webp" alt="Logo UACAM" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uacam.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uacam.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UACAM</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma de Campeche</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Proceso (Marzo 2020):</strong>
+                                <span>Instalación de tendederos en los campus 1, 3 y 5 por la colectiva "UAC sin acoso" exhibiendo personal académico y de servicio.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UABCS -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="uabcs universidad autonoma de baja california sur la paz">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UABCS.webp" alt="Logo UABCS" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://uabcs.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uabcs.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UABCS</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Autónoma de Baja California Sur</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">ZETA / Radio Fórmula (2022-2024):</strong>
+                                <span>Remoción y finiquito de profesores adscritos al Departamento de Humanidades tras protestas por acoso y discriminación.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UNACAR -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unacar universidad autonoma del carmen campeche">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UNACAR.png" alt="Logo UNACAR" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://unacar.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>unacar.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNACAR</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Autónoma del Carmen</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Proceso (Marzo 2020):</strong>
+                                <span>Colectiva "Las del Sur" colocó tendedero de denuncias frente a Rectoría; la administración ordenó retirarlo generando exhortos del Congreso Local.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UNICACH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat1" data-search="unicach universidad autonoma de ciencias y artes de chiapas tuxtla">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UNICACH.png" alt="Logo UNICACH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat1 font-subtitulo">Cat. 1: Autónoma</span>
+                                <a href="https://unicach.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>unicach.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNICACH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. de Ciencias y Artes de Chiapas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note">
+                                <strong class="block text-grisAntracita">Alerta Chiapas / El Sol del Soconusco (Mayo 2026):</strong>
+                                <span>Estudiantes de Biología denunciaron tocamientos sin consentimiento cometidos por un docente dentro de aulas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- CATEGORÍA 2: NO AUTÓNOMAS -->
+
+                <!-- IPN -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat2" data-search="ipn instituto politecnico nacional esime esca cecyt cdmx ley olimpia">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/IPN.jpg" alt="Logo IPN" class="max-h-full max-w-full object-contain" onerror="this.src='https://placehold.co/150x150?text=IPN';">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat2 font-subtitulo">Cat. 2: Federal</span>
+                                <a href="https://ipn.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>ipn.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">IPN</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Instituto Politécnico Nacional (Dependiente SEP)</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note uni-note-cat2">
+                                <strong class="block text-grisAntracita">Infobae (Octubre 2023):</strong>
+                                <span>Proceso judicial contra un estudiante de la ESCA Santo Tomás acusado de alterar y distribuir imágenes íntimas de compañeras mediante Inteligencia Artificial (Ley Olimpia).</span>
+                            </div>
+                            <div class="uni-note uni-note-cat2">
+                                <strong class="block text-grisAntracita">Excélsior (2020):</strong>
+                                <span>Movilizaciones y #IPNtendederos en planteles como ESIME Ticomán, CECyT 5 y 13.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UQROO -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat2" data-search="uqroo universidad de quintana roo chetumal cancun opd">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UQROO.jpg" alt="Logo UQROO" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat2 font-subtitulo">Cat. 2: Estatal Descentralizada</span>
+                                <a href="https://uqroo.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>uqroo.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UQROO</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad de Quintana Roo</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note uni-note-cat2">
+                                <strong class="block text-grisAntracita">Por Esto! (2024):</strong>
+                                <span>Rectoría confirmó la atención formal de 10 casos de presunto acoso sexual durante el ejercicio 2024.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- CATEGORÍA 3: TECNOLÓGICAS, INTERCULTURALES Y REGIONALES -->
+
+                <!-- UNICH -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="unich universidad intercultural de chiapas san cristobal">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UNICH.png" alt="Logo UNICH" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat3 font-subtitulo">Cat. 3: Intercultural</span>
+                                <a href="https://unich.edu.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>unich.edu.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UNICH</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Universidad Intercultural de Chiapas</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note uni-note-cat3">
+                                <strong class="block text-grisAntracita">Alerta Chiapas (Febrero 2026):</strong>
+                                <span>Señalamientos públicos contra autoridades universitarias por presunto encubrimiento a un exdocente denunciado por cuatro alumnas.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- ITSPR / TecNM Poza Rica -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="itspr tecnm tecnologico superior de poza rica veracruz">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/ITSPR Poza Rica.jpg" alt="Logo ITSPR" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat3 font-subtitulo">Cat. 3: Tecnológico</span>
+                                <a href="https://tecnm.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>tecnm.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">ITSPR Poza Rica</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Instituto Tecnológico Superior de Poza Rica</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note uni-note-cat3">
+                                <strong class="block text-grisAntracita">La Jornada Veracruz (2025):</strong>
+                                <span>Denuncia penal formal por acoso y abuso sexual contra un docente (Carpeta PZR/DVII/FEMUJ/F3/251/2025).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- TecNM GAM II -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="tecnm tecnologico nacional de mexico gustavo a madero cdmx">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/TecNM GAM II.jpg" alt="Logo TecNM" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat3 font-subtitulo">Cat. 3: Tecnológico</span>
+                                <a href="https://tecnm.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>tecnm.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">TecNM GAM II</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">TecNM Gustavo A. Madero II (CDMX)</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note uni-note-cat3">
+                                <strong class="block text-grisAntracita">N+ (Octubre 2023):</strong>
+                                <span>Denuncias de múltiples estudiantes señalando a un profesor del plantel por acoso y condicionamientos.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+                <!-- UBBJ Papantla -->
+                <div class="uni-card bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-category="cat3" data-search="ubbj universidad para el bienestar benito juarez garcia papantla veracruz cndh">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                            <div class="uni-logo-box">
+                                <img src="universidades_images/UBBJ Papantla.jpg" alt="Logo UBBJ" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="text-right">
+                                <span class="uni-badge uni-badge-cat3 font-subtitulo">Cat. 3: Sistema UBBJ</span>
+                                <a href="https://ubbj.gob.mx" target="_blank" rel="noopener noreferrer" class="uni-web-link text-xs text-azulOceano hover:underline block font-subtitulo"><svg aria-hidden="true" class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>ubbj.gob.mx</a>
+                            </div>
+                        </div>
+                        <h3 class="font-titulo1 text-2xl font-bold text-grisAntracita mb-1">UBBJ Papantla</h3>
+                        <p class="text-xs font-bold text-moradoMedio uppercase tracking-wider mb-4">Univ. Benito Juárez (Papantla, Ver.)</p>
+                        
+                        <div class="space-y-3 text-xs text-gray-700 mb-6 leading-relaxed">
+                            <div class="uni-note uni-note-cat3">
+                                <strong class="block text-grisAntracita">Recomendación CNDH (Septiembre 2025):</strong>
+                                <span>La CNDH emitió recomendación dirigida al sistema UBBJ por vulneración a derechos humanos y omisión ante denuncias de hostigamiento.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span aria-disabled="true" class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-fondoPagina border border-moradoMedio/20 text-grisAntracita/60 font-subtitulo font-bold text-xs rounded-lg cursor-not-allowed select-none">
+                        <span>Análisis no disponible aún</span>
+                    </span>
+                </div>
+
+            </div>
+
+    <!-- MENSAJE SI NO HAY RESULTADOS DE BÚSQUEDA -->
+    <div id="no-results" class="hidden text-center py-16 sello-asfalto rounded-xl border border-moradoMedio/20 mt-6">
+        <h3 class="font-titulo1 text-2xl text-grisAntracita font-bold mb-2">No se encontraron registros coincidentes</h3>
+        <p class="font-texto text-grisAntracita/80 text-base max-w-md mx-auto mb-6">
+            Intenta buscar por otro término o navega entre las categorías. Si deseas enviar información sobre tu universidad para evaluación, escríbenos por correo.
+        </p>
+        <a href="mailto:cosiendo.tus.alas@gmail.com?subject=Aportaci%C3%B3n%20de%20documentaci%C3%B3n%20-%20Observatorio" class="inline-flex items-center gap-2 bg-azulOceano text-white font-subtitulo font-bold uppercase tracking-wider px-6 py-3 rounded-lg text-xs hover:bg-moradoMedio transition">
+            <span>Enviar documentación por correo</span>
+        </a>
+    </div>
+
+    <!-- TESTIMONIOS Y DOCUMENTACIÓN (remitido a correo) -->
+    <div class="sello-asfalto p-8 sm:p-12 rounded-xl text-center border-t-4 border-t-verdeEsperanza my-14">
+        <h2 class="font-titulo1 text-3xl sm:text-4xl font-bold text-azulOceano mb-4">¿Te gustaría dejar un testimonio?</h2>
+        <p class="font-texto text-lg text-grisAntracita/90 max-w-2xl mx-auto leading-relaxed mb-8">
+            El Observatorio se alimenta de testimonios, expedientes de quejas, solicitudes de transparencia y análisis directo de asambleas estudiantiles. Envía tu testimonio o la documentación de tu campus de manera segura.
+        </p>
+        <a href="mailto:cosiendo.tus.alas@gmail.com?subject=Testimonio%20-%20Observatorio" class="btn-correo bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-8 py-4 rounded-lg hover:bg-moradoMedio transition shadow-sm">
+            <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span>Enviar testimonio a cosiendo.tus.alas@gmail.com</span>
+        </a>
+    </div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 py-10"><h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-2"><span class="subrayado-dorado">Cómo trabajamos</span></h2><p class="font-texto text-lg text-grisAntracita/70 mb-6">Método, criterios y mecanismos de corrección, publicados antes que los resultados.</p><div class="plegables"><details class="plegable" id="metodologia" style="--acento:#42c3d9"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Metodología</span><h3 class="plegable-titulo">Cómo medimos</h3><span class="plegable-bajada">Pregunta de investigación, fuentes, límites (sesgo de visibilidad mediática) y triangulación.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<h4>La pregunta</h4>
+<p>¿Qué distancia existe entre las obligaciones normativas que vinculan a una universidad, lo que su protocolo efectivamente prevé y lo que la evidencia pública muestra sobre su funcionamiento?</p>
+<p>La pregunta está formulada para admitir un resultado negativo. Si una institución resulta bien evaluada, eso también es un hallazgo, y publicarlo es lo que da credibilidad al resto.</p>
+<h4>Dos diagnósticos distintos</h4>
+<p>Separamos deliberadamente dos cosas que suelen mezclarse:</p>
+<ol>
+<li><strong>Incumplimiento normativo.</strong> Compara el texto del protocolo con las obligaciones que vinculan a la institución. Es documental y verificable línea por línea.</li>
+<li><strong>Indicios de inoperancia.</strong> Compara lo que el protocolo promete con lo que la evidencia pública sugiere que ocurre. Es indiciario, y lo tratamos como tal.</li>
+</ol>
+<h4>Fuentes</h4>
+<ul>
+<li><strong>Protocolos vigentes</strong>, en la versión pública, con fecha y enlace.</li>
+<li><strong>Hemerografía</strong> codificada por tipo de falla, etapa del procedimiento y respuesta institucional.</li>
+<li><strong>Solicitudes de acceso a la información</strong> sobre número de quejas, tiempos de resolución y medidas de protección otorgadas.</li>
+<li><strong>Datos estadísticos oficiales</strong> como referencia de contexto, no como medición de una institución concreta.</li>
+</ul>
+<h4>Límites que declaramos</h4>
+<h5>Sesgo de visibilidad mediática</h5>
+<p>Las noticias sobrerrepresentan a las universidades grandes, urbanas y con prensa o colectivas activas. <strong>Que no existan notas sobre una institución no significa que su protocolo funcione.</strong> Puede significar silencio, y el silencio no se evalúa como cumplimiento.</p>
+<h5>Lo no evaluado no es incumplimiento</h5>
+<p>Cuando no hemos podido revisar un indicador, se marca como no evaluado y no cuenta en contra. Si la cobertura de la matriz es insuficiente, la institución aparece como evaluación incompleta y no recibe calificación.</p>
+<h5>Evaluamos textos, no personas</h5>
+<p>El objeto es el diseño normativo y la respuesta institucional. No emitimos juicios sobre la responsabilidad de individuos.</p>
+<h4>Triangulación</h4>
+<p>Ningún hallazgo descansa en una sola fuente. Un indicio hemerográfico se contrasta contra el texto del protocolo y, cuando es posible, contra la respuesta oficial a una solicitud de información.</p>
+<h4>Versiones y correcciones</h4>
+<p>Cada ficha lleva fecha de revisión. Las correcciones se publican con constancia del cambio. El <a href="#replica">derecho de réplica</a> está abierto de forma permanente.</p>
+<h4>Relaciones con instituciones</h4>
+<p>Si una institución evaluada contrató trabajo con el proyecto, su ficha lo indica de forma visible y su actualización la revisa una persona o equipo ajeno a ese servicio. Ningún contrato cambia, retrasa ni retira una ficha. Las <a href="colabora.html#instituciones">reglas de separación</a> son públicas.</p>
+</div> <div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base mb-8" role="note">
+<span class="font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/30 text-grisAntracita px-2 py-0.5 rounded">Borrador</span>
+<p class="mt-2">Definir y publicar el universo exacto de la primera etapa, el periodo hemerográfico cubierto y el libro de códigos completo.</p>
+</div>
+</div></div></details><details class="plegable" id="matriz" style="--acento:#8e62b1"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Matriz</span><h3 class="plegable-titulo">Los diez indicadores</h3><span class="plegable-bajada">La vara de medir: cómo se evalúa cada indicador y con qué fundamento.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+<strong class="font-subtitulo text-azulOceano">Los fundamentos normativos son orientativos.</strong> Antes de publicar cualquier evaluación, cada uno debe verificarse artículo por artículo contra el texto vigente.
+            </div> <div class="contenido font-texto text-grisAntracita/90">
+<h4>Cómo se evalúa cada indicador</h4>
+<p>Cada indicador recibe uno de cuatro estados, siempre acompañado de la cita del artículo que lo respalda:</p>
+<ul>
+<li><strong>Cumple</strong>: el protocolo lo prevé de forma expresa.</li>
+<li><strong>Parcial</strong>: lo prevé con condiciones, vacíos o remisiones que lo debilitan.</li>
+<li><strong>No cumple</strong>: no lo prevé, o prevé lo contrario.</li>
+<li><strong>Sin evaluar</strong>: aún no se ha revisado. <strong>No cuenta como incumplimiento.</strong></li>
+</ul>
+<h4>Umbrales</h4>
+<p>PENDIENTE: fijar y justificar los porcentajes que separan cada nivel, y la cobertura mínima de la matriz por debajo de la cual una institución aparece como evaluación incompleta y no recibe calificación. Es una decisión metodológica y debe publicarse argumentada.</p>
+</div>
+</div><div class="plegable-bloque">
+<h4 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-8 text-center"><span class="subrayado-dorado">Los indicadores</span></h4> <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">1. Plazos definidos</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">Fija plazos concretos para cada etapa: recepción, medidas de protección, investigación y resolución.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGAMVLV · Belém do Pará</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">2. Medidas de protección inmediatas</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">Prevé medidas cautelares desde la denuncia, sin exigir prueba previa.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGAMVLV · CEDAW RG 36</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">3. Independencia de la instancia</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">Quien investiga y resuelve no depende jerárquicamente de la persona señalada ni de su unidad.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGES · Belém do Pará</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">4. Sin conciliación en violencia sexual</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">No impone ni promueve mediación entre la persona denunciante y la señalada.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGAMVLV · Belém do Pará</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">5. Valoración del testimonio</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">No exige coherencia perfecta ni evalúa la conducta previa o la vida sexual de quien denuncia.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> CEDAW RG 33 y 35 · Belém do Pará</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">6. Confidencialidad</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">Protege la identidad y los datos de quien denuncia durante y después del procedimiento.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGAMVLV · normativa de datos personales</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">7. Reparación y no repetición</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">Contempla medidas de reparación y garantías de no repetición, no solo la sanción.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGAMVLV · Ley General de Víctimas</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">8. Protección contra represalias</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">Prohíbe y sanciona expresamente las represalias académicas contra quien denuncia o testifica.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGES · CEDAW RG 35</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">9. Acompañamiento durante el proceso</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">Ofrece acompañamiento psicológico y orientación jurídica gratuitos.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> LGAMVLV · Ley General de Víctimas</p>
+</article>
+<article class="sello-asfalto p-6 rounded-xl">
+<h5 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">10. Protocolo público y con datos</h5>
+<p class="font-texto text-grisAntracita/80 mb-3">El protocolo es de fácil acceso y la institución publica estadísticas de casos.</p>
+<p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio"><span class="text-grisAntracita font-bold">Fundamento:</span> Ley de transparencia · LGES</p>
+</article>
+</div>
+</div></div></details><details class="plegable" id="informes" style="--acento:#fcc352"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Informes</span><h3 class="plegable-titulo">Informes de hallazgos</h3><span class="plegable-bajada">Reportes en PDF con ficha de cita. El primero, al cerrar la segunda fase.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base mb-8" role="note">
+<span class="font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/30 text-grisAntracita px-2 py-0.5 rounded">Borrador</span>
+<p class="mt-2">Esta sección se abrirá al cerrar la segunda fase del diagnóstico. No publicar la página con contenido de relleno: si no hay informes, es preferible decirlo.</p>
+</div> <div class="contenido font-texto text-grisAntracita/90">
+<h4>Qué se publicará aquí</h4>
+<p>Informes consolidados en PDF, cada uno con fecha, versión y ficha de cita académica. La <a href="#metodologia">metodología</a> y los <a href="#datos">datos</a> que los sustentan estarán siempre accesibles desde el propio informe.</p>
+<h4>Cómo citarnos</h4>
+<p>EDITAR: definir el formato de cita sugerido una vez exista el primer informe. Si se tramita ISBN o DOI, indicarlo aquí.</p>
+</div>
+</div></div></details><details class="plegable" id="datos" style="--acento:#53a0cc"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Datos abiertos</span><h3 class="plegable-titulo">Las bases en bruto</h3><span class="plegable-bajada">Para uso académico, periodístico o de investigación independiente. Se abrirán con el primer informe.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base mb-8" role="note">
+<span class="font-subtitulo text-[10px] uppercase tracking-widest bg-doradoSuave/30 text-grisAntracita px-2 py-0.5 rounded">Borrador</span>
+<p class="mt-2">Los datos se abrirán junto con el primer informe. Antes de publicarlos, revisar que ningún registro permita identificar a personas.</p>
+</div> <div class="contenido font-texto text-grisAntracita/90">
+<h4>Qué se publicará</h4>
+<ul>
+<li>La base de evaluación por institución e indicador, en formato CSV.</li>
+<li>El libro de códigos: qué significa cada campo y cada valor posible.</li>
+<li>El registro hemerográfico codificado, sin datos que identifiquen a personas.</li>
+</ul>
+<h4>Condiciones de uso</h4>
+<p>EDITAR: definir la licencia. Una licencia abierta con atribución es coherente con el proyecto y facilita que otras personas repliquen el análisis.</p>
+<h4>Advertencia de lectura</h4>
+<p>Los registros marcados como no evaluados indican ausencia de revisión, no incumplimiento. Cualquier análisis que los trate como ceros distorsiona los resultados.</p>
+</div>
+</div></div></details><details class="plegable" id="replica" style="--acento:#653a82"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Réplica</span><h3 class="plegable-titulo">Derecho de réplica</h3><span class="plegable-bajada">Para que las instituciones aludidas respondan, aporten evidencia o pidan fe de erratas.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Toda institución mencionada en el Observatorio puede responder. La réplica se publica junto a la ficha, sin edición de su contenido.</p>
+<h4>Qué puedes pedir</h4>
+<ul>
+<li><strong>Publicación de réplica.</strong> Tu respuesta se publica íntegra en la ficha correspondiente.</li>
+<li><strong>Fe de erratas.</strong> Si un dato es incorrecto, lo corregimos y dejamos constancia de la fecha y del cambio.</li>
+<li><strong>Actualización.</strong> Si el protocolo cambió después de nuestra revisión, evaluamos la versión nueva.</li>
+</ul>
+<h4>Cómo</h4>
+<ol>
+<li>Escribe a <a href="mailto:cosiendo.tus.alas@gmail.com">cosiendo.tus.alas@gmail.com</a> con el asunto «Réplica» y el nombre de la institución.</li>
+<li>Indica con precisión qué afirmación observas y acompaña la evidencia documental.</li>
+<li>Señala si autorizas la publicación íntegra de tu escrito.</li>
+</ol>
+<h4>Qué hacemos con tu escrito</h4>
+<p>EDITAR: fijar y declarar el plazo de respuesta. Un compromiso público de días hábiles es más creíble que una fórmula vaga.</p>
+<ul>
+<li>Si la observación procede, corregimos y lo hacemos constar.</li>
+<li>Si no procede, publicamos igualmente tu réplica junto con nuestra respuesta.</li>
+<li>En ningún caso retiramos una ficha sin dejar registro de que existió.</li>
+</ul>
+<h4>Lo que este mecanismo no es</h4>
+<p>No es una vía para solicitar la retirada de información documentada ni para condicionar la publicación de hallazgos. Es un mecanismo de contradicción, no de veto.</p>
+<p>Tampoco es una consultoría, y es gratuito. Contratar trabajo con el proyecto no modifica una ficha: ver las <a href="colabora.html#instituciones">reglas de separación</a>.</p>
+</div>
+</div></div></details></div></section>
+</main>
+<footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4">
+<div class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10" role="note">
+<p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a class="underline text-doradoSuave hover:text-white" href="directorio.html">Consulta el directorio de atención inmediata</a>.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+<div class="md:col-span-2">
+<h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+<p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+<div class="flex gap-3">
+<a aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.facebook.com/share/16oUTUZ9zC/" rel="noopener noreferrer" target="_blank">f</a>
+<a aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.instagram.com/cosiendo.tus.alas/" rel="noopener noreferrer" target="_blank">ig</a>
+<a aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.tiktok.com/@cosiendoalas.mx" rel="noopener noreferrer" target="_blank">tt</a>
+<a aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.youtube.com/@cosiendoalasmx" rel="noopener noreferrer" target="_blank">yt</a>
+</div>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#principios">Qué hacemos y qué no</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#transparencia">Transparencia y financiamiento</a></li>
+<li><a class="hover:text-doradoSuave transition" href="voces.html">Voces</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html">Colabora</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="legal.html#privacidad">Aviso de privacidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#terminos">Términos de uso</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#accesibilidad">Accesibilidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="observatorio.html#replica">Derecho de réplica</a></li>
+</ul>
+</div>
+</div>
+<div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                © 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+</div>
+</footer>
+
+<script>
+    const searchInput = document.getElementById('uni-search');
+    const clearBtn = document.getElementById('clear-search');
+    const uniCards = document.querySelectorAll('.uni-card');
+    const noResults = document.getElementById('no-results');
+    const visibleCountEl = document.getElementById('visible-count');
+
+    let activeCategory = 'all';
+
+    // Función para ignorar acentos en el buscador
+    const normalizeStr = s => (s || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+    function updateCounters() {
+        let total = uniCards.length;
+        let cat1 = 0, cat2 = 0, cat3 = 0;
+
+        uniCards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            if (cat === 'cat1') cat1++;
+            if (cat === 'cat2') cat2++;
+            if (cat === 'cat3') cat3++;
+        });
+
+        document.getElementById('count-all').textContent = total;
+        document.getElementById('count-cat1').textContent = cat1;
+        document.getElementById('count-cat2').textContent = cat2;
+        document.getElementById('count-cat3').textContent = cat3;
+    }
+
+    function filterGrid() {
+        const query = normalizeStr(searchInput.value.trim());
+        let visibleCount = 0;
+
+        if (query.length > 0) {
+            clearBtn.classList.remove('hidden');
+        } else {
+            clearBtn.classList.add('hidden');
+        }
+
+        uniCards.forEach(card => {
+            const searchData = normalizeStr(card.getAttribute('data-search') + ' ' + card.textContent);
+            const cardCategory = card.getAttribute('data-category');
+
+            const matchesQuery = query === '' || searchData.includes(query);
+            const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
+
+            if (matchesQuery && matchesCategory) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        visibleCountEl.textContent = visibleCount;
+
+        if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+        } else {
+            noResults.classList.add('hidden');
+        }
+    }
+
+    function filterCat(cat, btnElement) {
+        activeCategory = cat;
+        
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active', 'bg-azulOceano', 'text-white', 'border-azulOceano');
+            btn.classList.add('bg-white', 'text-grisAntracita', 'border-moradoMedio/30');
+            btn.setAttribute('aria-pressed', 'false');
+        });
+
+        btnElement.classList.remove('bg-white', 'text-grisAntracita', 'border-moradoMedio/30');
+        btnElement.classList.add('active', 'bg-azulOceano', 'text-white', 'border-azulOceano');
+        btnElement.setAttribute('aria-pressed', 'true');
+
+        filterGrid();
+    }
+
+    searchInput.addEventListener('input', filterGrid);
+
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        filterGrid();
+        searchInput.focus();
+    });
+
+    // Inicialización
+    updateCounters();
+    filterGrid();
+</script>
+<script>
+    // Aviso emergente: se muestra una vez por sesión del navegador
+    (function () {
+        const aviso = document.getElementById('aviso-observatorio');
+        const cerrar = document.getElementById('aviso-cerrar');
+        if (!aviso || typeof aviso.showModal !== 'function') return;
+
+        let yaVisto = false;
+        try { yaVisto = sessionStorage.getItem('avisoObservatorioVisto') === '1'; } catch (e) {}
+        if (yaVisto) return;
+
+        aviso.showModal();
+        cerrar.focus();
+
+        const marcarVisto = () => {
+            try { sessionStorage.setItem('avisoObservatorioVisto', '1'); } catch (e) {}
+        };
+        cerrar.addEventListener('click', () => aviso.close());
+        aviso.addEventListener('close', marcarVisto);
+        // Cerrar al hacer clic fuera del recuadro
+        aviso.addEventListener('click', (e) => { if (e.target === aviso) aviso.close(); });
+    })();
+</script>
+<script src="sitio.js"></script>
+</body>
+</html>

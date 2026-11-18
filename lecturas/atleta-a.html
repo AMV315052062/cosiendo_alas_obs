@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Atleta A (2020) · Reseña | Cosiendo Alas</title>
+    <meta name="description" content="Reseña del documental Atleta A (2020) por Karen Socorro. Un análisis sobre el encubrimiento institucional, la cultura del abuso en el deporte y el poder del periodismo.">
+    <!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Atleta A (2020) · Reseña | Cosiendo Alas">
+    <meta property="og:description" content="Reseña del documental Atleta A (2020) por Karen Socorro. Un análisis sobre el encubrimiento institucional, la cultura del abuso en el deporte y el poder del periodismo.">
+    <meta property="og:image" content="https://cosiendoalas.mx/og.png">
+    <link rel="icon" href="../home.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <a href="#contenido-principal" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold">Saltar al contenido</a>
+
+    <!-- SALIDA RÁPIDA -->
+    <button type="button" id="salida-rapida" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" aria-label="Salida rápida: te lleva a otra página de inmediato">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+        <span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+    </button>
+
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-4">
+                <a href="../index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img src="../home.svg" alt="" class="h-10 w-10 object-contain">
+                    <span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+                </a>
+                <nav class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita" aria-label="Principal">
+                    <a href="../posicion.html" class="hover:text-doradoSuave transition">Posición</a>
+                    <a href="../demasiado-karen.html" class="hover:text-doradoSuave transition">Demasiado Karen</a>
+                    <a href="../contra-archivo.html" aria-current="page" class="text-verdeEsperanza border-b-2 border-verdeEsperanza pb-1">Contra-archivo</a>
+                    <a href="../observatorio.html" class="hover:text-doradoSuave transition">Observatorio</a>
+                    <a href="../orientacion.html" class="hover:text-doradoSuave transition">Orientación</a>
+                    <a href="../colabora.html" class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition">Colabora</a>
+                </nav>
+                <div class="lg:hidden flex items-center">
+                    <button type="button" id="menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu" class="text-grisAntracita hover:text-azulOceano">
+                        <svg class="h-8 w-8" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-moradoMedio/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+                <a href="../posicion.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Posición</a>
+                    <a href="../demasiado-karen.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Demasiado Karen</a>
+                    <a href="../contra-archivo.html" aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-verdeEsperanza bg-fondoPagina">Contra-archivo</a>
+                    <a href="../observatorio.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Observatorio</a>
+                    <a href="../orientacion.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Orientación</a>
+                    <a href="../colabora.html" class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano">Colabora</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow" id="contenido-principal" tabindex="-1">
+        <div class="bg-grisAntracita border-b border-moradoMedio/30">
+            <div class="max-w-7xl mx-auto px-4 py-3">
+                <nav class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave" aria-label="Ruta de navegación">
+                    <ol class="flex flex-wrap gap-2">
+                        <li><a href="../index.html" class="hover:text-white transition">Inicio</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li><a href="../contra-archivo.html" class="hover:text-white transition">Contra-archivo</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li><a href="../contra-archivo.html#lecturas" class="hover:text-white transition">Lecturas</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li class="text-white font-bold" aria-current="page">Atleta A</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3 uppercase">
+                    <span class="h-px w-8 bg-doradoSuave inline-block" aria-hidden="true"></span>
+                    Cine y literatura · Documental
+                </p>
+                <h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">Atleta A <em class="text-doradoSuave italic font-normal">(2020)</em></h1>
+                <p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">Una visión desgarradora pero esencial que arroja luz implacable sobre el abuso y el sistema que lo protegió.</p>
+                <p class="font-subtitulo text-xs uppercase tracking-widest text-white/80 mt-6">Por Karen Socorro · 6 min de lectura</p>
+            </div>
+            <div class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl" aria-hidden="true"></div>
+            <div class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl" aria-hidden="true"></div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-4 py-12">
+            <div role="note" class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base mb-10 max-w-3xl">
+                <strong class="font-subtitulo text-azulOceano">Advertencia de contenido.</strong>
+                Esta reseña aborda violencia sexual. Si necesitas parar, el botón rojo de salida rápida te lleva a otra página de inmediato.
+            </div>
+            <div class="grid lg:grid-cols-[16rem_1fr] gap-10 lg:gap-14 items-start">
+                <aside class="lg:sticky lg:top-28 space-y-6">
+                    <img src="img/atleta-a.jpg" alt="Póster de Atleta A" width="320" class="w-48 sm:w-56 mx-auto rounded-xl shadow-lg border border-lavandaSuave/40" loading="lazy">
+                    <dl class="bg-white rounded-xl border border-lavandaSuave/40 p-5 font-texto text-sm text-grisAntracita/90">
+                        <p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio font-bold mb-2">Ficha</p>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Directores</dt><dd class="text-right">Bonni Cohen, Jon Shenk</dd></div>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Año</dt><dd class="text-right">2020</dd></div>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Protagonistas</dt><dd class="text-right">Maggie Nichols, Equipo IndyStar</dd></div>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Género</dt><dd class="text-right">Documental / Periodismo</dd></div>
+                    </dl>
+                    <ul class="flex flex-wrap gap-2" aria-label="Temas">
+                        <li class="px-3 py-1 rounded-full bg-lavandaSuave/30 text-azulOceano text-xs font-subtitulo font-bold uppercase tracking-wider">Violencia Institucional</li>
+                        <li class="px-3 py-1 rounded-full bg-lavandaSuave/30 text-azulOceano text-xs font-subtitulo font-bold uppercase tracking-wider">Periodismo</li>
+                        <li class="px-3 py-1 rounded-full bg-lavandaSuave/30 text-azulOceano text-xs font-subtitulo font-bold uppercase tracking-wider">Abuso Deportivo</li>
+                    </ul>
+                </aside>
+                <article class="min-w-0">
+                    <div class="contenido font-texto text-grisAntracita/90">
+                <p class="text-xl"><em>Atleta A</em> (<em>Athlete A</em>, 2020), dirigido por Bonni Cohen y Jon Shenk, es un documental en formato tradicional que narra la problemática de violencia sexual dentro del ecosistema de la gimnasia artística olímpica en Estados Unidos. Cuenta con un índice de aprobación del 100% en Rotten Tomatoes, cuyo consenso lo describe como "visión desgarradora pero esencial que arroja una luz implacable sobre los abusos horribles, así como la cultura que les permitió continuar sin cesar durante años".</p>
+                <p>Muestra el caso que comenzó la investigación periodística minuciosa contra Larry Nassar, médico de las atletas durante 29 años, quien fue acusado de conducta sexual inapropiada por parte de una menor de edad. El título del documental proviene de Maggie Nichols, identificada en los documentos judiciales como "Atleta A": una gimnasta que era considerada una estrella en ascenso y estaba en camino a los Juegos Olímpicos cuando sus sueños se derrumbaron después de reportar el abuso de Nassar en 2015.</p>
+                <p>Conforme avanza el caso, además de mostrar las repercusiones en la víctima Maggie, se adentra en la avalancha de acusaciones que comienzan a salir a la luz a raíz de la chispa que encendió con sus palabras. Para cuando Nassar fue a juicio, 125 mujeres habían aceptado comparecer en la corte para presentar sus testimonios de impacto.</p>
+                <h2>El contexto: la Guerra Fría y el modelo Károlyi</h2>
+                <p>Es interesante porque se adentra en el contexto social y político de EE. UU. que llevó a la gimnasia a ser lo que es. Entre tensiones con la URSS durante la Guerra Fría y el desenvolvimiento de la gimnasia como producto comercial para las marcas y producto cultural para el Estado y el nacionalismo. El documental traza la disfunción hasta Béla y Márta Károlyi, quienes habían alcanzado la fama con el triunfo de su gimnasta rumana de 14 años, Nadia Comăneci.</p>
+                <p>Los Károlyi salieron de la Rumania de Ceaușescu y trajeron a Estados Unidos un modelo de entrenamiento con una severidad que rayaba en la crueldad. El campamento en Texas parecía idílico, pero ningún padre tenía permitido poner un pie ahí — lo cual debería haber sido una señal de alarma. Adentro, los Károlyi atormentaban a las gimnastas adolescentes sobre su peso, las llamaban perezosas, las trataban como máquinas que debían empujarse al límite y más allá. Esa información contextual no es accesoria: <strong>es la arquitectura que hizo posible a Nassar.</strong></p>
+                <h2>La fachada de la confianza</h2>
+                <p>Dentro de esa fortaleza militar de entrenamiento, Nassar era, según el documental, la única figura de autoridad amigable para las niñas — un tipo amable y torpe que a veces les pasaba comida y dulces a escondidas. Nunca les daba amenazas explícitas. Siempre mantuvo la ficción de que era su amigo. Y ahí radica lo más perturbador: el abuso no se ejerció desde la intimidación sino desde la confianza.</p>
+                <blockquote class="pull-quote my-10">"El error es pensar que nadie habló antes. Durante casi 20 años, las víctimas se acercaron a sus padres, a la policía, a sus entrenadores y a los líderes de las organizaciones donde entrenaban. Nadie les creyó. Nadie las escuchó. Esa ha sido nuestra cultura: silenciamos, minimizamos e investigamos a las sobrevivientes, no a los agresores."<br/>
+— Productora del documental.</blockquote>
+                <h2>Violencia estructural y encubrimiento institucional</h2>
+                <p>En este sentido, lo valioso del documental radica en la visibilización de una estructura violenta que alienta y permite la sexualización de niñas y adolescentes gimnastas. Si bien se enfoca en el caso de Nassar, tampoco lo muestra como un chivo expiatorio aislado, sino que señala que la violencia que este hombre ejerció fue posible debido a una serie de condiciones y personas que permitieron y escondieron estas conductas.</p>
+                <p>Lo más importante para los realizadores fue que la película no fuera simplemente una pieza sensacionalista, sino que contara esa historia con claridad y la vinculara con la cultura más amplia de abuso. La analogía que el documental construye es directa: el encubrimiento de los crímenes de Nassar fue análogo a los escándalos de abuso sexual de la Iglesia Católica — la protección sistemática de abusadores por parte de una organización de extraordinario poder.</p>
+                <p>Y un detalle que revela el funcionamiento de la maquinaria institucional: cuando la madre de Maggie alertó a un oficial de USA Gymnastics, la noticia llegó a Steve Penny, el CEO de la organización, quien estaba legalmente obligado a alertar a las autoridades. En vez de eso, contrató a una firma externa para conducir una investigación privada. Penny estaba protegiendo a Nassar, pero lo que realmente protegía era la marca de USA Gymnastics, que generaba 12 millones de dólares al año.</p>
+                <h2>El papel del periodismo y las secuelas invisibles</h2>
+                <p>El papel del periodismo de investigación es central en la narrativa. Los reporteros del <em>Indianapolis Star</em> son presentados no como héroes abstractos sino como profesionales meticulosos que conectaron puntos durante meses. El documental muestra cómo periodistas, investigadores y abogados pueden convertirse en aliados, exponiendo y procesando a los perpetradores a pesar de las potenciales amenazas a su seguridad.</p>
+                <p>El documental también señala que, para muchas de estas gimnastas, el abuso de Nassar fue su primera experiencia con actos sexuales, y expone cómo ese tipo de abuso puede dañar la capacidad de disfrutar la sexualidad con sus parejas en el futuro. Ese apunte — mencionado brevemente por un abogado en el documental — es una de las dimensiones menos discutidas de la violencia sexual infantil y merece ser subrayado.</p>
+                <h2>Lo que falta: el camino de la denuncia y la prevención</h2>
+                <div role="note" class="sello-asfalto border-l-4 border-doradoSuave p-6 rounded-r-xl"><p><strong>Advertencia:</strong> Considero que este documental puede ser especialmente difícil para mujeres que fueron agredidas en el ámbito deportivo, por lo que no recomiendo verlo en un momento de crisis.</p></div>
+                <p>Sin embargo, considero que es necesario, puesto que muestra que la mejor resistencia es la palabra y, tomando prestada una consigna feminista, hacer que el miedo cambie de bando. Pues <strong>la vergüenza debe corresponder al agresor y nunca a las víctimas.</strong> Lo que resulta llamativo del tono del documental es su calidez redentora. Aunque los detalles son escalofriantes, es como si se hubiera abierto un espacio catártico para estas jóvenes y sus familias para explicar lo que vivieron.</p>
+                <p>Al enfocarse en el caso en general, no muestra el proceso de denuncia de las víctimas además del apoyo por parte de los medios. Si bien no era la intención y el documental cumple con sus objetivos, es importante para las expectativas como espectadoras, pues puede generar cierta sensibilidad si se está en un proceso penal.</p>
+                <div role="note" class="sello-asfalto border-l-4 border-verdeEsperanza p-6 rounded-r-xl"><span class="font-subtitulo text-[10px] uppercase tracking-widest text-azulOceano font-bold">Recomendación</span><p class="mt-2 font-semibold italic text-azulOceano">Una crítica válida es que el documental mantiene un foco que es todavía demasiado estrecho: nunca aborda ni informa a la audiencia sobre qué se puede hacer para asegurar que las organizaciones que trabajan con jóvenes protejan a los niños.</p></div>
+                <p>Es una observación importante: el documental es extraordinario en lo que muestra, pero lo que no muestra — las herramientas concretas de prevención, los mecanismos de denuncia accesibles, el acompañamiento posterior — es precisamente el espacio que organizaciones como Cosiendo Alas pueden y deben llenar.</p>
+                    </div>
+                    <div class="divisor-linea" aria-hidden="true"><i>&#9670;</i></div>
+                    <p class="font-subtitulo text-sm uppercase tracking-widest text-moradoMedio">Reseña de Karen Socorro · Publicada originalmente en el Botiquín Cultural</p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-between items-center">
+                        <a href="../contra-archivo.html#lecturas" class="font-subtitulo font-bold text-sm uppercase tracking-widest text-azulOceano hover:text-verdeEsperanza transition"><span aria-hidden="true">&larr;</span> Todas las lecturas</a>
+                        <a href="../voces.html#compartir" class="inline-block bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-6 py-3 rounded-lg hover:bg-moradoMedio transition">Compartir tu propio texto</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div role="note" class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10">
+                <p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a href="../directorio.html" class="underline text-doradoSuave hover:text-white">Consulta el directorio de atención inmediata</a>.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+                <div class="md:col-span-2">
+                    <h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+                    <p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">f</a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">ig</a>
+                        <a href="https://www.tiktok.com/@cosiendoalas.mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">tt</a>
+                        <a href="https://www.youtube.com/@cosiendoalasmx" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">yt</a>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+                    <ul class="space-y-2">
+                        <li><a href="../posicion.html" class="hover:text-doradoSuave transition">Posición</a></li>
+                        <li><a href="../posicion.html#principios" class="hover:text-doradoSuave transition">Qué hacemos y qué no</a></li>
+                        <li><a href="../posicion.html#transparencia" class="hover:text-doradoSuave transition">Transparencia y financiamiento</a></li>
+                        <li><a href="../voces.html" class="hover:text-doradoSuave transition">Voces</a></li>
+                        <li><a href="../colabora.html" class="hover:text-doradoSuave transition">Colabora</a></li>
+                        <li><a href="../colabora.html#contacto" class="hover:text-doradoSuave transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+                    <ul class="space-y-2">
+                        <li><a href="../legal.html#privacidad" class="hover:text-doradoSuave transition">Aviso de privacidad</a></li>
+                        <li><a href="../legal.html#terminos" class="hover:text-doradoSuave transition">Términos de uso</a></li>
+                        <li><a href="../legal.html#accesibilidad" class="hover:text-doradoSuave transition">Accesibilidad</a></li>
+                        <li><a href="../observatorio.html#replica" class="hover:text-doradoSuave transition">Derecho de réplica</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                &copy; 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../sitio.js"></script>
+</body>
+</html>

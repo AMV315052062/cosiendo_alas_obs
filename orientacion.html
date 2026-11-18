@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="no-referrer" name="referrer"/>
+<title>Orientación | Cosiendo Alas</title>
+<meta content="Qué derechos te asisten, cómo ejercerlos y cómo defenderte. Rutas según lo que necesitas que pase." name="description"/>
+<!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+<meta content="website" property="og:type"/>
+<meta content="Orientación | Cosiendo Alas" property="og:title"/>
+<meta content="Qué derechos te asisten, cómo ejercerlos y cómo defenderte. Rutas según lo que necesitas que pase." property="og:description"/>
+<meta content="https://cosiendoalas.mx/og.png" property="og:image"/>
+<link href="home.svg" rel="icon" type="image/svg+xml"/>
+<link href="estilos.css" rel="stylesheet"/>
+<style>
+    /* Recursos descargables (independiente de CDN) */
+    .recursos-caja {
+        background-color: #ffffff;
+        border: 1px solid rgba(142, 98, 177, 0.25);
+        border-top: 4px solid #fcc352;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+    }
+    .recursos-encabezado {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    .recursos-titulo { font-size: 1.5rem; font-weight: 700; color: #2b1045; margin: 0.25rem 0 0.35rem; line-height: 1.2; }
+    .recursos-intro { margin: 0; color: rgba(43, 16, 69, 0.75); max-width: 36rem; }
+    .recursos-lista {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        gap: 0.75rem;
+    }
+    .recursos-item {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+        padding: 0.9rem 1rem;
+        border-radius: 0.5rem;
+        background-color: #f8f6fb;
+    }
+    .recursos-item svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; margin-top: 0.15rem; color: #653a82; }
+    .recursos-nombre { display: block; font-weight: 700; color: #2b1045; line-height: 1.3; }
+    .recursos-desc { display: block; font-size: 0.9rem; color: rgba(43, 16, 69, 0.75); line-height: 1.45; margin-top: 0.2rem; }
+    .recursos-desc a { color: #653a82; text-decoration: underline; }
+    .recursos-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        max-width: 100%;
+        text-align: center;
+        background-color: #653a82;
+        color: #ffffff;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.8rem 1.25rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+    .recursos-btn:hover { background-color: #2b1045; }
+    .recursos-btn svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+    .recursos-nota { font-size: 0.85rem; color: rgba(43, 16, 69, 0.65); margin: 1rem 0 0; }
+</style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold" href="#contenido-principal">Saltar al contenido</a>
+<!-- SALIDA RÁPIDA -->
+<button aria-label="Salida rápida: te lleva a otra página de inmediato" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" id="salida-rapida" type="button">
+<svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+</button>
+<header class="bg-white shadow-sm sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20 gap-4">
+<a class="flex-shrink-0 flex items-center gap-3" href="index.html">
+<img alt="" class="h-10 w-10 object-contain" src="home.svg"/>
+<span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+</a>
+<nav aria-label="Principal" class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita">
+<a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a>
+<a class="hover:text-doradoSuave transition" href="demasiado-karen.html">Demasiado Karen</a>
+<a class="hover:text-doradoSuave transition" href="contra-archivo.html">Contra-archivo</a>
+<a class="hover:text-doradoSuave transition" href="observatorio.html">Observatorio</a>
+<a aria-current="page" class="text-verdeEsperanza border-b-2 border-verdeEsperanza pb-1" href="orientacion.html">Orientación</a>
+<a class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition" href="colabora.html">Colabora</a>
+</nav>
+<div class="lg:hidden flex items-center">
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación" class="text-grisAntracita hover:text-azulOceano" id="menu-btn" type="button">
+<svg aria-hidden="true" class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:hidden bg-white border-t border-moradoMedio/20" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="posicion.html">Posición</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="demasiado-karen.html">Demasiado Karen</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="contra-archivo.html">Contra-archivo</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina" href="observatorio.html">Observatorio</a>
+<a aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-verdeEsperanza bg-fondoPagina" href="orientacion.html">Orientación</a>
+<a class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano" href="colabora.html">Colabora</a>
+</div>
+</div>
+</header>
+<main class="flex-grow" id="contenido-principal" tabindex="-1">
+<div class="bg-grisAntracita border-b border-moradoMedio/30">
+<div class="max-w-7xl mx-auto px-4 py-3">
+<nav aria-label="Ruta de navegación" class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave">
+<ol class="flex flex-wrap gap-2">
+<li><a class="hover:text-white transition" href="index.html">Inicio</a></li>
+<li><span aria-hidden="true" class="text-moradoMedio">›</span></li>
+<li aria-current="page" class="text-white font-bold">Orientación</li>
+</ol>
+</nav>
+</div>
+</div>
+<section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+<div class="max-w-4xl mx-auto relative z-10">
+<p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3">
+<span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>
+                    Orientación
+                </p>
+<h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">¿Qué necesitas<br/><em class="text-doradoSuave italic font-normal">que pase?</em></h1>
+<p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">Orientamos sobre derechos: no sustituimos tu decisión ni llevamos tu caso. Elige por dónde empezar.</p>
+</div>
+<div aria-hidden="true" class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl"></div>
+<div aria-hidden="true" class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl"></div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 pt-12 pb-4">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Antes de preguntarte si vas a denunciar, la pregunta útil es otra: <strong>¿qué necesitas que pase?</strong></p>
+<p>La sentencia penal es solo una de varias respuestas posibles, y con frecuencia no es la más urgente. Cada objetivo tiene una ruta distinta, con tiempos y probabilidades distintas. Aquí están separadas para que elijas con información.</p>
+</div>
+</section><section aria-label="Lo urgente primero" class="max-w-4xl mx-auto px-4 pb-4"><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><a class="block sello-asfalto border-l-4 border-l-doradoSuave rounded-r-xl p-5 hover:shadow-lg transition group" href="directorio.html"><span class="font-subtitulo text-[10px] uppercase tracking-widest text-moradoMedio">Si es urgente</span><strong class="block font-titulo1 text-xl text-azulOceano mt-1 mb-1">¿Estás en riesgo ahora mismo?</strong><span class="font-texto text-grisAntracita/80">No esperes respuesta nuestra: el directorio tiene a quién llamar hoy. <span class="font-subtitulo font-bold text-sm text-azulOceano group-hover:text-verdeEsperanza whitespace-nowrap">Ir al directorio →</span></span></a><a class="block sello-asfalto border-l-4 border-l-verdeEsperanza rounded-r-xl p-5 hover:shadow-lg transition group" href="#evidencia"><span class="font-subtitulo text-[10px] uppercase tracking-widest text-moradoMedio">Antes que nada</span><strong class="block font-titulo1 text-xl text-azulOceano mt-1 mb-1">¿Algo puede perderse?</strong><span class="font-texto text-grisAntracita/80">Si hay contenido circulando o mensajes que pueden borrarse, documéntalo primero. <span class="font-subtitulo font-bold text-sm text-azulOceano group-hover:text-verdeEsperanza whitespace-nowrap">Cómo hacerlo →</span></span></a></div><p class="font-texto text-sm text-grisAntracita/70 mt-5"><strong class="font-subtitulo text-azulOceano">Orientación general, no asesoría sobre tu caso.</strong> Las reglas cambian según la entidad y la fecha. Antes de actuar, verifica con una persona abogada o <a class="underline" href="#solicitar">escríbenos</a>.</p></section>
+
+<!-- RECURSOS DESCARGABLES -->
+<section aria-labelledby="recursos-titulo" class="max-w-4xl mx-auto px-4 pt-6 pb-4" id="recursos">
+<div class="recursos-caja">
+<div class="recursos-encabezado">
+<div>
+<span class="font-subtitulo text-[10px] uppercase tracking-widest text-moradoMedio">Recursos</span>
+<h2 class="recursos-titulo font-titulo1" id="recursos-titulo">Materiales para descargar</h2>
+<p class="recursos-intro font-texto">Si prefieres tener la información a la mano o imprimirla, reunimos cuatro documentos en una carpeta. Puedes empezar por aquí o volver cuando los necesites.</p>
+</div>
+<a class="recursos-btn font-subtitulo" href="https://drive.google.com/drive/folders/1m_WMFcuqUdFH-f8ELMZ4FSOjWQa52_GQ?usp=sharing" rel="noopener noreferrer" target="_blank">Abrir la carpeta<svg aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+</div>
+<ul class="recursos-lista font-texto">
+<li class="recursos-item"><svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg><span><span class="recursos-nombre">Orientación jurídica</span><span class="recursos-desc">Las rutas y los derechos de esta página, en un documento para consultar sin conexión.</span></span></li>
+<li class="recursos-item"><svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg><span><span class="recursos-nombre">Diccionario elemental penal</span><span class="recursos-desc">Los términos que vas a escuchar en la fiscalía y en el juzgado, explicados en lenguaje claro.</span></span></li>
+<li class="recursos-item"><svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg><span><span class="recursos-nombre">Primeros auxilios. Guía práctica de acompañamiento</span><span class="recursos-desc">Para quien acompaña a alguien. Ver también <a href="#acompanantes">si acompañas a alguien</a>.</span></span></li>
+<li class="recursos-item"><svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg><span><span class="recursos-nombre">Registro de hechos</span><span class="recursos-desc">Una bitácora para anotar cada hecho con fecha, testigos y evidencia. Ver <a href="#evidencia">preservar evidencia</a>.</span></span></li>
+</ul>
+<p class="recursos-nota font-texto">Los documentos se abren en Google Drive. Si los descargas, guárdalos en un lugar al que solo tú tengas acceso.</p>
+</div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 py-10"><h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-2"><span class="subrayado-dorado">Según lo que necesitas</span></h2><p class="font-texto text-lg text-grisAntracita/70 mb-6">Cada objetivo tiene su ruta, con tiempos y probabilidades distintas. Abre la que te sirva: pueden seguirse varias a la vez.</p><div class="plegables"><details class="plegable" id="retiro-contenido" style="--acento:#42c3d9"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Ruta</span><h3 class="plegable-titulo">Que el contenido desaparezca</h3><span class="plegable-bajada">Imágenes o videos íntimos difundidos sin tu consentimiento.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+ <div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Cuando circulan imágenes o videos íntimos sin tu consentimiento, lo más urgente casi nunca es la condena penal: es que el contenido deje de estar accesible.</p>
+<p>Son dos caminos que corren en paralelo y conviene no confundirlos. Uno puede funcionar aunque el otro se estanque.</p>
+<h4>1. Documentar antes de que desaparezca</h4>
+<p>Parece contradictorio, pero antes de pedir que se borre hay que conservar prueba de que existió. Revisa <a href="#evidencia">cómo preservar evidencia</a>: capturas con dirección visible, fecha y perfil, y respaldo en más de un lugar. Sin esto, si el contenido desaparece, desaparece también la prueba.</p>
+<h4>2. Reportar a la plataforma</h4>
+<p>Las plataformas tienen mecanismos propios para contenido íntimo no consentido, y suelen ser más rápidos que cualquier vía legal. No sustituyen a las otras rutas: se hacen además.</p>
+<h4>3. Medidas de protección</h4>
+<p>La LGAMVLV contempla medidas de protección que pueden incluir órdenes para interrumpir la difusión de contenido. Se solicitan a la autoridad competente y no requieren que el proceso haya avanzado.</p>
+<p>Estas medidas pueden solicitarse directamente a cualquier agente del ministerio público, autoridades administrativas o cualquier autoridad policial. De igual manera pueden autorizarlas jueces y juezas del poder judicial. El fundamento está en el artículo 34 de la Ley General de Acceso de las Mujeres a una Vida Libre de Violencia (LGAMVLV)</p>
+<h4>4. La vía penal</h4>
+<p>Existe tipificación para la difusión de contenido íntimo sin consentimiento. Es una ruta con obstáculos probatorios reales, sobre todo para identificar a quien difundió. Puede valer la pena, pero conviene no depender solo de ella para lograr que el contenido baje.</p>
+<h4>Lo que conviene saber</h4>
+<ul>
+<li>El contenido puede reaparecer. Conservar el registro permite actuar de nuevo sin empezar de cero.</li>
+<li>Buscar tu propio nombre periódicamente ayuda a detectar reapariciones, aunque hacerlo desgasta. Puedes pedirle a alguien de confianza que lo haga.</li>
+<li>Que el proceso penal no avance no significa que hayas fracasado. Si el contenido bajó, conseguiste lo más urgente.</li>
+</ul>
+</div>
+</div></div></details><details class="plegable" id="via-universitaria" style="--acento:#8e62b1"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Ruta</span><h3 class="plegable-titulo">Dejar de ver a esa persona en la escuela</h3><span class="plegable-bajada">Medidas dentro de tu universidad: separación de aula, cambio de horario, suspensión.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+ <div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">El procedimiento universitario no exige el estándar probatorio del proceso penal. Por eso, a veces logra lo que la vía penal no: que dejes de coincidir con esa persona.</p>
+<h4>Primero: consigue el protocolo</h4>
+<p>Descarga el protocolo vigente de tu universidad y localiza tres cosas: los <strong>plazos</strong> de cada etapa, qué <strong>medidas de protección</strong> prevé y <strong>quién resuelve</strong>. Revisa también si tu institución está en nuestro <a href="observatorio.html#indice">índice</a>.</p>
+<h4>Qué puedes exigir</h4>
+<ul>
+<li><strong>Medidas de protección desde el inicio</strong>, sin esperar a que concluya la investigación: cambio de grupo, de horario o separación del aula.</li>
+<li><strong>Que se respeten los plazos</strong> que el propio protocolo fija.</li>
+<li><strong>Que no te impongan conciliación.</strong> En casos de violencia sexual, la mediación entre las partes no procede.</li>
+<li><strong>Confidencialidad</strong> durante y después del procedimiento.</li>
+<li><strong>Acompañamiento</strong>, si el protocolo lo contempla.</li>
+<li><strong>Que no haya represalias</strong> académicas por haber denunciado.</li>
+</ul>
+<h4>Todo por escrito</h4>
+<p>Presenta cada solicitud por escrito y conserva acuse con fecha. Si después el procedimiento se detiene, ese acuse es lo que demuestra que pediste y no respondieron. Las conversaciones de pasillo no existen para efectos de un reclamo posterior.</p>
+<h4>Si el procedimiento se detiene</h4>
+<ul>
+<li>Solicita por escrito el estado del procedimiento, citando el plazo que el protocolo incumplió.</li>
+<li>Escala al órgano superior o a la defensoría de derechos universitarios, si existe.</li>
+<li>Considera una queja ante la comisión de derechos humanos correspondiente.</li>
+<li>Si nada de lo anterior funcionó, toca estudiar la procedencia de un juicio de amparo. Escríbenos.</li>
+</ul>
+<h4>Lo que este procedimiento no hace</h4>
+<p>Una sanción universitaria no es una condena penal ni implica reparación económica. Puede separar a la persona de la institución, y eso a veces es exactamente lo que se necesita. Si buscas algo más, la vía universitaria no excluye las otras: pueden seguirse a la vez.</p>
+</div>
+</div></div></details><details class="plegable" id="via-penal" style="--acento:#fcc352"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Ruta</span><h3 class="plegable-titulo">Una sanción penal</h3><span class="plegable-bajada">Qué implica denunciar, cuánto tarda y qué esperar de forma realista.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+ <div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Esta página no va a decirte que denuncies ni que no denuncies. Va a decirte qué implica, para que decidas tú.</p>
+<h4>Lo primero, con honestidad</h4>
+<p>Una parte grande de las carpetas de investigación por delitos sexuales no llega a juicio. Los delitos contra la intimidad sexual son especialmente difíciles de acreditar. <strong>Esto no dice nada sobre tu caso ni sobre si te creen: describe una falla estructural.</strong></p>
+<p>Hay personas que denuncian sabiendo que probablemente no habrá sentencia, porque necesitan que exista el registro o porque necesitan haberlo intentado. Esa es una decisión válida y no es ingenuidad.</p>
+<h4>Cómo funciona, en grueso</h4>
+<ol>
+<li><strong>Denuncia.</strong> Se presenta ante el ministerio público y se abre una carpeta de investigación.</li>
+<li><strong>Investigación.</strong> El ministerio público reúne pruebas. Es la etapa más larga y donde más casos se detienen.</li>
+<li><strong>Judicialización.</strong> Si hay elementos, el caso pasa ante un juez.</li>
+<li><strong>Juicio.</strong> Solo una fracción llega hasta aquí.</li>
+</ol>
+<h4>Tus derechos como víctima</h4>
+<ul>
+<li><strong>Asesoría jurídica gratuita.</strong> Te corresponde por ley y puedes exigirla desde el primer momento.</li>
+<li><strong>Medidas de protección</strong> desde la denuncia.</li>
+<li><strong>Que no te revictimicen.</strong> No están obligadas a repetir la declaración una y otra vez, y tu vida sexual previa no es materia del proceso.</li>
+<li><strong>Copia de todo lo que firmes</strong> y acceso a tu carpeta.</li>
+<li><strong>Que se realicen las diligencias que solicites</strong>, o que te digan por escrito por qué no.</li>
+</ul>
+<h4>Lo que conviene llevar</h4>
+<p>Todo lo que hayas documentado (revisa <a href="#evidencia">preservar evidencia</a>), una cronología escrita de los hechos y, si puedes, alguien que te acompañe. No vayas sola si tienes cómo evitarlo.</p>
+<h4>Si archivan tu caso</h4>
+<p>El archivo no siempre es el punto final, y hay plazos cortos para impugnarlo. Está explicado en <a href="#archivo">qué hacer si archivan tu caso</a>.</p>
+<h4>El costo que no se menciona</h4>
+<p>Un proceso penal consume tiempo, dinero y energía durante meses o años. Tienes derecho a decidir que no quieres eso, y esa decisión no te vuelve cómplice de nada.</p>
+</div>
+</div></div></details><details class="plegable" id="via-civil" style="--acento:#53a0cc"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Ruta</span><h3 class="plegable-titulo">Una reparación</h3><span class="plegable-bajada">La vía civil: daño moral, con otras reglas de prueba y otros tiempos.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+ <div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">La vía civil busca una reparación, no un castigo. Tiene reglas de prueba distintas a las del proceso penal, y eso a veces la vuelve viable cuando la otra no lo es.</p>
+<h4>En qué se diferencia de la penal</h4>
+<ul>
+<li><strong>El estándar de prueba es menos exigente</strong> que el «más allá de toda duda razonable» del proceso penal.</li>
+<li><strong>El proceso lo impulsas tú</strong>, no el ministerio público. Eso da más control y también implica más carga.</li>
+<li><strong>El resultado es económico</strong>, además del reconocimiento del daño en la sentencia.</li>
+<li><strong>Requiere abogada o abogado.</strong> Aquí no hay asesoría de oficio equivalente a la penal.</li>
+</ul>
+<h4>Daño moral</h4>
+<p>Es la figura por la que suele reclamarse la afectación a la integridad, el honor o la vida privada. Hay que acreditar el hecho, el daño y la relación entre ambos.</p>
+<p>Tomando como base, el Código Civil Federal el plazo para poder demandarlo es de dos años a partir de la publicación o la situación que se mencione es la responsable de dañar la reputación, el honor, etc. El plazo puede variar por entidad. Para probar el daño requeriría: constancias, peritajes, testimonios, etc.</p>
+<h4>Contra la institución</h4>
+<p>Cuando una universidad pública incumplió sus propias obligaciones, puede existir responsabilidad institucional.</p>
+<p>El juicio de amparo indirecto procede ante omisiones y actos que modifiquen, creen o extingan situaciones jurídicas en particular o colectivas, se puede exigir este cumplimiento.</p>
+<h4>Los costos</h4>
+<p>Requiere honorarios y tiempo, y no siempre concluye con una compensación que los cubra. Conviene tener el cálculo claro antes de empezar, no a la mitad.</p>
+<h4>Puede ir en paralelo</h4>
+<p>Esta vía no excluye a las otras. Puedes seguir el procedimiento universitario, la denuncia penal y la demanda civil a la vez, aunque sostener las tres simultáneamente puede ser desgastante.</p>
+</div>
+</div></div></details></div><div class="mt-6 sello-asfalto p-6 rounded-xl border-l-4 border-l-grisAntracita"><h3 class="text-xl font-titulo1 font-bold text-azulOceano mb-2">Todavía no lo sé</h3><p class="font-texto text-grisAntracita/80 mb-4">Está bien no saberlo. Podemos conversarlo sin que eso te comprometa a nada.</p><a class="inline-block bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-6 py-3 rounded-lg hover:bg-moradoMedio transition" href="#solicitar">Solicitar orientación</a></div></section>
+
+<section class="max-w-4xl mx-auto px-4 py-10"><h2 class="text-3xl font-titulo1 font-bold text-grisAntracita mb-2"><span class="subrayado-dorado">Para cualquier ruta</span></h2><p class="font-texto text-lg text-grisAntracita/70 mb-6">Herramientas que sirven decidas lo que decidas.</p><div class="plegables"><details class="plegable" id="evidencia" style="--acento:#42c3d9"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Herramienta</span><h3 class="plegable-titulo">Preservar evidencia</h3><span class="plegable-bajada">Capturas, respaldos y fe de hechos. Lo que se pierde en las primeras horas rara vez se recupera.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Buena parte de lo que se considera «imposible de probar» se pierde en las primeras horas. Esto no garantiza un resultado, pero evita que un caso muera por falta de documentación.</p>
+<h4>Capturas de pantalla</h4>
+<p>Una captura sirve como indicio cuando permite verificar de dónde salió. Procura que se vea:</p>
+<ul>
+<li>La <strong>dirección completa</strong> (URL) del contenido.</li>
+<li>El <strong>perfil o cuenta</strong> que lo publicó.</li>
+<li>La <strong>fecha y hora</strong> visibles en pantalla.</li>
+<li>El <strong>contexto alrededor</strong>: comentarios, número de vistas, hilo completo.</li>
+</ul>
+<p>Si puedes, graba también la pantalla mientras navegas hasta el contenido. Un video que muestra el recorrido es más difícil de cuestionar que una imagen suelta.</p>
+<h4>No borres nada</h4>
+<p>Conversaciones, correos, mensajes, incluso los que te resulten dolorosos de conservar. El impulso de borrar es comprensible y es justo lo que después hace falta. Si no quieres tenerlos a la vista, pídele a alguien de confianza que guarde una copia.</p>
+<h4>Respalda en más de un lugar</h4>
+<p>Un solo respaldo no es respaldo. Guarda copia en el dispositivo, en un servicio en la nube y, si puedes, en una memoria externa. Si tu dispositivo es compartido o alguien puede acceder a él, prioriza un lugar al que solo tú entres.</p>
+<h4>Documentos y constancias</h4>
+<ul>
+<li>Todo escrito que presentes, <strong>con acuse sellado y fechado</strong>.</li>
+<li>Constancias médicas o psicológicas, si acudiste a atención.</li>
+<li>Correos institucionales, citatorios, notificaciones.</li>
+<li>Registros de asistencia, horarios o cualquier documento que sitúe tiempos y lugares.</li>
+</ul>
+<h4>Una cronología</h4>
+<p>Escribe qué pasó, cuándo y quién estaba presente, con el mayor detalle que recuerdes y lo antes posible. La memoria se desordena con el tiempo, y en los procesos se te va a pedir precisión. Ese documento es para ti: no tienes que entregarlo a nadie.</p>
+<p>Para ordenarla puedes usar nuestra <strong>bitácora de registro de hechos</strong>: una tabla para anotar cada hecho por separado, con fecha, testigos, la evidencia que guardaste y si lo reportaste. Los hechos que parecen menores, registrados juntos, muestran un patrón.</p>
+<p><a class="inline-block bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-6 py-3 rounded-lg hover:bg-moradoMedio transition no-underline" href="https://drive.google.com/file/d/17FibaCRuq0yHQHuNmVrQiHrVb7OYx0ym/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Descargar la bitácora (PDF)</a></p>
+<p class="font-texto text-sm text-grisAntracita/70">Guárdala en un lugar al que solo tú tengas acceso.</p>
+<h4>Si el contenido es íntimo</h4>
+<p>Documentar contenido íntimo tuyo es incómodo y puede revolverlo todo. Puedes pedirle a alguien de confianza que lo haga por ti. No estás obligada a mirarlo una y otra vez para poder defenderte.</p>
+</div>
+</div></div></details><details class="plegable" id="archivo" style="--acento:#653a82"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Herramienta</span><h3 class="plegable-titulo">Si archivan tu caso</h3><span class="plegable-bajada">Impugnación ante juez de control, diligencias y quejas. Con plazos cortos.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+ <div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Que archiven una carpeta no siempre significa que el caso terminó. Existen vías para impugnarlo, y algunas tienen <strong>plazos cortos</strong>: por eso conviene leer esto apenas te notifiquen, no semanas después.</p>
+<h4>Primero: identifica qué te notificaron</h4>
+<p>No es lo mismo un archivo temporal, una abstención de investigar o una determinación de no ejercicio de la acción penal. Cada figura tiene efectos y vías distintas. El documento que recibiste debe decir cuál es; si no lo dice con claridad, pide por escrito que te lo precisen.</p>
+<h4>Impugnación ante juez de control</h4>
+<p>El Código Nacional de Procedimientos Penales prevé que la víctima impugne ante un juez de control las determinaciones del ministerio público de archivo temporal, abstención de investigar y no ejercicio de la acción penal.</p>
+<p>El artículo que debes revisar es el 258.<strong> Tienes máximo diez dias para solicitar audiencia de control judicial.</strong></p>
+<h4>Solicitar diligencias por escrito</h4>
+<p>Antes de que se archive, o incluso después, puedes solicitar por escrito que se practiquen diligencias concretas: que se requiera un registro, que se entreviste a una persona, que se solicite información a una plataforma. Presenta la solicitud con acuse.</p>
+<p>Aunque no se realicen, el acuse deja documentada la inacción, y eso sirve tanto para impugnar como para una queja.</p>
+<h4>Quejas</h4>
+<ul>
+<li><strong>Comisión de derechos humanos</strong> correspondiente, por violaciones al derecho de acceso a la justicia.</li>
+<li><strong>Órgano interno de control</strong> de la fiscalía, por la actuación del personal.</li>
+<li><strong>Visitaduría</strong> u homóloga, según la institución.</li>
+</ul>
+<h4>Qué esperar</h4>
+<p>Ninguna de estas vías garantiza que el caso avance. Lo que hacen es convertir la inacción en algo que se puede reclamar, y dejar constancia. A veces eso basta para que una carpeta se reactive; a veces no.</p>
+<h4>Si decides parar</h4>
+<p>También es una decisión legítima. Sostener un proceso durante años tiene un costo real, y nadie está obligada a pagarlo indefinidamente para demostrar que lo que vivió fue cierto.</p>
+</div>
+</div></div></details><details class="plegable" id="represalias" style="--acento:#8e62b1"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Herramienta</span><h3 class="plegable-titulo">Si hay represalias</h3><span class="plegable-bajada">Contrademandas por daño moral, procedimientos en tu contra y presiones académicas.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+ <div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Denunciar, sobre todo públicamente, puede tener consecuencias que casi nadie advierte de antemano: contrademandas, procedimientos disciplinarios y presiones académicas. Esto es lo que conviene saber antes.</p>
+<h4>Antes de publicar algo</h4>
+<p>Si estás pensando en denunciar públicamente —en redes, en un tendedero, en una asamblea— conviene saber a qué te expones.</p>
+<ul>
+<li><strong>Imputar un delito a una persona identificable</strong> puede dar lugar a una demanda por daño moral.</li>
+<li>Narrar tu experiencia sin nombrar ni hacer identificable a nadie reduce ese riesgo, aunque no lo elimina.</li>
+<li>Documenta todo antes de publicar: si después tienes que defenderte, lo que respaldaste es tu defensa.</li>
+<li>Guarda copia de lo que publiques y de las reacciones que reciba.</li>
+</ul>
+<p>Esto no es una recomendación de callar. Es información para que, si decides hablar, sepas dónde estás parada.</p>
+<h4>Si te demandan por daño moral</h4>
+<ul>
+<li><strong>No ignores la notificación.</strong> Los plazos para contestar son cortos y no comparecer empeora la situación.</li>
+<li><strong>Busca representación legal de inmediato.</strong> Si no puedes pagarla, escríbenos y te ayudamos a buscar quién sí.</li>
+<li><strong>Reúne todo lo que respalde lo que dijiste.</strong></li>
+</ul>
+<h4>Si abren un procedimiento en tu contra en la universidad</h4>
+<ul>
+<li>Pide por escrito que te informen qué se te imputa y con qué fundamento.</li>
+<li>Solicita copia del expediente.</li>
+<li>Exige que se respeten los plazos y tu derecho a ser oída.</li>
+<li>Documenta la secuencia temporal: si el procedimiento se abrió después de tu denuncia, esa cronología importa.</li>
+</ul>
+<h4>Presiones académicas</h4>
+<p>Calificaciones que bajan sin explicación, oportunidades que se cierran, trato distinto en clase. Suelen ser difíciles de probar aisladas, y visibles cuando se documentan en conjunto.</p>
+<ul>
+<li>Registra cada hecho con fecha y personas presentes.</li>
+<li>Conserva evaluaciones anteriores y posteriores a la denuncia.</li>
+<li>Revisa si el protocolo de tu universidad prohíbe expresamente las represalias: si lo hace, es un incumplimiento reclamable.</li>
+</ul>
+<h4>No lo sostengas sola</h4>
+<p>Las represalias funcionan por aislamiento. Cuéntale a alguien de confianza, acércate a una colectiva, busca a quien ya pasó por algo parecido. Además del apoyo, tener testigos de lo que ocurre cambia las cosas.</p>
+</div>
+</div></div></details><details class="plegable" id="perspectivas" style="--acento:#53a0cc"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Herramienta</span><h3 class="plegable-titulo">Exige que te juzguen con perspectiva</h3><span class="plegable-bajada">Género, infancia, discapacidad y edad: lo que la autoridad está obligada a mirar.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">El sistema de justicia tiene sesgos que, si nadie los corrige, producen resultados injustos. La Suprema Corte lo reconoce y ha emitido protocolos que obligan a quien juzga a revisar si el género, la edad o la discapacidad están pesando en cómo se valora un caso.</p>
+<p>Pedir que se apliquen no es pedir un trato especial ni un favor. Es exigir que el proceso no reproduzca la discriminación. Sirven en la vía penal, en la civil y, cada vez más, en los procedimientos universitarios: revisa si el protocolo de tu institución lo exige.</p>
+<h4>Perspectiva de género</h4>
+<p>Es un método de análisis, no una ideología. Obliga a identificar si hay una relación de poder desigual entre las partes y si se están usando estereotipos para valorar las pruebas o la credibilidad de alguien.</p>
+<p>En la práctica, opera así: si se cuestiona tu ropa, tu consumo de alcohol, tu vida sexual previa o que «no gritaste», la autoridad está razonando con estereotipos, y eso es lo que el protocolo prohíbe.</p>
+<p><strong>No es exclusiva para mujeres.</strong> Aplica a cualquier persona afectada por roles o jerarquías de género, incluidos hombres víctimas de violencia sexual y personas de la diversidad sexual. Tampoco invierte la carga de la prueba ni presume culpabilidad: exige que quien juzga no sea ciego al contexto.</p>
+<p class="font-texto text-sm text-grisAntracita/70"><strong>Fundamento:</strong> arts. 1 y 4 CPEUM · CEDAW · Convención de Belém do Pará · jurisprudencia 1a./J. 22/2016 (10a.) · Protocolo para Juzgar con Perspectiva de Género (SCJN, 2020).</p>
+<h4>Perspectiva de infancia y adolescencia</h4>
+<p>Cuando una niña, niño o adolescente participa en un proceso, el interés superior de la niñez es el principio rector, por encima de la comodidad institucional.</p>
+<ul>
+<li><strong>Su testimonio no se descarta por la edad.</strong> Un relato fragmentado o no lineal no significa que sea falso: es una forma habitual de narrar una experiencia traumática.</li>
+<li><strong>La entrevista se hace en condiciones especiales</strong>, con personal especializado y en espacios adecuados, como la cámara Gesell.</li>
+<li><strong>No debe repetir su declaración</strong> sin necesidad, ni ser sometida a peritajes reiterados sin justificación técnica.</li>
+<li><strong>Tiene derecho a que le expliquen</strong> lo que pasa en su caso con lenguaje adecuado a su edad, y a que su opinión cuente.</li>
+</ul>
+<p class="font-texto text-sm text-grisAntracita/70"><strong>Fundamento:</strong> art. 4 CPEUM · Convención sobre los Derechos del Niño · Ley General de los Derechos de Niñas, Niños y Adolescentes · Protocolo para Juzgar con Perspectiva de Infancia y Adolescencia (SCJN, 2021).</p>
+<h4>Perspectiva de discapacidad</h4>
+<p>La barrera está en el entorno, no en la persona. Si el proceso no se adapta para que alguien participe en igualdad de condiciones, el problema es del proceso.</p>
+<ul>
+<li><strong>Ajustes razonables</strong> en todas las etapas: intérprete de Lengua de Señas Mexicana, documentos en formato accesible, lectura fácil, espacios accesibles.</li>
+<li><strong>Nadie sustituye su voluntad.</strong> El Estado debe darle apoyos para que decida por sí misma, no decidir por ella.</li>
+<li><strong>Su testimonio no se desestima por un diagnóstico.</strong> Hacerlo es discriminación, no análisis probatorio.</li>
+<li><strong>Una persona de apoyo elegida por ella</strong> puede acompañarla al declarar sin que eso invalide su testimonio.</li>
+</ul>
+<p class="font-texto text-sm text-grisAntracita/70"><strong>Fundamento:</strong> art. 1 CPEUM · Convención sobre los Derechos de las Personas con Discapacidad · art. 109, fracc. XI y XII CNPP · Protocolo para Juzgar con Perspectiva de Discapacidad (SCJN).</p>
+<h4>Personas mayores</h4>
+<p>La edad avanzada no reduce derechos. Desestimar un testimonio con un «a su edad es normal confundirse», sin una razón probatoria concreta, es un sesgo. También importa si las condiciones del proceso (horarios, traslados, lenguaje) le impiden participar, y si su dependencia de otras personas ayuda a entender los hechos.</p>
+<p class="font-texto text-sm text-grisAntracita/70"><strong>Fundamento:</strong> art. 1 CPEUM · Convención Interamericana sobre la Protección de los Derechos Humanos de las Personas Mayores, art. 31 (acceso a la justicia).</p>
+<h4>Cómo pedirlo</h4>
+<ul>
+<li>Por escrito, citando el protocolo que corresponde.</li>
+<li>Señalando el estereotipo o la barrera concreta: qué se dijo, qué se omitió, qué ajuste faltó.</li>
+<li>Si una resolución no lo consideró, esa omisión es un argumento para impugnarla o para presentar una queja.</li>
+</ul>
+<p>Que los protocolos existan no garantiza que se apliquen. Conocerlos te permite señalar, con nombre y fundamento, cuándo no se aplicaron.</p>
+</div>
+</div></div></details><details class="plegable" id="acompanantes" style="--acento:#936479"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Herramienta</span><h3 class="plegable-titulo">Si acompañas a alguien</h3><span class="plegable-bajada">Primeros auxilios psicológicos: qué decir, qué evitar y cómo cuidarte tú.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Si alguien te contó que vivió violencia sexual, tu trabajo no es resolver lo que pasó. Es que sepa que cuenta contigo.</p>
+<p>No necesitas respuestas perfectas. Necesitas presencia, escucha y algunos principios básicos. Esto no sustituye la atención psicológica profesional.</p>
+<h4>Primero, observa</h4>
+<p>Antes de actuar, fíjate en cómo está: si tiembla o hiperventila, si llora o parece no sentir nada, si tiene a quién acudir, si está confundida o «ausente».</p>
+<p><strong>Busca ayuda de inmediato</strong> si habla de hacerse daño o de no querer seguir viviendo, si está completamente disociada, si la persona agresora está cerca o podría llegar, o si tiene lesiones que necesitan atención urgente. El <a href="directorio.html">directorio</a> tiene a quién llamar; en una emergencia, el 911.</p>
+<h4>Los primeros minutos</h4>
+<ul>
+<li><strong>Tu calma es contagiosa.</strong> Si respira muy rápido, respira despacio con ella.</li>
+<li><strong>Si parece ausente</strong>, ayúdala a volver al presente: pídele que nombre cinco cosas que puede ver.</li>
+<li><strong>Valida lo que siente.</strong> No hay una forma correcta de reaccionar a algo así.</li>
+<li><strong>No llenes los silencios.</strong> Estar presente también es acompañar.</li>
+</ul>
+<h4>Qué ayuda</h4>
+<ul>
+<li>«Te creo». «No es tu culpa». «¿Qué necesitas ahora?».</li>
+<li>Dejar que hable sin interrumpir, y respetar si todavía no quiere hablar.</li>
+<li>Preguntar antes de tocar.</li>
+<li>Contener tu propio enojo o tristeza delante de ella.</li>
+</ul>
+<h4>Qué evitar</h4>
+<ul>
+<li>Preguntas que culpan: por qué no gritó, qué hacía ahí, cuánto había tomado.</li>
+<li>Dudar de lo que cuenta o pedirle que «perdone y siga adelante».</li>
+<li>Contarle a otras personas sin su permiso.</li>
+<li>Presionarla para que denuncie. La denuncia es un derecho, no una obligación.</li>
+</ul>
+<h4>Si fue reciente</h4>
+<p>Las primeras 72 horas importan para su salud. En urgencias de un hospital público puede recibir anticoncepción de emergencia, profilaxis contra el VIH y tratamiento preventivo de otras infecciones, sin necesidad de denunciar. Pregúntale si quiere ir y acompáñala si dice que sí. Si está considerando denunciar, conviene no bañarse ni lavar la ropa antes. Revisa también <a href="#evidencia">cómo preservar evidencia</a> y la <a href="#via-penal">ruta penal</a>.</p>
+<p>Y lo más simple: que tenga agua, comida y un lugar seguro donde pasar la noche.</p>
+<h4>No tienes que hacerlo todo</h4>
+<p>El aislamiento es uno de los mayores riesgos después de una agresión. Tu papel es ayudarla a construir una red, no ser la única persona en ella. Conectarla con ayuda especializada no es abandonarla.</p>
+<h4>Tú también importas</h4>
+<p>Acompañar a alguien que vivió algo así desgasta, y eso no significa que estés fallando. Habla con alguien de confianza sobre cómo te sientes, sin revelar detalles. Pon límites: puedes ser un apoyo valioso sin estar disponible las 24 horas. No eres su terapeuta ni su abogada, y no eres responsable de cómo termine el proceso.</p>
+<p><a class="inline-block bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-6 py-3 rounded-lg hover:bg-moradoMedio transition no-underline" href="https://drive.google.com/file/d/19kmhM7getwORM85vRh7RHu7tsqeNz-Ws/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Descargar la guía de primeros auxilios psicológicos (PDF)</a></p>
+</div>
+</div></div></details><a class="plegable plegable-enlace" href="directorio.html" style="--acento:#2b1045"><span class="plegable-texto"><span class="plegable-eyebrow">Directorio</span><span class="plegable-titulo">Dónde acudir ahora</span><span class="plegable-bajada">Instancias jurídicas, psicológicas e institucionales, con notas sobre cómo opera cada una.</span></span><span aria-hidden="true" class="plegable-icono">→</span></a></div></section>
+
+<div class="max-w-4xl mx-auto px-4 pb-4"><details class="plegable" id="alcance" style="--acento:#2b1045"><summary class="plegable-resumen"><span class="plegable-texto"><span class="plegable-eyebrow">Antes de escribirnos</span><h3 class="plegable-titulo">Qué podemos y qué no</h3><span class="plegable-bajada">Qué incluye nuestra orientación y qué no. Léelo antes de escribirnos.</span></span><span aria-hidden="true" class="plegable-icono"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6"></path></svg></span></summary><div class="plegable-cuerpo"><div class="plegable-bloque">
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+<strong class="font-subtitulo text-azulOceano">Lee esto antes de escribirnos.</strong> Saber qué podemos y qué no podemos hacer evita que cuentes con algo que no vamos a poder darte.
+            </div> <div class="contenido font-texto text-grisAntracita/90">
+<h4>Qué incluye</h4>
+<ul>
+<li><strong>Explicarte qué derechos te asisten</strong> en tu situación concreta y qué obliga a tu universidad.</li>
+<li><strong>Describirte las rutas posibles</strong> con sus tiempos, costos y probabilidades reales.</li>
+<li><strong>Orientarte sobre cómo preservar evidencia</strong> y cómo documentar lo que ocurre.</li>
+<li><strong>Ayudarte a entender un escrito</strong> que recibiste y qué significa para ti.</li>
+<li><strong>Derivarte</strong> a instancias de acompañamiento jurídico o psicológico cuando eso es lo que necesitas.</li>
+</ul>
+<h4>Qué no incluye</h4>
+<ul>
+<li><strong>No llevamos tu caso.</strong> No somos tus representantes legales ni firmamos escritos por ti.</li>
+<li><strong>No recibimos denuncias.</strong> No somos instancia investigadora de ninguna universidad.</li>
+<li><strong>No decidimos por ti.</strong> Te damos información; la decisión es siempre tuya.</li>
+<li><strong>No somos servicio de emergencia.</strong> No atendemos 24 horas ni respondemos de inmediato.</li>
+<li><strong>No damos terapia.</strong> Podemos derivarte a quien sí.</li>
+</ul>
+<h4>Los tiempos</h4>
+<p>Revisamos el correo electrónico diariamente por la noche a fin de poder tener oportunidad de dedicar tiempo suficiente para atender las solicitudes que nos lleguen. De igual manera el teléfono</p>
+<h4>Confidencialidad</h4>
+<p>Lo que nos cuentes no se comparte, no se publica y no se usa como material de investigación. Si alguna vez quisiéramos usar algo de tu caso con otro fin, te lo pediríamos de forma explícita y específica, y podrías negarte sin que eso afectara la orientación.</p>
+<h4>Una advertencia honesta</h4>
+<p>Muchos casos de violencia sexual no llegan a juicio, y los delitos contra la intimidad sexual son especialmente difíciles de probar. No es una afirmación sobre tu caso ni sobre tu credibilidad: es una falla estructural del sistema. Te lo decimos antes para que, si decides avanzar, lo hagas sabiendo a qué te enfrentas.</p>
+</div>
+</div></div></details></div>
+
+<section class="ancla border-t border-moradoMedio/20 mt-10" id="solicitar">
+<div class="max-w-4xl mx-auto px-4 pt-16">
+<p class="font-subtitulo text-moradoMedio text-xs sm:text-sm uppercase tracking-[0.2em] mb-4 flex items-center gap-3"><span aria-hidden="true" class="h-px w-8 bg-doradoSuave inline-block"></span>Solicitar orientación</p>
+<h2 class="text-3xl md:text-5xl font-titulo1 font-bold leading-tight text-grisAntracita">Escríbenos.</h2>
+<p class="font-texto text-lg sm:text-xl text-grisAntracita/70 leading-relaxed max-w-3xl mt-4">Cuéntanos lo necesario. No hace falta que narres todo ni que nombres a nadie.</p>
+</div>
+</section>
+<section class="max-w-4xl mx-auto px-4 py-12">
+<div class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base text-grisAntracita/90 mb-8" role="note">
+<strong class="font-subtitulo text-azulOceano">Si estás en riesgo ahora mismo</strong>, este formulario no es la vía: no lo leemos de inmediato. Usa el <a class="underline" href="directorio.html">directorio de atención inmediata</a>.
+            </div> <div class="contenido font-texto text-grisAntracita/90">
+<p class="text-xl">Antes de escribir, lee el <a href="#alcance">alcance del servicio</a>. Resume qué podemos hacer y qué no.</p>
+<h2>Qué necesitamos saber</h2>
+<p>Lo mínimo para orientarte. No hace falta que narres todo lo que pasó, y no es necesario que des nombres de nadie.</p>
+</div> 
+
+<!-- FORMULARIO DE ORIENTACIÓN CONECTADO -->
+<form id="form-orientacion" class="sello-asfalto p-6 sm:p-8 rounded-xl space-y-6">
+<p class="font-subtitulo text-xs uppercase tracking-widest text-verdeEsperanza font-bold">Formulario de solicitud habilitado</p>
+<div>
+<label class="block font-subtitulo font-bold text-sm mb-2" for="como-llamarte">Cómo quieres que te llamemos</label>
+<input class="w-full px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20" id="como-llamarte" name="nombre" type="text" required/>
+<p class="text-sm text-grisAntracita/70 mt-1">No necesita ser tu nombre real.</p>
+</div>
+<div>
+<label class="block font-subtitulo font-bold text-sm mb-2" for="medio">Cómo te contactamos</label>
+<input class="w-full px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20" id="medio" name="contacto" type="text" required/>
+<p class="text-sm text-grisAntracita/70 mt-1">Dinos si algún medio no es seguro para ti.</p>
+</div>
+<fieldset>
+<legend class="block font-subtitulo font-bold text-sm mb-2">¿Qué necesitas que pase?</legend>
+<div class="space-y-2 font-texto">
+<label class="flex items-center gap-3"><input class="w-5 h-5 accent-azulOceano" name="objetivo" value="Que un contenido deje de circular" type="radio" required/> Que un contenido deje de circular</label>
+<label class="flex items-center gap-3"><input class="w-5 h-5 accent-azulOceano" name="objetivo" value="Medidas dentro de mi universidad" type="radio"/> Medidas dentro de mi universidad</label>
+<label class="flex items-center gap-3"><input class="w-5 h-5 accent-azulOceano" name="objetivo" value="Entender la vía penal" type="radio"/> Entender la vía penal</label>
+<label class="flex items-center gap-3"><input class="w-5 h-5 accent-azulOceano" name="objetivo" value="Una reparación" type="radio"/> Una reparación</label>
+<label class="flex items-center gap-3"><input class="w-5 h-5 accent-azulOceano" name="objetivo" value="Todavía no lo sé" type="radio"/> Todavía no lo sé</label>
+</div>
+</fieldset>
+<div>
+<label class="block font-subtitulo font-bold text-sm mb-2" for="situacion">Cuéntanos lo necesario</label>
+<textarea class="w-full px-4 py-3 bg-white border border-moradoMedio/30 rounded-lg font-texto focus:outline-none focus:border-azulOceano focus:ring-2 focus:ring-azulOceano/20" id="situacion" name="situacion" rows="8" required></textarea>
+<p class="text-sm text-grisAntracita/70 mt-1">Escribe solo lo que necesites para que entendamos tu situación. Si hay plazos corriendo, dínoslo: eso es lo más urgente.</p>
+</div>
+<div class="flex items-start gap-3">
+<input class="mt-1.5 w-5 h-5 accent-azulOceano" id="entiendo" name="entiendo" type="checkbox" required/>
+<label class="font-texto text-base" for="entiendo">Entiendo que Cosiendo Alas orienta sobre derechos y <strong>no asume la representación legal</strong> de mi caso.</label>
+</div>
+<button id="btn-enviar" class="bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-8 py-4 rounded-lg hover:bg-moradoMedio transition" type="submit">Enviar solicitud</button>
+<div id="form-mensaje" class="hidden font-texto text-sm mt-3"></div>
+</form>
+<div class="mt-10 sello-asfalto border-l-4 border-verdeEsperanza p-5 rounded-r-xl font-texto" role="note">
+<strong class="font-subtitulo text-azulOceano">Mientras tanto.</strong>
+                Si hay contenido circulando o documentos que puedan perderse, revisa <a class="underline" href="#evidencia">cómo preservar evidencia</a>. Esa parte no conviene esperarla.
+            </div>
+</section>
+</main>
+<footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+<div class="max-w-7xl mx-auto px-4">
+<div class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10" role="note">
+<p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a class="underline text-doradoSuave hover:text-white" href="directorio.html">Consulta el directorio de atención inmediata</a>.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+<div class="md:col-span-2">
+<h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+<p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+<div class="flex gap-3">
+<a aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.facebook.com/share/16oUTUZ9zC/" rel="noopener noreferrer" target="_blank">f</a>
+<a aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.instagram.com/cosiendo.tus.alas/" rel="noopener noreferrer" target="_blank">ig</a>
+<a aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.tiktok.com/@cosiendoalas.mx" rel="noopener noreferrer" target="_blank">tt</a>
+<a aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold" href="https://www.youtube.com/@cosiendoalasmx" rel="noopener noreferrer" target="_blank">yt</a>
+</div>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="posicion.html">Posición</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#principios">Qué hacemos y qué no</a></li>
+<li><a class="hover:text-doradoSuave transition" href="posicion.html#transparencia">Transparencia y financiamiento</a></li>
+<li><a class="hover:text-doradoSuave transition" href="voces.html">Voces</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html">Colabora</a></li>
+<li><a class="hover:text-doradoSuave transition" href="colabora.html#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+<ul class="space-y-2">
+<li><a class="hover:text-doradoSuave transition" href="legal.html#privacidad">Aviso de privacidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#terminos">Términos de uso</a></li>
+<li><a class="hover:text-doradoSuave transition" href="legal.html#accesibilidad">Accesibilidad</a></li>
+<li><a class="hover:text-doradoSuave transition" href="observatorio.html#replica">Derecho de réplica</a></li>
+</ul>
+</div>
+</div>
+<div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                © 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+</div>
+</footer>
+<script src="sitio.js"></script>
+<script>
+    const formOrientacion = document.getElementById('form-orientacion');
+    const formMensaje = document.getElementById('form-mensaje');
+    const btnEnviar = document.getElementById('btn-enviar');
+
+    if (formOrientacion) {
+        formOrientacion.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyfTZTlGbADcS7fYicVTqfcQB5os64cWy_vstIhJUS3ZXK8Sl8ZRIqo60amNKJkrmpZHA/exec';
+
+            btnEnviar.disabled = true;
+            btnEnviar.textContent = 'Enviando...';
+            formMensaje.classList.remove('hidden', 'text-red-600', 'text-verdeEsperanza');
+            formMensaje.classList.add('text-grisAntracita');
+            formMensaje.textContent = 'Registrando solicitud...';
+
+            const formData = new FormData(formOrientacion);
+
+            try {
+                await fetch(scriptURL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+
+                formMensaje.classList.remove('text-grisAntracita');
+                formMensaje.classList.add('text-verdeEsperanza', 'font-bold');
+                formMensaje.textContent = 'Tu solicitud de orientación ha sido enviada con éxito. Te contactaremos pronto.';
+                formOrientacion.reset();
+            } catch (error) {
+                formMensaje.classList.remove('text-grisAntracita');
+                formMensaje.classList.add('text-red-600', 'font-bold');
+                formMensaje.textContent = 'Hubo un error al enviar la solicitud. Por favor intenta de nuevo o escríbenos directamente.';
+            } finally {
+                btnEnviar.disabled = false;
+                btnEnviar.textContent = 'Enviar solicitud';
+            }
+        });
+    }
+</script>
+</body>
+</html>

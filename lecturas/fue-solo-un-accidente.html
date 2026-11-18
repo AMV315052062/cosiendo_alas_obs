@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Fue solo un accidente (2025) · Reseña | Cosiendo Alas</title>
+    <meta name="description" content="Reseña de la película Fue solo un accidente (2025) por Karen Socorro. Un dilema moral sobre la justicia, el trauma y la memoria sensorial.">
+    <!-- Redes sociales. PENDIENTE: crear og.png (1200x630) y confirmar el dominio -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fue solo un accidente (2025) · Reseña | Cosiendo Alas">
+    <meta property="og:description" content="Reseña de la película Fue solo un accidente (2025) por Karen Socorro. Un dilema moral sobre la justicia, el trauma y la memoria sensorial.">
+    <meta property="og:image" content="https://cosiendoalas.mx/og.png">
+    <link rel="icon" href="../home.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <a href="#contenido-principal" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-azulOceano focus:px-4 focus:py-2 focus:rounded focus:font-subtitulo focus:font-bold">Saltar al contenido</a>
+
+    <!-- SALIDA RÁPIDA -->
+    <button type="button" id="salida-rapida" class="fixed bottom-6 right-6 z-50 bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105 flex items-center gap-2" aria-label="Salida rápida: te lleva a otra página de inmediato">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+        <span class="hidden md:inline font-subtitulo text-sm uppercase tracking-wider">Salida rápida (Esc x2)</span>
+    </button>
+
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-4">
+                <a href="../index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img src="../home.svg" alt="" class="h-10 w-10 object-contain">
+                    <span class="font-titulo1 text-xl sm:text-2xl font-bold text-azulOceano">Cosiendo Alas</span>
+                </a>
+                <nav class="hidden lg:flex space-x-6 items-center font-subtitulo text-sm uppercase tracking-wide font-semibold text-grisAntracita" aria-label="Principal">
+                    <a href="../posicion.html" class="hover:text-doradoSuave transition">Posición</a>
+                    <a href="../demasiado-karen.html" class="hover:text-doradoSuave transition">Demasiado Karen</a>
+                    <a href="../contra-archivo.html" aria-current="page" class="text-verdeEsperanza border-b-2 border-verdeEsperanza pb-1">Contra-archivo</a>
+                    <a href="../observatorio.html" class="hover:text-doradoSuave transition">Observatorio</a>
+                    <a href="../orientacion.html" class="hover:text-doradoSuave transition">Orientación</a>
+                    <a href="../colabora.html" class="bg-azulOceano text-white px-5 py-2 rounded-lg hover:bg-moradoMedio transition">Colabora</a>
+                </nav>
+                <div class="lg:hidden flex items-center">
+                    <button type="button" id="menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu" class="text-grisAntracita hover:text-azulOceano">
+                        <svg class="h-8 w-8" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-moradoMedio/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-subtitulo">
+                <a href="../posicion.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Posición</a>
+                    <a href="../demasiado-karen.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Demasiado Karen</a>
+                    <a href="../contra-archivo.html" aria-current="page" class="block px-3 py-2 rounded-md text-base font-bold text-verdeEsperanza bg-fondoPagina">Contra-archivo</a>
+                    <a href="../observatorio.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Observatorio</a>
+                    <a href="../orientacion.html" class="block px-3 py-2 rounded-md text-base font-medium text-grisAntracita hover:bg-fondoPagina">Orientación</a>
+                    <a href="../colabora.html" class="block px-3 py-2 rounded-md text-base font-bold text-azulOceano">Colabora</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow" id="contenido-principal" tabindex="-1">
+        <div class="bg-grisAntracita border-b border-moradoMedio/30">
+            <div class="max-w-7xl mx-auto px-4 py-3">
+                <nav class="font-subtitulo text-xs uppercase tracking-widest text-lavandaSuave" aria-label="Ruta de navegación">
+                    <ol class="flex flex-wrap gap-2">
+                        <li><a href="../index.html" class="hover:text-white transition">Inicio</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li><a href="../contra-archivo.html" class="hover:text-white transition">Contra-archivo</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li><a href="../contra-archivo.html#lecturas" class="hover:text-white transition">Lecturas</a></li>
+                    <li><span aria-hidden="true" class="text-moradoMedio">&rsaquo;</span></li>
+                    <li class="text-white font-bold" aria-current="page">Fue solo un accidente</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero-gradient text-white py-16 sm:py-20 px-4 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <p class="font-subtitulo text-doradoSuave text-xs sm:text-sm tracking-[0.2em] mb-5 flex items-center gap-3 uppercase">
+                    <span class="h-px w-8 bg-doradoSuave inline-block" aria-hidden="true"></span>
+                    Cine y literatura · Película
+                </p>
+                <h1 class="text-4xl md:text-6xl font-titulo1 font-bold mb-6 leading-tight">Fue solo un accidente <em class="text-doradoSuave italic font-normal">(2025)</em></h1>
+                <p class="font-texto text-lg sm:text-xl text-lavandaSuave leading-relaxed max-w-3xl">El dilema desgarrador entre la justicia, la rabia y la misericordia.</p>
+                <p class="font-subtitulo text-xs uppercase tracking-widest text-white/80 mt-6">Por Karen Socorro · 5 min de lectura</p>
+            </div>
+            <div class="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-verdeEsperanza opacity-10 blur-3xl" aria-hidden="true"></div>
+            <div class="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-doradoSuave opacity-10 blur-3xl" aria-hidden="true"></div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-4 py-12">
+            <div role="note" class="sello-asfalto border-l-4 border-doradoSuave p-5 rounded-r-xl font-texto text-base mb-10 max-w-3xl">
+                <strong class="font-subtitulo text-azulOceano">Advertencia de contenido.</strong>
+                Esta reseña aborda violencia sexual. Si necesitas parar, el botón rojo de salida rápida te lleva a otra página de inmediato.
+            </div>
+            <div class="grid lg:grid-cols-[16rem_1fr] gap-10 lg:gap-14 items-start">
+                <aside class="lg:sticky lg:top-28 space-y-6">
+                    <!-- Póster: guarda la imagen como lecturas/img/fue-solo-un-accidente.jpg y sustituye este bloque por <img src="img/fue-solo-un-accidente.jpg" alt="Póster de Fue solo un accidente" width="320" class="w-48 sm:w-56 mx-auto rounded-xl shadow-lg"> -->
+                    <div class="hero-gradient w-48 sm:w-56 aspect-[2/3] mx-auto rounded-xl shadow-lg flex flex-col justify-end p-5 text-white" aria-hidden="true"><span class="font-subtitulo text-[10px] uppercase tracking-widest text-doradoSuave">Película</span><span class="font-titulo1 text-2xl font-bold leading-tight mt-2">Fue solo un accidente</span></div>
+                    <dl class="bg-white rounded-xl border border-lavandaSuave/40 p-5 font-texto text-sm text-grisAntracita/90">
+                        <p class="font-subtitulo text-xs uppercase tracking-widest text-moradoMedio font-bold mb-2">Ficha</p>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Director</dt><dd class="text-right">Jafar Panahi</dd></div>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Guion</dt><dd class="text-right">J. Panahi, M. Mahmoudian</dd></div>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Año</dt><dd class="text-right">2025</dd></div>
+                        <div class="flex justify-between gap-4 py-2 border-b border-lavandaSuave/30 last:border-0"><dt class="font-bold text-grisAntracita">Galardón</dt><dd class="text-right">Palma de Oro (Cannes)</dd></div>
+                    </dl>
+                    <ul class="flex flex-wrap gap-2" aria-label="Temas">
+                        <li class="px-3 py-1 rounded-full bg-lavandaSuave/30 text-azulOceano text-xs font-subtitulo font-bold uppercase tracking-wider">TEPT</li>
+                        <li class="px-3 py-1 rounded-full bg-lavandaSuave/30 text-azulOceano text-xs font-subtitulo font-bold uppercase tracking-wider">Dilema Moral</li>
+                        <li class="px-3 py-1 rounded-full bg-lavandaSuave/30 text-azulOceano text-xs font-subtitulo font-bold uppercase tracking-wider">Resistencia</li>
+                    </ul>
+                </aside>
+                <article class="min-w-0">
+                    <div class="contenido font-texto text-grisAntracita/90">
+                <p class="text-xl"><em>Fue solo un accidente</em> (<em>Yek tasādof-e sāde</em>, 2025), escrita y dirigida por Jafar Panahi, ganadora de la Palma de Oro en Cannes y primera película iraní nominada a Mejor Película Dramática, Mejor Director y Mejor Guion en los Golden Globes. Si bien la película no tiene como tema principal la violencia sexual, la aborda como parte del conflicto. La historia se centra en un grupo de personas que estuvieron en la cárcel y fueron torturadas por el gobierno de Irán debido a su disidencia política.</p>
+                <p>Uno de ellos encuentra a un hombre que cree reconocer como su torturador y lo secuestra. De ahí, se generan una serie de situaciones, entre cómicas y trágicas, que se resumen en el dilema moral de cada integrante sobre qué hacer con él. La película no moraliza sobre una vía "correcta", sino que pone sentimientos muy humanos a flor de piel: el dolor, la rabia, la impotencia, la culpa.</p>
+                <h2>La memoria sensorial y el trauma</h2>
+                <p>Lo que hace que el dilema sea tan desgarrador es un detalle que Panahi construye desde el inicio: <strong>ninguno de los sobrevivientes vio jamás la cara de su torturador</strong> porque permanecieron con los ojos vendados durante todo su cautiverio. Solo pueden reconocerlo a través de los sentidos — el sonido, el olor, el tacto.</p>
+                <p>Cada uno trae un método distinto de identificación sensorial, lo que significa que sus juicios están profundamente influenciados por el instinto y la emoción más que por la lógica. ¿Es realmente él? ¿Basta con lo que el cuerpo recuerda? La película instala esa duda y no la suelta nunca.</p>
+                <p>Me parece relevante debido a que está basada en las vivencias propias del director, por lo que el tratamiento del TEPT es orgánico y real. Panahi ha contado que durante sus interrogatorios siempre llevaba una venda en los ojos y estaba de cara a la pared con un papel en la mano, respondiendo preguntas que alguien hacía detrás de él:</p>
+                <blockquote class="pull-quote my-10">"No sabía quién era. Solo escuchaba su voz o sus movimientos al caminar. Y siempre quise saber quién era, saber cómo se veía. Y si lo viera fuera de ahí, ¿lo reconocería o no?"</blockquote>
+                <p>Esa pregunta personal — <em>¿reconocería a mi torturador si lo encontrara en la calle?</em> — es el motor de toda la película.</p>
+                <h2>Cine como resistencia viva</h2>
+                <p>Panahi fue arrestado en 2022 tras una sentencia de 2010 que incluía seis años de prisión y una prohibición de veinte años para hacer cine. Fue liberado tras casi siete meses y una huelga de hambre. Pero no salió solo: compartió celda con otros presos que no habían visto el mundo exterior en cinco o seis años, que le contaron su dolor y su sufrimiento, que comieron con él y caminaron en el patio con él. Y cuando salió, sintió que cargaba un peso sobre los hombros. La película es ese peso hecho ficción. Los distintos personajes y personalidades en pantalla parecen reflejar fragmentos de los propios pensamientos y emociones conflictivos de Panahi.</p>
+                <p>El coguionista, Mehdi Mahmoudian, es un periodista y activista de derechos humanos que ha pasado una década entrando y saliendo de la cárcel. Panahi le pidió que viniera al set porque conoce íntimamente cómo actúan los interrogadores: cuándo tienen risa histérica, cuándo se calman, cuándo muestran fuerza, cuándo humillan. Esa colaboración entre cineasta y sobreviviente le da a la película una textura que no se puede fabricar desde la imaginación.</p>
+                <h2>La ambigüedad ética de la justicia</h2>
+                <p>No es una película que te manipula para sentir dolor, sino que juega con la incomodidad para dejar una postura clara: resulta traumático, como víctima, tener que decidir qué hacer y qué es la justicia, fuera de discusiones teóricas, en una vivencia personal. Cada decisión de los personajes es un estudio en ambigüedad ética que subraya la pregunta central: <strong>¿puede la violencia alguna vez resolver verdaderamente la injusticia?</strong> Uno de los personajes, Shiva, lo condensa en una frase que funciona como brújula moral de la película:</p>
+                <blockquote class="pull-quote my-10">"No es porque ellos hayan recurrido a la violencia que nosotros también debamos hacerlo."</blockquote>
+                <p>Pero Panahi no convierte esa frase en tesis; la pone a competir con la rabia legítima de los demás, y deja que el espectador sienta el tirón en ambas direcciones.</p>
+                <p>La película resiste ofrecer respuestas fáciles, dejando al espectador confrontar la incómoda tensión entre justicia y misericordia. Al mezclar realismo emocional con humor negro, Panahi arrastra a la audiencia a un espacio moralmente incómodo donde la línea entre la rectitud y la crueldad se difumina. Lo cómico no trivializa el dolor; lo hace soportable. Las situaciones absurdas — transportar al cautivo mientras atienden eventos de la vida cotidiana, discutir a gritos dentro de una camioneta repleta de gente vestida de gala — revelan que la vida no se detiene para que la justicia se resuelva. Todo sigue. Todo coexiste. Y eso es parte de la crueldad.</p>
+                <p>La película está filmada en un estilo naturalista, usando los espacios abiertos del desierto y primeros planos asfixiantes dentro de la camioneta. Esas escenas interiores se sienten como un mundo completamente distinto, quizás otra forma de prisión. Panahi filmó en secreto en Teherán y sus alrededores, a pesar de las restricciones gubernamentales. El acto mismo de hacer la película es, en sí, un acto de resistencia que espeja el dilema de sus personajes: ¿cuánto estás dispuesto a arriesgar por lo que consideras justo?</p>
+                <h2>El sinsentido del proceso</h2>
+                <div role="note" class="sello-asfalto border-l-4 border-verdeEsperanza p-6 rounded-r-xl"><span class="font-subtitulo text-[10px] uppercase tracking-widest text-azulOceano font-bold">Recomendación</span><p class="mt-2 font-semibold italic text-azulOceano">Recomiendo la película sobre todo a personas que se encuentran en un proceso penal, pues plantea la pregunta "¿Para qué?". Se adentra en el sinsentido de la búsqueda de justicia como propósito ulterior y llega de manera casi agónica a la resignación de que el pasado no se puede reescribir.</p></div>
+                <p>Panahi ha dicho que, sin importar cuán enojados puedan estar sus personajes con una persona, al final del día van a elegir la no violencia sobre la violencia. Pero esa elección no trae paz. Trae otra clase de peso. El sonido escalofriante de una pierna ortopédica que rechina está condenado a perseguir a Vahid para siempre.</p>
+                <p>Considero que tiene tantas interpretaciones como espectadores. En lo personal, me quedo con el amargo gusto a la respuesta. En el contexto de la continua agitación política en Irán, la película subraya el sentimiento de que no hay respuestas fáciles. Y quizás esa sea su mayor honestidad: no pretender que las hay.</p>
+                    </div>
+                    <div class="divisor-linea" aria-hidden="true"><i>&#9670;</i></div>
+                    <p class="font-subtitulo text-sm uppercase tracking-widest text-moradoMedio">Reseña de Karen Socorro · Publicada originalmente en el Botiquín Cultural</p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-between items-center">
+                        <a href="../contra-archivo.html#lecturas" class="font-subtitulo font-bold text-sm uppercase tracking-widest text-azulOceano hover:text-verdeEsperanza transition"><span aria-hidden="true">&larr;</span> Todas las lecturas</a>
+                        <a href="../voces.html#compartir" class="inline-block bg-azulOceano text-white font-subtitulo font-bold uppercase text-sm tracking-wider px-6 py-3 rounded-lg hover:bg-moradoMedio transition">Compartir tu propio texto</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-grisAntracita text-white pt-12 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <div role="note" class="bg-black/25 border-l-4 border-doradoSuave p-4 rounded mb-10">
+                <p class="text-sm font-subtitulo font-semibold text-center">
+                    ¿Estás en riesgo inmediato? Cosiendo Alas no es un servicio de emergencia.
+                    <a href="../directorio.html" class="underline text-doradoSuave hover:text-white">Consulta el directorio de atención inmediata</a>.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm text-lavandaSuave">
+                <div class="md:col-span-2">
+                    <h2 class="font-titulo1 text-xl text-white mb-4">Cosiendo Alas</h2>
+                    <p class="mb-4 max-w-md">Observatorio crítico y orientación frente a la violencia institucional en las universidades públicas. No actuamos como instancia investigadora ni redactamos protocolos de cumplimiento en papel.</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">f</a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">ig</a>
+                        <a href="https://www.tiktok.com/@cosiendoalas.mx" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">tt</a>
+                        <a href="https://www.youtube.com/@cosiendoalasmx" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Cosiendo Alas" class="w-10 h-10 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition font-subtitulo font-bold">yt</a>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">El proyecto</h2>
+                    <ul class="space-y-2">
+                        <li><a href="../posicion.html" class="hover:text-doradoSuave transition">Posición</a></li>
+                        <li><a href="../posicion.html#principios" class="hover:text-doradoSuave transition">Qué hacemos y qué no</a></li>
+                        <li><a href="../posicion.html#transparencia" class="hover:text-doradoSuave transition">Transparencia y financiamiento</a></li>
+                        <li><a href="../voces.html" class="hover:text-doradoSuave transition">Voces</a></li>
+                        <li><a href="../colabora.html" class="hover:text-doradoSuave transition">Colabora</a></li>
+                        <li><a href="../colabora.html#contacto" class="hover:text-doradoSuave transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-white mb-4 uppercase tracking-wider text-xs">Legal</h2>
+                    <ul class="space-y-2">
+                        <li><a href="../legal.html#privacidad" class="hover:text-doradoSuave transition">Aviso de privacidad</a></li>
+                        <li><a href="../legal.html#terminos" class="hover:text-doradoSuave transition">Términos de uso</a></li>
+                        <li><a href="../legal.html#accesibilidad" class="hover:text-doradoSuave transition">Accesibilidad</a></li>
+                        <li><a href="../observatorio.html#replica" class="hover:text-doradoSuave transition">Derecho de réplica</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-xs text-lavandaSuave/70 border-t border-moradoMedio/30 pt-8">
+                &copy; 2026 Cosiendo Alas. Licenciado para la libre circulación comunitaria.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../sitio.js"></script>
+</body>
+</html>
